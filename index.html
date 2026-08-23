@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Financial Coach - Kiến Tạo Di Sản Tài Chính</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<style>
+@font-face{font-family:'Glacial Indifference';src:url('https://cdn.jsdelivr.net/gh/dharmatype/Dharma-Type-Free@main/fonts/GlacialIndifference/GlacialIndifference-Regular.otf') format('opentype');font-weight:400}
+@font-face{font-family:'Glacial Indifference';src:url('https://cdn.jsdelivr.net/gh/dharmatype/Dharma-Type-Free@main/fonts/GlacialIndifference/GlacialIndifference-Bold.otf') format('opentype');font-weight:700}
+:root{--em:#0A3323;--sa:#105666;--eu:#839958;--iv:#F7F4D5;--be:#F7F4D5;--go:#D3968C;--gl:#D3968C;--fs:'Alex Brush',cursive;--fb:'Glacial Indifference','Cormorant Garamond',Georgia,serif;--fr:'Cormorant Garamond',Georgia,serif;--tr:0.4s ease}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--em);color:var(--iv);font-family:var(--fb);font-size:22px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.cnt{max-width:1140px;margin:0 auto;padding:0 40px}
+.ey{display:inline-block;font-size:18px;letter-spacing:5px;text-transform:uppercase;color:var(--go);margin-bottom:16px}
+.st{font-family:var(--fs);font-size:clamp(52px,6vw,80px);font-weight:400;color:var(--iv);line-height:1.2;margin-bottom:24px}
+.gl{width:80px;height:2px;background:var(--go);margin:0 auto 32px}
+.orn{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:20px}
+.orn::before,.orn::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--go))}
+.orn::after{background:linear-gradient(to left,transparent,var(--go))}
+.orn span{color:var(--go);font-size:18px;letter-spacing:4px;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;padding:18px 48px;font-family:var(--fb);font-size:17px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;border:2px solid var(--go);color:var(--go);background:transparent;cursor:pointer;transition:var(--tr);position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;inset:0;background:var(--go);transform:scaleX(0);transform-origin:left;transition:transform var(--tr);z-index:0}
+.btn:hover::before{transform:scaleX(1)} .btn:hover{color:var(--em)} .btn span{position:relative;z-index:1}
+.bf{background:var(--go);color:var(--em)} .bf::before{background:var(--em)} .bf:hover{color:var(--go)}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:all .4s}
+.nav.sc{background:rgba(10,51,35,.98);backdrop-filter:blur(12px);padding:14px 40px;border-bottom:1px solid rgba(211,150,140,.2)}
+.nav-logo{display:flex;align-items:center;gap:16px;font-family:var(--fs);font-size:32px;color:var(--gl);flex-shrink:0;white-space:nowrap}
+.nav-logo img{width:60px;height:60px;object-fit:contain;flex-shrink:0}
+.nav-logo small{display:block;font-family:var(--fb);font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--iv);margin-top:-4px;opacity:0.8;white-space:nowrap}
+.nav-links{display:flex;gap:32px;list-style:none;flex-shrink:1;flex-wrap:nowrap}
+.nav-links a{font-size:16px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--iv);opacity:.9;transition:var(--tr);position:relative;white-space:nowrap}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--go);transform:scaleX(0);transition:var(--tr)}
+.nav-links a:hover{opacity:1} .nav-links a:hover::after{transform:scaleX(1)}
+.nav-btn{padding:12px 28px;font-size:15px;letter-spacing:3px;flex-shrink:0}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:url('assets/hero-bg.jpg') center/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(10,51,35,0.85)}
+.hvg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hvg svg{position:absolute;width:100%;height:100%}
+.hero .cnt{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:100px}
+.hbadge{display:inline-flex;align-items:center;gap:12px;margin-bottom:32px}
+.hbadge::before,.hbadge::after{content:'';width:40px;height:2px;background:var(--go)}
+.hbadge span{font-size:16px;letter-spacing:5px;text-transform:uppercase;color:var(--go);font-weight:600;}
+.ht{font-family:var(--fs);font-size:clamp(56px,6vw,96px);line-height:1.05;color:var(--iv);margin-bottom:14px}
+.ht em{color:var(--gl);font-style:normal}
+.htag{font-family:var(--fr);font-size:22px;letter-spacing:3px;text-transform:uppercase;color:var(--iv);margin-bottom:24px;font-weight:600;}
+.hdesc{font-size:22px;color:var(--iv);opacity:0.95;max-width:540px;margin-bottom:36px;line-height:1.7}
+.hctas{display:flex;gap:20px;flex-wrap:wrap}
+.hvis{display:flex;justify-content:center;align-items:center;position:relative}
+.hcard{background:rgba(211,150,140,.25);border:1px solid rgba(211,150,140,.4);padding:1px;position:relative;backdrop-filter:blur(8px);max-width:420px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:1px;overflow:hidden}
+.hcard::before{content:'';position:absolute;top:-1px;left:40px;right:40px;height:3px;background:linear-gradient(to right,transparent,var(--go),transparent);z-index:1}
+.hs{text-align:center;padding:36px 20px;background:rgba(10,51,35,.75)}
+.hsn{font-family:var(--fs);font-size:64px;color:var(--gl);line-height:1;margin-bottom:8px}
+.hsl{font-size:17px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--iv)}
+.hacc{position:absolute;width:240px;height:240px;border:2px solid rgba(211,150,140,.15);border-radius:50%;top:-40px;right:-40px;animation:rot 25s linear infinite}
+.hacc::before{content:'';position:absolute;width:160px;height:160px;border:1px solid rgba(211,150,140,.1);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+@keyframes rot{to{transform:rotate(360deg)}}
+.hscroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.hscroll span{font-size:15px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--iv)}
+@media(max-height:840px){
+  .hero .cnt{padding-top:88px;gap:40px}
+  .ht{font-size:clamp(44px,5.2vw,72px);margin-bottom:10px}
+  .htag{margin-bottom:14px;font-size:19px}
+  .hdesc{margin-bottom:24px;font-size:19px;line-height:1.6}
+  .hctas .btn{padding:14px 36px}
+  .hs{padding:22px 16px}
+  .hsn{font-size:42px;margin-bottom:4px}
+  .hsl{font-size:14px}
+  .hacc{width:180px;height:180px;top:-30px;right:-30px}
+  .hacc::before{width:120px;height:120px}
+  .hscroll{bottom:16px}
+}
+@media(max-height:700px){
+  .hero .cnt{padding-top:80px}
+  .ht{font-size:clamp(38px,4.6vw,60px)}
+  .hdesc{display:none}
+  .hs{padding:16px 12px}
+  .hscroll{display:none}
+}
+.scl{width:2px;height:50px;background:linear-gradient(to bottom,var(--go),transparent);animation:sd 2s ease-in-out infinite}
+@keyframes sd{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}
+/* PAIN */
+.pain{padding:100px 0;background:linear-gradient(180deg,var(--em) 0%,#062217 100%);position:relative}
+.pain::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
+.pain-i{text-align:center;max-width:800px;margin:0 auto 64px}
+.pain-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(211,150,140,.2)}
+.pain-c{background:#082a1c;padding:48px 40px;position:relative;transition:var(--tr)}
+.pain-c:hover{background:rgba(131,153,88,.2)}
+.pain-c::before{content:'';position:absolute;top:0;left:0;width:0;height:3px;background:var(--go);transition:width .5s}
+.pain-c:hover::before{width:100%}
+.pn{font-family:var(--fs);font-size:68px;color:rgba(211,150,140,.3);line-height:1;margin-bottom:16px}
+.pt{font-family:var(--fr);font-size:28px;font-weight:600;color:var(--iv);margin-bottom:16px;line-height:1.4}
+.pd{font-size:22px;color:var(--iv);opacity:0.95;line-height:1.8}
+/* SOL */
+.sol{padding:100px 0;background:var(--iv);color:var(--em)}
+.sol-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.sl{list-style:none;display:flex;flex-direction:column;gap:24px}
+.sl li{display:flex;gap:20px;align-items:flex-start}
+.si{width:40px;height:40px;background:var(--em);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px}
+.si svg{width:20px;height:20px;fill:none;stroke:var(--iv);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.slt{font-family:var(--fr);font-size:28px;font-weight:600;color:var(--em);margin-bottom:8px}
+.sld{font-size:22px;color:var(--em);font-weight:500;line-height:1.7}
+.sa{width:100%;max-width:480px;margin:0 auto;background:var(--em);clip-path:polygon(50% 0%,100% 8%,100% 100%,0 100%,0 8%);padding:70px 48px 60px;text-align:center;color:var(--iv)}
+.sal{font-size:18px;letter-spacing:5px;text-transform:uppercase;color:var(--eu);margin-bottom:16px;font-weight:bold;}
+.sat{font-family:var(--fs);font-size:56px;color:var(--gl);margin-bottom:32px}
+.sai{display:flex;flex-direction:column;gap:12px}
+.sai-item{padding:12px 20px;border:1px solid rgba(211,150,140,.4);font-size:17px;letter-spacing:2px;text-transform:uppercase;color:var(--iv);font-weight:600;}
+.sb{position:absolute;bottom:-24px;right:-12px;background:var(--go);color:var(--em);padding:24px 32px;text-align:center}
+.sbn{font-family:var(--fs);font-size:56px;line-height:1;display:block}
+.sbt{font-size:15px;letter-spacing:3px;text-transform:uppercase;display:block;font-weight:bold;}
+.sv{position:relative}
+/* JOURNEY */
+.jrn{padding:100px 0;background:#062217;position:relative}
+.jrn::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
+.ji{text-align:center;max-width:800px;margin:0 auto 80px}
+.tl{position:relative;padding:0 0 0 80px;max-width:900px;margin:0 auto}
+.tl::before{content:'';position:absolute;top:0;bottom:0;left:30px;width:2px;background:linear-gradient(to bottom,var(--go),rgba(211,150,140,.2))}
+.ti{position:relative;margin-bottom:64px}
+.ti:last-child{margin-bottom:0}
+.td{position:absolute;left:-63px;top:6px;width:24px;height:24px;background:var(--em);border:2px solid var(--go);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.td::before{content:'';width:8px;height:8px;background:var(--go);border-radius:50%}
+.tph{font-size:18px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:var(--go);margin-bottom:12px}
+.ttt{font-family:var(--fr);font-size:34px;font-weight:600;color:var(--iv);margin-bottom:16px}
+.tde{font-size:22px;color:var(--iv);line-height:1.8;margin-bottom:24px}
+.ttg{display:flex;flex-wrap:wrap;gap:12px}
+.ttg span{padding:8px 16px;border:1px solid rgba(211,150,140,.4);font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--iv);background:rgba(211,150,140,.1)}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:80px}
+.sc{background:rgba(255,255,255,.04);border:1px solid rgba(211,150,140,.2);padding:40px 32px;text-align:center;transition:var(--tr)}
+.sc:hover{border-color:rgba(211,150,140,.5);background:rgba(131,153,88,.15)}
+.sic{width:60px;height:60px;margin:0 auto 20px;border:2px solid rgba(211,150,140,.4);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.sic svg{width:28px;height:28px;stroke:var(--go);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.scn{font-family:var(--fs);font-size:50px;color:var(--gl);margin-bottom:8px}
+.scl{font-size:17px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:var(--iv)}
+/* TOOLKIT */
+.tk{padding:100px 0;background:var(--sa);position:relative;overflow:hidden}
+.tk::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
+.tki{text-align:center;max-width:720px;margin:0 auto 80px}
+.tkb{display:inline-flex;align-items:center;gap:12px;background:rgba(211,150,140,.2);border:1px solid rgba(211,150,140,.4);padding:10px 24px;margin-bottom:24px}
+.tkb svg{width:18px;height:18px;fill:var(--iv)}
+.tkb span{font-size:15px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:var(--iv)}
+.tkg{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;position:relative;z-index:1}
+.tkc{background:rgba(10,51,35,.8);border:1px solid rgba(211,150,140,.3);padding:40px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;transition:var(--tr)}
+.tkc:hover{border-color:rgba(211,150,140,.6);background:var(--em)}
+.tkn{font-family:var(--fs);font-size:66px;color:rgba(211,150,140,.5);line-height:1}
+.tknm{font-family:var(--fr);font-size:28px;font-weight:600;color:var(--gl);margin-bottom:12px;line-height:1.3}
+.tkd{font-size:20px;color:var(--iv);line-height:1.7}
+.sks{margin-top:64px;padding-top:48px;border-top:1px solid rgba(211,150,140,.3);text-align:center;position:relative;z-index:1}
+.skl{font-size:18px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:var(--iv);margin-bottom:24px}
+.skp{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.skp span{padding:12px 24px;border:1px solid rgba(211,150,140,.5);font-size:15px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:var(--em);background:var(--iv)}
+/* ABOUT */
+.abt{padding:100px 0;background:var(--em);position:relative;overflow:hidden}
+.abt::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
+.abt-g{display:grid;grid-template-columns:0.8fr 1.2fr;gap:80px;align-items:center}
+.abt-v{position:relative}
+.abt-img{position:relative;max-width:400px;margin:0 auto;aspect-ratio:3/4;overflow:hidden}
+.abt-img img{width:100%;height:100%;object-fit:cover;object-position:center 12%;position:relative;z-index:1;display:block}
+.abt-img::before{content:'';position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;border:2px solid rgba(211,150,140,.4);z-index:0}
+.abt-name{font-family:var(--fs);font-size:clamp(48px,5vw,64px);color:var(--gl);margin-bottom:8px;line-height:1.1}
+.abt-role{font-family:var(--fr);font-size:20px;letter-spacing:3px;text-transform:uppercase;color:var(--eu);font-weight:600;margin-bottom:28px}
+.abt-d{font-size:22px;color:var(--iv);opacity:0.95;line-height:1.8;margin-bottom:36px;max-width:560px}
+.abt-list{list-style:none;display:flex;flex-direction:column;gap:20px;margin-bottom:44px}
+.abt-list li{display:flex;gap:16px;align-items:flex-start}
+.abt-ic{width:36px;height:36px;background:var(--go);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.abt-ic svg{width:18px;height:18px;fill:none;stroke:var(--em);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.abt-list span{font-size:19px;color:var(--iv);font-weight:500;line-height:1.6}
+.abt-kw{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.abt-kw span{padding:14px 28px;border-radius:999px;border:1px solid rgba(211,150,140,.35);background:rgba(255,255,255,.04);color:var(--iv);font-size:17px;font-weight:500;letter-spacing:0.3px;transition:var(--tr)}
+.abt-kw span:hover{border-color:rgba(211,150,140,.7);background:rgba(211,150,140,.1)}
+/* FOR / INV / CTA / FOOTER */
+.for{padding:100px 0;background:var(--be);color:var(--em)}
+.for-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.fd{font-size:24px;color:var(--em);font-weight:500;line-height:1.9;margin-bottom:32px}
+.fl{list-style:none;display:flex;flex-direction:column;gap:20px;margin-bottom:48px}
+.fl li{display:flex;gap:16px;align-items:flex-start;font-size:22px;color:var(--em);font-weight:500}
+.fck{color:var(--eu);font-size:24px;margin-top:2px;flex-shrink:0}
+.fbox{background:var(--em);padding:64px 48px;color:var(--iv);position:relative}
+.fbox::after{content:'';position:absolute;top:16px;right:-16px;bottom:-16px;left:16px;border:2px solid rgba(211,150,140,.4);z-index:-1}
+.fbt{font-family:var(--fs);font-size:50px;color:var(--gl);margin-bottom:32px;line-height:1.2}
+.fm{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fmi{padding:24px;background:rgba(255,255,255,.06);border-left:3px solid rgba(211,150,140,.5)}
+.fmv{font-family:var(--fs);font-size:44px;color:var(--gl);line-height:1;margin-bottom:8px}
+.fml{font-size:17px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:var(--iv)}
+.inv{padding:100px 0;background:#062217;text-align:center;position:relative}
+.inv::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
+.iey{font-size:18px;font-weight:bold;letter-spacing:5px;text-transform:uppercase;color:var(--go);margin-bottom:24px}
+/* PACKAGES */
+.pkg-i{text-align:center;max-width:760px;margin:0 auto 64px}
+.pkg-g{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:980px;margin:0 auto}
+.pkg-c{background:rgba(10,51,35,.8);border:1px solid rgba(211,150,140,.3);padding:48px 40px;position:relative;display:flex;flex-direction:column;text-align:left}
+.pkg-c.feat{border-color:var(--go);background:rgba(211,150,140,.07)}
+.pkg-c.feat::before,.pkg-c.feat::after{content:'';position:absolute;width:28px;height:28px;border-color:var(--go);border-style:solid}
+.pkg-c.feat::before{top:-2px;left:-2px;border-width:2px 0 0 2px}
+.pkg-c.feat::after{bottom:-2px;right:-2px;border-width:0 2px 2px 0}
+.pkg-ribbon{position:absolute;top:-15px;right:32px;background:var(--go);color:var(--em);font-size:13px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;padding:8px 18px}
+.pkg-badge{display:inline-block;font-size:14px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:var(--go);margin-bottom:16px}
+.pkg-name{font-family:var(--fr);font-size:30px;font-weight:600;color:var(--iv);margin-bottom:16px;line-height:1.3}
+.pkg-q{font-size:15px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:var(--eu);margin-bottom:16px}
+.pkg-desc{font-size:18px;color:var(--iv);opacity:0.9;line-height:1.7;margin-bottom:24px}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:32px;flex-grow:1}
+.pkg-list li{display:flex;gap:12px;align-items:flex-start;font-size:17px;color:var(--iv);line-height:1.6}
+.pkg-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--go);flex-shrink:0;margin-top:8px}
+.pkg-div{width:100%;height:1px;background:rgba(211,150,140,.25);margin-bottom:24px}
+.pkg-price{font-family:var(--fs);font-size:46px;color:var(--gl);line-height:1;margin-bottom:8px}
+.pkg-price small{font-size:22px;font-family:var(--fb);opacity:0.85}
+.pkg-price.alt{font-family:var(--fr);font-size:23px;font-weight:600;color:var(--iv)}
+.pkg-price-note{font-size:14px;color:var(--iv);opacity:0.75;margin-bottom:24px;line-height:1.5}
+.cta{padding:100px 0;background:linear-gradient(135deg,#062217 0%,var(--sa) 100%);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(211,150,140,.15) 0%,transparent 70%)}
+.ctac{position:relative;z-index:1}
+.ctat{font-family:var(--fs);font-size:clamp(60px,8vw,104px);color:var(--iv);margin-bottom:16px}
+.ctat em{color:var(--gl);font-style:normal}
+.ctas{font-size:22px;letter-spacing:2px;text-transform:uppercase;color:var(--iv);opacity:0.95;margin-bottom:56px}
+.cform{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fg input,.fg textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(211,150,140,.5);color:var(--iv);padding:20px 24px;font-family:var(--fb);font-size:22px;letter-spacing:1px;outline:none;transition:var(--tr)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(247,244,213,.6);font-size:16px;letter-spacing:2px;text-transform:uppercase}
+.fg input:focus,.fg textarea:focus{border-color:var(--go);background:rgba(255,255,255,.12)}
+.fg textarea{min-height:140px;resize:none}
+.fsb .btn{width:100%;justify-content:center;font-size:20px;}
+footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1px solid rgba(211,150,140,.2)}
+.flo{font-family:var(--fs);font-size:50px;color:var(--gl);margin-bottom:16px}
+.ftg{font-size:17px;font-weight:bold;letter-spacing:5px;text-transform:uppercase;color:var(--eu);margin-bottom:40px}
+.fli{display:flex;gap:40px;justify-content:center;margin-bottom:48px;list-style:none;flex-wrap:wrap;}
+.fli a{font-size:17px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:var(--iv);transition:color .3s}
+.fli a:hover{color:var(--go)}
+.fcp{font-size:15px;color:rgba(247,244,213,.5);letter-spacing:1px}
+.fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+@media(max-width:1320px){.nav-links{display:none}}
+@media(max-width:1024px){.hero .cnt,.sol-g,.for-g,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc{margin:0 auto 48px}.pain-g,.sg,.tkg,.pkg-g,.frow{grid-template-columns:1fr}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-role{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}}
+@media(max-width:640px){
+  .cnt{padding:0 20px}
+  .nav{padding:12px 14px;gap:6px}
+  .nav-logo img{width:36px;height:36px}
+  .nav-logo{font-size:19px;gap:6px}
+  .nav-logo small{font-size:9px;letter-spacing:0.5px}
+  .nav-btn{padding:8px 14px;font-size:11px;letter-spacing:0.5px}
+  .pain,.sol,.jrn,.tk,.abt,.for,.inv,.cta{padding:64px 0}
+  .pkg-c{padding:36px 26px}
+  .pkg-g{gap:24px}
+  .ht{font-size:48px}
+  .ctat{font-size:44px}
+  .hcard{max-width:100%}
+  .hs{padding:24px 14px}
+  .hsn{font-size:40px}
+  .hsl{font-size:13px}
+  .hctas{width:100%}
+  .hctas .btn{width:100%;justify-content:center}
+  .tkc{padding:28px 22px;gap:18px}
+  .tkn{font-size:46px}
+  .abt-img{max-width:260px}
+  .abt-kw span{padding:10px 18px;font-size:14px}
+  .fbox{padding:40px 28px}
+  .sa{padding:48px 28px 40px}
+  .sb{padding:18px 22px;right:0}
+  .sbn{font-size:40px}
+  .fm{gap:16px}
+  .fmi{padding:18px}
+}
+</style>
+</head>
+<body>
+<nav class='nav' id='nav'>
+  <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Financial Coach<small>Kiến Tạo Di Sản Tài Chính</small></div></div>
+  <ul class='nav-links'>
+    <li><a href='#sol'>Giải Pháp</a></li>
+    <li><a href='#about'>Về Trinh</a></li>
+    <li><a href='#jrn'>Hành Trình</a></li>
+    <li><a href='#tk'>Công Cụ</a></li>
+    <li><a href='#for'>Dành Cho Ai</a></li>
+  </ul>
+  <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn nav-btn'><span>Đăng Ký Tư Vấn</span></a>
+</nav>
+
+<section class='hero' id='home'>
+  <div class='hvg'>
+    <svg viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice' xmlns='http://www.w3.org/2000/svg'>
+      <defs><linearGradient id='lg1' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:rgba(211,150,140,0)'/><stop offset='50%' style='stop-color:rgba(211,150,140,0.15)'/><stop offset='100%' style='stop-color:rgba(211,150,140,0)'/></linearGradient></defs>
+      <path d='M0,450 Q360,200 720,450 T1440,450' stroke='url(#lg1)' stroke-width='0.8' fill='none'/>
+      <path d='M0,500 Q400,300 800,500 T1440,500' stroke='url(#lg1)' stroke-width='0.5' fill='none'/>
+      <circle cx='900' cy='180' r='120' stroke='rgba(211,150,140,0.05)' stroke-width='1' fill='none'/>
+      <circle cx='900' cy='180' r='70' stroke='rgba(211,150,140,0.08)' stroke-width='1' fill='none'/>
+      <line x1='840' y1='180' x2='960' y2='180' stroke='rgba(211,150,140,0.15)' stroke-width='0.5'/>
+      <line x1='900' y1='120' x2='900' y2='240' stroke='rgba(211,150,140,0.15)' stroke-width='0.5'/>
+    </svg>
+  </div>
+  <div class='cnt'>
+    <div>
+      <h1 class='ht'>Xây Dựng<br><em>Di Sản</em><br>Tài Chính</h1>
+      <p class='htag'>Strategy &middot; Finance &middot; Legacy</p>
+      <p class='hdesc'>Hệ thống hóa quản trị tài chính &mdash; nâng tầm quyết định chiến lược &mdash; xây dựng cấu trúc bền vững để chuyển giao di sản qua nhiều thế hệ.</p>
+      <div class='hctas'>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn'><span>Đăng Ký Tư Vấn Miễn Phí</span></a>
+        <a href='#sol' class='btn'><span>Khám Phá Chương Trình</span></a>
+      </div>
+    </div>
+    <div class='hvis'>
+      <div class='hacc'></div>
+      <div class='hcard'>
+        <div class='hs'><div class='hsn'>1</div><div class='hsl'>Năm Đồng Hành Toàn Diện</div></div>
+        <div class='hs'><div class='hsn'>2</div><div class='hsl'>Giai Đoạn Chiến Lược</div></div>
+        <div class='hs'><div class='hsn'>5h+</div><div class='hsl'>Tư Vấn Trực Tiếp / Tháng</div></div>
+        <div class='hs'><div class='hsn'>4</div><div class='hsl'>Bộ Công Cụ Tài Chính Độc Quyền</div></div>
+      </div>
+    </div>
+  </div>
+  <div class='hscroll'><span>Scroll</span><div class='scl'></div></div>
+</section>
+
+<section class='pain'>
+  <div class='cnt'>
+    <div class='pain-i fu'>
+      <span class='ey'>Thực Trạng Hiện Nay</span>
+      <h2 class='st'>Doanh nghiệp của bạn đang ở đâu?</h2>
+      <div class='gl'></div>
+      <p style='color:var(--iv);font-size:22px;opacity:0.9;'>Phần lớn doanh nghiệp SME tăng trưởng mạnh nhưng thiếu hệ thống tài chính để kiểm soát và định hướng dài hạn.</p>
+    </div>
+    <div class='pain-g'>
+      <div class='pain-c fu'>
+        <div class='pn'>01</div>
+        <div class='pt'>Quyết định tài chính dựa trên cảm tính</div>
+        <p class='pd'>Thiếu dữ liệu định lượng và mô hình đánh giá chuẩn mực, khiến các quyết định đầu tư tiềm ẩn rủi ro cao.</p>
+      </div>
+      <div class='pain-c fu'>
+        <div class='pn'>02</div>
+        <div class='pt'>Không kiểm soát được dòng tiền</div>
+        <p class='pd'>Doanh thu tốt nhưng dòng tiền thiếu ổn định, không có hệ thống dự báo để chủ động ứng phó với biến động.</p>
+      </div>
+      <div class='pain-c fu'>
+        <div class='pn'>03</div>
+        <div class='pt'>Thiếu chiến lược tài chính dài hạn</div>
+        <p class='pd'>Chưa có kế hoạch tài chính 3-5 năm bài bản để tối ưu giá trị doanh nghiệp và chuẩn bị cho việc chuyển giao.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='sol' id='sol'>
+  <div class='cnt'>
+    <div class='sol-g'>
+      <div class='fu'>
+        <span class='ey' style='color:var(--eu);'>Giải Pháp Toàn Diện</span>
+        <h2 class='st' style='color:var(--em);'>Financial Coach<br>đồng hành cùng bạn</h2>
+        <div class='gl' style='margin-left:0;background:var(--eu);'></div>
+        <ul class='sl'>
+          <li>
+            <div class='si'><svg viewBox='0 0 24 24'><polyline points='20 6 9 17 4 12'></polyline></svg></div>
+            <div><div class='slt'>Hệ thống quản trị tài chính đo lường được</div><p class='sld'>Thiết lập bộ chỉ số KPI tài chính, quy trình báo cáo và kiểm soát tự động &mdash; minh bạch, nhất quán.</p></div>
+          </li>
+          <li>
+            <div class='si'><svg viewBox='0 0 24 24'><polyline points='22 7 13.5 15.5 8.5 10.5 2 17'></polyline><polyline points='16 7 22 7 22 13'></polyline></svg></div>
+            <div><div class='slt'>Nâng cấp quyết định tài chính chiến lược</div><p class='sld'>Ứng dụng tư duy tài chính cấp cao: phân tích kịch bản, đánh giá đầu tư và lập kế hoạch chiến lược.</p></div>
+          </li>
+          <li>
+            <div class='si'><svg viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='2'></rect><line x1='3' y1='9' x2='21' y2='9'></line><line x1='9' y1='21' x2='9' y2='9'></line></svg></div>
+            <div><div class='slt'>Cấu trúc tài chính dài hạn &amp; chuyển giao di sản</div><p class='sld'>Xây dựng nền tảng tài chính vững chắc, tối ưu giá trị doanh nghiệp qua nhiều thế hệ.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class='sv fu'>
+        <div class='sa'>
+          <div class='sal'>Chương Trình</div>
+          <div class='sat'>1 Năm<br>Đồng Hành</div>
+          <div class='sai'>
+            <div class='sai-item'>Thẩm Định Tài Chính</div>
+            <div class='sai-item'>Kế Hoạch Chiến Lược 3-5 Năm</div>
+            <div class='sai-item'>Triển Khai &amp; Kiểm Soát</div>
+            <div class='sai-item'>Monthly Review &amp; Coaching</div>
+          </div>
+        </div>
+        <div class='sb'><span class='sbn'>12+</span><span class='sbt'>Phiên Review / Năm</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='abt' id='about'>
+  <div class='cnt'>
+    <div class='abt-g'>
+      <div class='abt-v fu'>
+        <div class='abt-img'><img src='Expert/Avatar.jpg' alt='Phan Tuyết Trinh'/></div>
+      </div>
+      <div class='fu'>
+        <span class='ey'>Người Đồng Hành</span>
+        <div class='abt-name'>Phan Tuyết Trinh</div>
+        <div class='abt-role'>Financial Coach / Mentor Chủ Doanh Nghiệp</div>
+        <p class='abt-d'>Ước mơ của Trinh là trao cho mỗi chủ doanh nghiệp một tấm bản đồ tài chính &mdash; kim chỉ nam để bạn chạm đến mục tiêu cuộc sống và sống một cuộc đời thật tự do, thật tỏa sáng. &#x2728;</p>
+        <ul class='abt-list'>
+          <li><div class='abt-ic'><svg viewBox='0 0 24 24'><polyline points='20 6 9 17 4 12'></polyline></svg></div><span>Giám Đốc Tài Chính Khối Kinh Doanh &mdash; ACB</span></li>
+          <li><div class='abt-ic'><svg viewBox='0 0 24 24'><polyline points='20 6 9 17 4 12'></polyline></svg></div><span>10 Năm Kinh Nghiệm Tài Chính &mdash; Ngân Hàng</span></li>
+        </ul>
+        <div class='abt-kw'>
+          <span>Thạc Sĩ Tài Chính (UEH)</span>
+          <span>CFA Level 1</span>
+          <span>CFP Level 1 (VFCA)</span>
+          <span>ICF Level 1</span>
+        </div>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn'><span>Đặt Lịch Trò Chuyện Cùng Trinh</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='jrn' id='jrn'>
+  <div class='cnt'>
+    <div class='ji fu'>
+      <span class='ey'>Lộ Trình</span>
+      <h2 class='st'>Hành trình 1 năm<br>kiến tạo nền tảng</h2>
+      <div class='gl'></div>
+      <p style='color:var(--iv);font-size:22px;opacity:0.9;'>Phương pháp tiếp cận có cấu trúc &mdash; từ thẩm định thực trạng đến triển khai và duy trì kết quả bền vững.</p>
+    </div>
+    <div class='tl'>
+      <div class='ti fu'>
+        <div class='td'></div>
+        <div class='tph'>Giai Đoạn 1 &mdash; Tối Đa 3 Tháng</div>
+        <div class='ttt'>Thẩm Định &amp; Xây Dựng Chiến Lược</div>
+        <p class='tde'>Đánh giá toàn diện sức khỏe tài chính doanh nghiệp. Xây dựng kế hoạch tài chính và phương án đầu tư chiến lược kinh doanh trong 3-5 năm tới &mdash; dựa trên dữ liệu thực tế, không phải cảm tính.</p>
+        <div class='ttg'>
+          <span>Thẩm Định Tài Chính</span><span>Financial Master Plan</span><span>Đánh Giá Đầu Tư</span><span>Kế Hoạch 3-5 Năm</span>
+        </div>
+      </div>
+      <div class='ti fu'>
+        <div class='td'></div>
+        <div class='tph'>Giai Đoạn 2 &mdash; 9 Tháng Tiếp Theo</div>
+        <div class='ttt'>Đồng Hành Triển Khai &amp; Kiểm Soát</div>
+        <p class='tde'>Cùng bạn thực thi chiến lược, kiểm soát hiệu quả và đề xuất các kịch bản ứng phó linh hoạt trước biến động thị trường. Mọi quyết định được đưa ra dựa trên dữ liệu, không phải cảm tính.</p>
+        <div class='ttg'>
+          <span>Coaching Session</span><span>Monthly Review</span><span>Emergency Call</span><span>Scenario Analysis</span>
+        </div>
+      </div>
+    </div>
+    <div class='sg'>
+      <div class='sc fu'>
+        <div class='sic'><svg viewBox='0 0 24 24'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'></path></svg></div>
+        <div class='scn'>45-60'</div><div class='scl'>Mỗi Phiên Coaching</div>
+      </div>
+      <div class='sc fu'>
+        <div class='sic'><svg viewBox='0 0 24 24'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'></rect><line x1='16' y1='2' x2='16' y2='6'></line><line x1='8' y1='2' x2='8' y2='6'></line><line x1='3' y1='10' x2='21' y2='10'></line></svg></div>
+        <div class='scn'>2+</div><div class='scl'>Phiên Coaching / Tháng</div>
+      </div>
+      <div class='sc fu'>
+        <div class='sic'><svg viewBox='0 0 24 24'><line x1='18' y1='20' x2='18' y2='10'></line><line x1='12' y1='20' x2='12' y2='4'></line><line x1='6' y1='20' x2='6' y2='14'></line></svg></div>
+        <div class='scn'>12</div><div class='scl'>Monthly Review / Năm</div>
+      </div>
+    </div>
+    <div class='fu' style='text-align:center;margin-top:64px;padding:40px;border:1px solid rgba(211,150,140,.2);max-width:720px;margin-left:auto;margin-right:auto;'>
+      <div style='color:var(--go);font-size:18px;font-weight:bold;letter-spacing:5px;text-transform:uppercase;margin-bottom:16px;'>Emergency Support</div>
+      <p style='color:var(--iv);font-size:22px;line-height:1.8;'><em style='font-family:var(--fr);color:var(--gl);font-size:26px;'>"Không cần đợi đến buổi gặp hàng tuần."</em><br>Emergency call cho các vấn đề quan trọng cần giải quyết ngay &mdash; để tạo bước tiến nhanh chóng khi cần thiết nhất.</p>
+    </div>
+  </div>
+</section>
+
+<section class='tk' id='tk'>
+  <div class='cnt'>
+    <div class='tki fu'>
+      <div class='tkb'><svg viewBox='0 0 24 24'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'></polygon></svg><span>Tặng Kèm Hoàn Toàn Miễn Phí</span></div>
+      <h2 class='st'>Bộ Công Cụ<br>Tài Chính Độc Quyền</h2>
+      <div class='gl'></div>
+      <p style='color:var(--iv);font-size:22px;opacity:0.9;'>4 bộ công cụ được thiết kế riêng cho doanh nghiệp SME, giúp bạn đưa ra quyết định dựa trên dữ liệu &mdash; không phải cảm tính.</p>
+    </div>
+    <div class='tkg'>
+      <div class='tkc fu'><div class='tkn'>01</div><div><div class='tknm'>Investment Project Evaluation Model</div><p class='tkd'>Công cụ chuẩn mực đánh giá hiệu quả đầu tư dựa trên dòng tiền, chi phí vốn và giá trị gia tăng dài hạn &mdash; thay vì lợi nhuận kế toán hay cảm tính.</p></div></div>
+      <div class='tkc fu'><div class='tkn'>02</div><div><div class='tknm'>Master Plan &mdash; 6 Trụ Cột Doanh Nghiệp</div><p class='tkd'>Nhìn toàn cảnh bức tranh doanh nghiệp qua 6 trụ cột kết nối: Strategy &mdash; Finance &mdash; Operations &mdash; Marketing/Sales &mdash; People &mdash; Product.</p></div></div>
+      <div class='tkc fu'><div class='tkn'>03</div><div><div class='tknm'>Scenario Analysis</div><p class='tkd'>Đánh giá kết quả tài chính dưới nhiều kịch bản khác nhau &mdash; nhìn trước rủi ro, nắm bắt cơ hội và ra quyết định tự tin hơn trong mọi tình huống.</p></div></div>
+      <div class='tkc fu'><div class='tkn'>04</div><div><div class='tknm'>Rolling Forecast</div><p class='tkd'>Dự báo tài chính liên tục hàng tháng, chủ động điều chỉnh chiến lược và đảm bảo dòng tiền an toàn trong mọi biến động thị trường.</p></div></div>
+    </div>
+    <div class='sks fu'>
+      <div class='skl'>Kỹ Năng Phát Triển Cho Đội Ngũ</div>
+      <div class='skp'><span>Quản Trị Tài Chính</span><span>Phân Tích Số Liệu</span><span>Định Giá Sản Phẩm</span><span>Data-Driven Decision Making</span><span>Financial Modeling</span></div>
+    </div>
+  </div>
+</section>
+
+<section class='for' id='for'>
+  <div class='cnt'>
+    <div class='for-g'>
+      <div class='fu'>
+        <span class='ey' style='color:var(--eu);'>Chương Trình Dành Cho</span>
+        <h2 class='st' style='color:var(--em);'>Chủ Doanh Nghiệp<br>Muốn Bứt Phá</h2>
+        <div class='gl' style='background:var(--eu);margin-left:0;'></div>
+        <p class='fd'>Bạn đang điều hành doanh nghiệp với doanh thu tốt nhưng chưa có hệ thống tài chính bài bản để định hướng tương lai và xây dựng di sản lâu dài?</p>
+        <ul class='fl'>
+          <li><span class='fck'>&#x2736;</span><span>Chủ doanh nghiệp SME / Startup, độ tuổi <strong>30-45</strong></span></li>
+          <li><span class='fck'>&#x2736;</span><span>Doanh thu từ <strong>10 tỷ đồng / năm</strong> trở lên</span></li>
+          <li><span class='fck'>&#x2736;</span><span>Muốn <strong>hệ thống hóa</strong> quy trình quản trị tài chính</span></li>
+          <li><span class='fck'>&#x2736;</span><span>Hướng đến <strong>chiến lược kinh doanh dài hạn</strong> 3-5 năm</span></li>
+          <li><span class='fck'>&#x2736;</span><span>Muốn <strong>chuyển giao di sản</strong> cho nhiều thế hệ tiếp theo</span></li>
+        </ul>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='color:var(--em);border-color:var(--eu);'><span>Tôi Phù Hợp &mdash; Đăng Ký Ngay</span></a>
+      </div>
+      <div class='fu'>
+        <div class='fbox'>
+          <div class='fbt'>Cam Kết<br>Kết Quả</div>
+          <div class='fm'>
+            <div class='fmi'><div class='fmv'>3-5</div><div class='fml'>Năm Kế Hoạch Chiến Lược</div></div>
+            <div class='fmi'><div class='fmv'>5h+</div><div class='fml'>Tư Vấn Trực Tiếp / Tháng</div></div>
+            <div class='fmi'><div class='fmv'>12</div><div class='fml'>Monthly Review Sessions</div></div>
+            <div class='fmi'><div class='fmv'>4</div><div class='fml'>Công Cụ Độc Quyền</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='inv' id='inv'>
+  <div class='cnt'>
+    <div class='pkg-i fu'>
+      <span class='iey'>Mức Đầu Tư</span>
+      <h2 class='st'>Chọn Gói Đồng Hành<br>Phù Hợp Với Bạn</h2>
+      <div class='gl'></div>
+      <p style='color:var(--iv);font-size:20px;opacity:0.9;'>Từ thẩm định nhanh sức khỏe tài chính đến đồng hành xây dựng giải pháp dài hạn &mdash; chọn lộ trình phù hợp với giai đoạn phát triển của doanh nghiệp bạn.</p>
+    </div>
+    <div class='pkg-g'>
+      <div class='pkg-c fu'>
+        <span class='pkg-badge'>Ngắn Hạn &middot; 3 Tháng</span>
+        <div class='pkg-name'>Finance Health Check</div>
+        <p class='pkg-desc'>Thẩm định sức khỏe tài chính doanh nghiệp, xây dựng kế hoạch tài chính và phương án đầu tư chiến lược kinh doanh trong 3-5 năm tới.</p>
+        <ul class='pkg-list'>
+          <li>Thẩm định sức khỏe tài chính toàn diện</li>
+          <li>Xây dựng kế hoạch tài chính chiến lược</li>
+          <li>Phương án đầu tư kinh doanh 3-5 năm</li>
+        </ul>
+        <div class='pkg-div'></div>
+        <div class='pkg-price'>40<small> Triệu</small></div>
+        <div class='pkg-price-note'>Phí đồng hành trọn gói</div>
+        <a href='#cta' class='btn' style='justify-content:center;'><span>Đăng Ký Health Check</span></a>
+      </div>
+      <div class='pkg-c feat fu'>
+        <div class='pkg-ribbon'>Đồng Hành Dài Hạn</div>
+        <span class='pkg-badge'>Dài Hạn &middot; 1 Năm</span>
+        <div class='pkg-name'>Financial Coach<br>Đồng Hành 1 Năm</div>
+        <p class='pkg-q'>Giải Quyết Vấn Đề Gì?</p>
+        <ul class='pkg-list'>
+          <li>Thiết lập hệ thống tài chính quản trị có thể đo lường và kiểm soát tự động</li>
+          <li>Nâng cấp chất lượng quyết định tài chính ở cấp độ chiến lược</li>
+          <li>Xây dựng cấu trúc tài chính dài hạn để tối ưu giá trị doanh nghiệp</li>
+        </ul>
+        <p class='pkg-desc'>Đồng hành cùng chủ doanh nghiệp trong vòng 1 năm.</p>
+        <div class='pkg-div'></div>
+        <div class='pkg-price alt'>Theo Khối Lượng Công Việc</div>
+        <div class='pkg-price-note'>Không công bố giá chính thức trên website &mdash; liên hệ để nhận báo giá phù hợp</div>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn' style='justify-content:center;'><span>Đặt Lịch Tư Vấn Riêng</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='cta' id='cta'>
+  <div class='ctac cnt'>
+    <div class='orn'><span>Bắt Đầu Hành Trình</span></div>
+    <div class='ctat'>Sẵn sàng xây dựng<br><em>Di Sản Tài Chính?</em></div>
+    <p class='ctas'>Điền thông tin đăng ký ngay bên dưới &mdash; Không ràng buộc</p>
+    <form class='cform fu' onsubmit='handleSubmit(event)'>
+      <div class='frow'>
+        <div class='fg'><input type='text' name='name' placeholder='Họ và Tên' required/></div>
+        <div class='fg'><input type='tel' name='phone' placeholder='Số Điện Thoại' required/></div>
+      </div>
+      <div class='fg'><input type='text' name='company' placeholder='Tên Doanh Nghiệp &amp; Doanh Thu Hàng Năm'/></div>
+      <div class='fg'><input type='text' name='goal' placeholder='Mục Tiêu Bạn Muốn Đạt Được'/></div>
+      <div class='fg'><textarea name='message' placeholder='Thách thức tài chính bạn đang gặp phải...'></textarea></div>
+      <div class='fsb'>
+        <button type='submit' class='btn bf' style='border:none;'><span>Gửi Đăng Ký Ngay</span></button>
+      </div>
+    </form>
+    <div id='form-success' style='display:none;margin-top:32px;padding:24px;border:1px solid rgba(211,150,140,.3);color:var(--gl);font-family:var(--fr);font-size:22px;letter-spacing:1px;'>
+      &#x2736; Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.
+    </div>
+    <div class='orn' style='margin:40px 0 32px;'><span>Còn Phân Vân? Đặt Lịch Tư Vấn 1:1</span></div>
+    <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn'><span>Chọn Lịch Hẹn Ngay Trên Calendly</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class='flo'>Financial Coach</div>
+  <div class='ftg'>Kiến Tạo Di Sản Tài Chính &mdash; Bền Vững Qua Nhiều Thế Hệ</div>
+  <ul class='fli'>
+    <li><a href='#sol'>Giải Pháp</a></li>
+    <li><a href='#about'>Về Trinh</a></li>
+    <li><a href='#jrn'>Hành Trình</a></li>
+    <li><a href='#tk'>Công Cụ</a></li>
+    <li><a href='#for'>Dành Cho Ai</a></li>
+    <li><a href='#cta'>Liên Hệ</a></li>
+  </ul>
+  <div class='fcp'>&copy; 2024 Financial Coach. All rights reserved.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',window.scrollY>60));
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+const GAS_URL='https://script.google.com/macros/s/AKfycby8dlPcqSOfsbqdIYRVcLQYQt7PmWprUz9-DyMgQbz8ZtMoX37xOLfevoNq-kTcx3G9/exec';
+function handleSubmit(e){
+  e.preventDefault();
+  const form=e.target;
+  const data={
+    name:form.name.value,
+    phone:form.phone.value,
+    company:form.company.value,
+    goal:form.goal.value,
+    message:form.message.value
+  };
+  const btn=form.querySelector('button[type=submit]');
+  btn.disabled=true;
+  fetch(GAS_URL,{method:'POST',body:JSON.stringify(data)})
+    .catch(err=>console.error('Gửi form thất bại:',err))
+    .finally(()=>{
+      form.style.display='none';
+      document.getElementById('form-success').style.display='block';
+    });
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
+document.querySelectorAll('.calendly-btn').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    if(window.Calendly){
+      Calendly.initPopupWidget({url:this.href});
+    }else{
+      window.open(this.href,'_blank');
+    }
+  });
+});
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
