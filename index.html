@@ -40,8 +40,8 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover{opacity:1} .nav-links a:hover::after{transform:scaleX(1)}
 .nav-btn{padding:12px 28px;font-size:15px;letter-spacing:3px;flex-shrink:0}
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:url('assets/hero-bg.jpg') center/cover no-repeat}
-.hero::before{content:'';position:absolute;inset:0;background:rgba(10,51,35,0.85)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:url('Branding/hero-lotus.jpg') center/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(10,51,35,0.88)}
 .hvg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .hvg svg{position:absolute;width:100%;height:100%}
 .hero .cnt{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:100px}
@@ -50,8 +50,12 @@ a{color:inherit;text-decoration:none}
 .hbadge span{font-size:16px;letter-spacing:5px;text-transform:uppercase;color:var(--go);font-weight:600;}
 .ht{font-family:var(--fs);font-size:clamp(56px,6vw,96px);line-height:1.05;color:var(--iv);margin-bottom:14px}
 .ht em{color:var(--gl);font-style:normal}
-.htag{font-family:var(--fr);font-size:22px;letter-spacing:3px;text-transform:uppercase;color:var(--iv);margin-bottom:24px;font-weight:600;}
+.htag{font-family:var(--fr);font-size:26px;font-style:italic;letter-spacing:0.3px;color:var(--gl);margin-bottom:24px;font-weight:600;max-width:520px;line-height:1.4}
 .hdesc{font-size:22px;color:var(--iv);opacity:0.95;max-width:540px;margin-bottom:36px;line-height:1.7}
+.hchk{list-style:none;max-width:540px;margin-bottom:36px}
+.hchk li{display:flex;align-items:flex-start;gap:12px;font-size:22px;color:var(--iv);opacity:0.95;line-height:1.5;margin-bottom:10px}
+.hchk li:last-child{margin-bottom:0}
+.hchk-ic{color:var(--go);font-weight:700;flex-shrink:0;margin-top:3px}
 .hctas{display:flex;gap:20px;flex-wrap:wrap}
 .hvis{display:flex;justify-content:center;align-items:center;position:relative}
 .hcard{background:rgba(211,150,140,.25);border:1px solid rgba(211,150,140,.4);padding:1px;position:relative;backdrop-filter:blur(8px);max-width:420px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:1px;overflow:hidden}
@@ -69,6 +73,8 @@ a{color:inherit;text-decoration:none}
   .ht{font-size:clamp(44px,5.2vw,72px);margin-bottom:10px}
   .htag{margin-bottom:14px;font-size:19px}
   .hdesc{margin-bottom:24px;font-size:19px;line-height:1.6}
+  .hchk{margin-bottom:24px}
+  .hchk li{font-size:19px;margin-bottom:6px}
   .hctas .btn{padding:14px 36px}
   .hs{padding:22px 16px}
   .hsn{font-size:42px;margin-bottom:4px}
@@ -80,7 +86,7 @@ a{color:inherit;text-decoration:none}
 @media(max-height:700px){
   .hero .cnt{padding-top:80px}
   .ht{font-size:clamp(38px,4.6vw,60px)}
-  .hdesc{display:none}
+  .hdesc,.hchk{display:none}
   .hs{padding:16px 12px}
   .hscroll{display:none}
 }
@@ -149,7 +155,8 @@ a{color:inherit;text-decoration:none}
 .tkc{background:rgba(10,51,35,.8);border:1px solid rgba(211,150,140,.3);padding:40px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;transition:var(--tr)}
 .tkc:hover{border-color:rgba(211,150,140,.6);background:var(--em)}
 .tkn{font-family:var(--fs);font-size:66px;color:rgba(211,150,140,.5);line-height:1}
-.tknm{font-family:var(--fr);font-size:28px;font-weight:600;color:var(--gl);margin-bottom:12px;line-height:1.3}
+.tknm{font-family:var(--fr);font-size:26px;font-weight:600;color:var(--gl);margin-bottom:6px;line-height:1.3}
+.tk-eng{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--iv);opacity:0.55;margin-bottom:12px}
 .tkd{font-size:20px;color:var(--iv);line-height:1.7}
 .sks{margin-top:64px;padding-top:48px;border-top:1px solid rgba(211,150,140,.3);text-align:center;position:relative;z-index:1}
 .skl{font-size:18px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;color:var(--iv);margin-bottom:24px}
@@ -171,6 +178,8 @@ a{color:inherit;text-decoration:none}
 .abt-ic{width:36px;height:36px;background:var(--go);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .abt-ic svg{width:18px;height:18px;fill:none;stroke:var(--em);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .abt-list span{font-size:19px;color:var(--iv);font-weight:500;line-height:1.6}
+.abt-cred{font-size:19px;color:var(--iv);opacity:0.95;line-height:1.7;margin-bottom:28px}
+.abt-hl{font-size:1.35em;font-weight:700;color:var(--gl)}
 .abt-kw{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
 .abt-kw span{padding:14px 28px;border-radius:999px;border:1px solid rgba(211,150,140,.35);background:rgba(255,255,255,.04);color:var(--iv);font-size:17px;font-weight:500;letter-spacing:0.3px;transition:var(--tr)}
 .abt-kw span:hover{border-color:rgba(211,150,140,.7);background:rgba(211,150,140,.1)}
@@ -235,7 +244,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 .fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fu.vis{opacity:1;transform:translateY(0)}
 @media(max-width:1320px){.nav-links{display:none}}
-@media(max-width:1024px){.hero .cnt,.sol-g,.for-g,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc{margin:0 auto 48px}.pain-g,.sg,.tkg,.pkg-g,.frow{grid-template-columns:1fr}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-role{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}}
+@media(max-width:1024px){.hero .cnt,.sol-g,.for-g,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc,.hchk{margin:0 auto 48px}.pain-g,.sg,.tkg,.pkg-g,.frow{grid-template-columns:1fr}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-role{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}}
 @media(max-width:640px){
   .cnt{padding:0 20px}
   .nav{padding:12px 14px;gap:6px}
@@ -260,8 +269,6 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   .abt-kw span{padding:10px 18px;font-size:14px}
   .fbox{padding:40px 28px}
   .sa{padding:48px 28px 40px}
-  .sb{padding:18px 22px;right:0}
-  .sbn{font-size:40px}
   .fm{gap:16px}
   .fmi{padding:18px}
 }
@@ -277,7 +284,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     <li><a href='#tk'>Công Cụ</a></li>
     <li><a href='#for'>Dành Cho Ai</a></li>
   </ul>
-  <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn nav-btn'><span>Đăng Ký Tư Vấn</span></a>
+  <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn nav-btn'><span>Đặt Lịch Tư Vấn</span></a>
 </nav>
 
 <section class='hero' id='home'>
@@ -294,12 +301,15 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   </div>
   <div class='cnt'>
     <div>
-      <h1 class='ht'>Xây Dựng<br><em>Di Sản</em><br>Tài Chính</h1>
-      <p class='htag'>Strategy &middot; Finance &middot; Legacy</p>
-      <p class='hdesc'>Hệ thống hóa quản trị tài chính &mdash; nâng tầm quyết định chiến lược &mdash; xây dựng cấu trúc bền vững để chuyển giao di sản qua nhiều thế hệ.</p>
+      <h1 class='ht'>Kiến Tạo<br><em>Di Sản</em><br>Tài Chính</h1>
+      <p class='htag'>Để lợi nhuận hôm nay trở thành di sản cho thế hệ mai sau</p>
+      <ul class='hchk'>
+        <li><span class='hchk-ic'>&#10003;</span>Hệ thống hóa quản trị tài chính</li>
+        <li><span class='hchk-ic'>&#10003;</span>Nâng tầm quyết định chiến lược</li>
+        <li><span class='hchk-ic'>&#10003;</span>Xây dựng cấu trúc bền vững để chuyển giao di sản qua nhiều thế hệ</li>
+      </ul>
       <div class='hctas'>
-        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn'><span>Đăng Ký Tư Vấn Miễn Phí</span></a>
-        <a href='#sol' class='btn'><span>Khám Phá Chương Trình</span></a>
+        <a href='#sol' class='btn bf'><span>Tìm Hiểu Chương Trình</span></a>
       </div>
     </div>
     <div class='hvis'>
@@ -318,26 +328,26 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='pain'>
   <div class='cnt'>
     <div class='pain-i fu'>
-      <span class='ey'>Thực Trạng Hiện Nay</span>
-      <h2 class='st'>Doanh nghiệp của bạn đang ở đâu?</h2>
+      <span class='ey'>Dấu Hiệu Cảnh Báo</span>
+      <h2 class='st'>Doanh nghiệp đang lớn nhanh hơn<br>hệ thống tài chính của nó?</h2>
       <div class='gl'></div>
-      <p style='color:var(--iv);font-size:22px;opacity:0.9;'>Phần lớn doanh nghiệp SME tăng trưởng mạnh nhưng thiếu hệ thống tài chính để kiểm soát và định hướng dài hạn.</p>
+      <p style='color:var(--iv);font-size:22px;opacity:0.9;'>Doanh thu tăng mỗi năm, nhưng cách bạn ra quyết định tài chính vẫn như hồi mới khởi nghiệp. Đây là 3 dấu hiệu quen thuộc nhất.</p>
     </div>
     <div class='pain-g'>
       <div class='pain-c fu'>
         <div class='pn'>01</div>
-        <div class='pt'>Quyết định tài chính dựa trên cảm tính</div>
-        <p class='pd'>Thiếu dữ liệu định lượng và mô hình đánh giá chuẩn mực, khiến các quyết định đầu tư tiềm ẩn rủi ro cao.</p>
+        <div class='pt'>Mỗi Quyết Định Là Một Ván Cược</div>
+        <p class='pd'>Không có dữ liệu, không có mô hình chuẩn — nghĩa là bạn đang đoán, chứ không phải đang biết. Một lần đoán sai có thể là hàng tỷ đồng.</p>
       </div>
       <div class='pain-c fu'>
         <div class='pn'>02</div>
-        <div class='pt'>Không kiểm soát được dòng tiền</div>
-        <p class='pd'>Doanh thu tốt nhưng dòng tiền thiếu ổn định, không có hệ thống dự báo để chủ động ứng phó với biến động.</p>
+        <div class='pt'>Doanh Thu Tăng, Giấc Ngủ Giảm</div>
+        <p class='pd'>Sổ sách đẹp nhưng tài khoản lúc đầy lúc cạn. Không ai báo trước tháng nào sẽ thiếu tiền trả lương — bạn chỉ biết khi nó đã xảy ra.</p>
       </div>
       <div class='pain-c fu'>
         <div class='pn'>03</div>
-        <div class='pt'>Thiếu chiến lược tài chính dài hạn</div>
-        <p class='pd'>Chưa có kế hoạch tài chính 3-5 năm bài bản để tối ưu giá trị doanh nghiệp và chuẩn bị cho việc chuyển giao.</p>
+        <div class='pt'>Lớn Mà Không Rõ Sẽ Lớn Thành Gì</div>
+        <p class='pd'>5 năm nữa doanh nghiệp đáng giá bao nhiêu? Ai sẽ tiếp quản nó? Không có kế hoạch tài chính dài hạn, câu trả lời vẫn chỉ là hy vọng.</p>
       </div>
     </div>
   </div>
@@ -347,21 +357,21 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   <div class='cnt'>
     <div class='sol-g'>
       <div class='fu'>
-        <span class='ey' style='color:var(--eu);'>Giải Pháp Toàn Diện</span>
-        <h2 class='st' style='color:var(--em);'>Financial Coach<br>đồng hành cùng bạn</h2>
+        <span class='ey' style='color:var(--eu);'>Câu Trả Lời Cho 3 Nỗi Lo Trên</span>
+        <h2 class='st' style='color:var(--em);'>Từ đoán,<br>chuyển thành biết</h2>
         <div class='gl' style='margin-left:0;background:var(--eu);'></div>
         <ul class='sl'>
           <li>
             <div class='si'><svg viewBox='0 0 24 24'><polyline points='20 6 9 17 4 12'></polyline></svg></div>
-            <div><div class='slt'>Hệ thống quản trị tài chính đo lường được</div><p class='sld'>Thiết lập bộ chỉ số KPI tài chính, quy trình báo cáo và kiểm soát tự động &mdash; minh bạch, nhất quán.</p></div>
+            <div><div class='slt'>Ra quyết định bằng dữ liệu, không bằng cảm tính</div><p class='sld'>Bộ chỉ số tài chính đo lường được, quy trình kiểm soát tự động &mdash; để mỗi quyết định đầu tư đều có căn cứ, không còn là phỏng đoán.</p></div>
           </li>
           <li>
             <div class='si'><svg viewBox='0 0 24 24'><polyline points='22 7 13.5 15.5 8.5 10.5 2 17'></polyline><polyline points='16 7 22 7 22 13'></polyline></svg></div>
-            <div><div class='slt'>Nâng cấp quyết định tài chính chiến lược</div><p class='sld'>Ứng dụng tư duy tài chính cấp cao: phân tích kịch bản, đánh giá đầu tư và lập kế hoạch chiến lược.</p></div>
+            <div><div class='slt'>Nhìn thấy dòng tiền trước khi nó xảy ra</div><p class='sld'>Dự báo tài chính liên tục, phân tích kịch bản rủi ro &mdash; để bạn chủ động ứng phó, không còn bất ngờ vào phút cuối.</p></div>
           </li>
           <li>
             <div class='si'><svg viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='2'></rect><line x1='3' y1='9' x2='21' y2='9'></line><line x1='9' y1='21' x2='9' y2='9'></line></svg></div>
-            <div><div class='slt'>Cấu trúc tài chính dài hạn &amp; chuyển giao di sản</div><p class='sld'>Xây dựng nền tảng tài chính vững chắc, tối ưu giá trị doanh nghiệp qua nhiều thế hệ.</p></div>
+            <div><div class='slt'>Xây nền tảng cho ngày bàn giao</div><p class='sld'>Cấu trúc tài chính dài hạn giúp tối ưu giá trị doanh nghiệp &mdash; sẵn sàng cho ngày chuyển giao, dù là bán, gọi vốn hay trao lại cho thế hệ sau.</p></div>
           </li>
         </ul>
       </div>
@@ -376,7 +386,6 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
             <div class='sai-item'>Monthly Review &amp; Coaching</div>
           </div>
         </div>
-        <div class='sb'><span class='sbn'>12+</span><span class='sbt'>Phiên Review / Năm</span></div>
       </div>
     </div>
   </div>
@@ -392,18 +401,17 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <span class='ey'>Người Đồng Hành</span>
         <div class='abt-name'>Phan Tuyết Trinh</div>
         <div class='abt-role'>Financial Coach / Mentor Chủ Doanh Nghiệp</div>
-        <p class='abt-d'>Ước mơ của Trinh là trao cho mỗi chủ doanh nghiệp một tấm bản đồ tài chính &mdash; kim chỉ nam để bạn chạm đến mục tiêu cuộc sống và sống một cuộc đời thật tự do, thật tỏa sáng. &#x2728;</p>
-        <ul class='abt-list'>
-          <li><div class='abt-ic'><svg viewBox='0 0 24 24'><polyline points='20 6 9 17 4 12'></polyline></svg></div><span>Giám Đốc Tài Chính Khối Kinh Doanh &mdash; ACB</span></li>
-          <li><div class='abt-ic'><svg viewBox='0 0 24 24'><polyline points='20 6 9 17 4 12'></polyline></svg></div><span>10 Năm Kinh Nghiệm Tài Chính &mdash; Ngân Hàng</span></li>
-        </ul>
+        <p class='abt-d'>Ước mơ của Trinh là được nhìn thấy chủ doanh nghiệp Việt Nam có trong tay một tấm bản đồ tài chính &mdash; vững tay lái để đưa doanh nghiệp đến sự thịnh vượng, phát triển bền vững, và xa hơn là kiến tạo di sản qua nhiều thế hệ. &#x2728;</p>
+        <p class='abt-cred'>Ở độ tuổi 28, Trinh giữ vai trò Giám Đốc Tài Chính Khối Khách Hàng Cá Nhân tại ACB &mdash; khối kinh doanh lớn nhất ngân hàng.</p>
+        <p class='abt-cred'>Với hành trình 10 năm làm chuyên gia, Trinh có cơ hội làm việc ở các định chế tài chính lớn, sát cánh cùng chủ doanh nghiệp để kiến tạo những giá trị tài chính đột phá &mdash; giúp SME tăng trưởng lợi nhuận <span class='abt-hl'>20&ndash;50%</span> chỉ sau 6&ndash;12 tháng đồng hành, Start-up tăng trưởng lợi nhuận vượt <span class='abt-hl'>2&ndash;3 lần</span>.</p>
+        <p class='abt-cred'>Khách hàng thường nhắc đến Trinh như một người tận tâm, trách nhiệm, thực chiến &mdash; giúp doanh nghiệp tháo gỡ khủng hoảng tài chính và tiết kiệm hàng chục tỷ mỗi năm.</p>
         <div class='abt-kw'>
           <span>Thạc Sĩ Tài Chính (UEH)</span>
           <span>CFA Level 1</span>
           <span>CFP Level 1 (VFCA)</span>
           <span>ICF Level 1</span>
         </div>
-        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn'><span>Đặt Lịch Trò Chuyện Cùng Trinh</span></a>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn'><span>Đặt Lịch Tư Vấn 1:1 &mdash; Miễn Phí</span></a>
       </div>
     </div>
   </div>
@@ -461,16 +469,16 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='tk' id='tk'>
   <div class='cnt'>
     <div class='tki fu'>
-      <div class='tkb'><svg viewBox='0 0 24 24'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'></polygon></svg><span>Tặng Kèm Hoàn Toàn Miễn Phí</span></div>
+      <div class='tkb'><svg viewBox='0 0 24 24'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'></polygon></svg><span>Đi Kèm Trong Chương Trình</span></div>
       <h2 class='st'>Bộ Công Cụ<br>Tài Chính Độc Quyền</h2>
       <div class='gl'></div>
       <p style='color:var(--iv);font-size:22px;opacity:0.9;'>4 bộ công cụ được thiết kế riêng cho doanh nghiệp SME, giúp bạn đưa ra quyết định dựa trên dữ liệu &mdash; không phải cảm tính.</p>
     </div>
     <div class='tkg'>
-      <div class='tkc fu'><div class='tkn'>01</div><div><div class='tknm'>Investment Project Evaluation Model</div><p class='tkd'>Công cụ chuẩn mực đánh giá hiệu quả đầu tư dựa trên dòng tiền, chi phí vốn và giá trị gia tăng dài hạn &mdash; thay vì lợi nhuận kế toán hay cảm tính.</p></div></div>
-      <div class='tkc fu'><div class='tkn'>02</div><div><div class='tknm'>Master Plan &mdash; 6 Trụ Cột Doanh Nghiệp</div><p class='tkd'>Nhìn toàn cảnh bức tranh doanh nghiệp qua 6 trụ cột kết nối: Strategy &mdash; Finance &mdash; Operations &mdash; Marketing/Sales &mdash; People &mdash; Product.</p></div></div>
-      <div class='tkc fu'><div class='tkn'>03</div><div><div class='tknm'>Scenario Analysis</div><p class='tkd'>Đánh giá kết quả tài chính dưới nhiều kịch bản khác nhau &mdash; nhìn trước rủi ro, nắm bắt cơ hội và ra quyết định tự tin hơn trong mọi tình huống.</p></div></div>
-      <div class='tkc fu'><div class='tkn'>04</div><div><div class='tknm'>Rolling Forecast</div><p class='tkd'>Dự báo tài chính liên tục hàng tháng, chủ động điều chỉnh chiến lược và đảm bảo dòng tiền an toàn trong mọi biến động thị trường.</p></div></div>
+      <div class='tkc fu'><div class='tkn'>01</div><div><div class='tknm'>Biết Trước Khoản Đầu Tư Nào Đáng Làm</div><div class='tk-eng'>Investment Project Evaluation Model</div><p class='tkd'>Đánh giá hiệu quả đầu tư dựa trên dòng tiền thực và chi phí vốn &mdash; không phải lợi nhuận kế toán hay cảm tính.</p></div></div>
+      <div class='tkc fu'><div class='tkn'>02</div><div><div class='tknm'>Nhìn Toàn Cảnh Doanh Nghiệp Trong 1 Trang</div><div class='tk-eng'>Master Plan &mdash; 6 Trụ Cột Doanh Nghiệp</div><p class='tkd'>Kết nối 6 trụ cột: Strategy &mdash; Finance &mdash; Operations &mdash; Marketing/Sales &mdash; People &mdash; Product, để không quyết định nào bị nhìn tách rời.</p></div></div>
+      <div class='tkc fu'><div class='tkn'>03</div><div><div class='tknm'>Thấy Trước Rủi Ro, Trước Khi Nó Xảy Ra</div><div class='tk-eng'>Scenario Analysis</div><p class='tkd'>Đánh giá kết quả tài chính dưới nhiều kịch bản khác nhau &mdash; để bạn tự tin ra quyết định trong mọi tình huống, không bị động.</p></div></div>
+      <div class='tkc fu'><div class='tkn'>04</div><div><div class='tknm'>Luôn Biết Trước Tháng Sau Còn Đủ Tiền Không</div><div class='tk-eng'>Rolling Forecast</div><p class='tkd'>Dự báo tài chính liên tục hàng tháng, chủ động điều chỉnh chiến lược và giữ dòng tiền an toàn trước mọi biến động.</p></div></div>
     </div>
     <div class='sks fu'>
       <div class='skl'>Kỹ Năng Phát Triển Cho Đội Ngũ</div>
@@ -486,7 +494,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <span class='ey' style='color:var(--eu);'>Chương Trình Dành Cho</span>
         <h2 class='st' style='color:var(--em);'>Chủ Doanh Nghiệp<br>Muốn Bứt Phá</h2>
         <div class='gl' style='background:var(--eu);margin-left:0;'></div>
-        <p class='fd'>Bạn đang điều hành doanh nghiệp với doanh thu tốt nhưng chưa có hệ thống tài chính bài bản để định hướng tương lai và xây dựng di sản lâu dài?</p>
+        <p class='fd'>Bạn đang điều hành doanh nghiệp với doanh thu tốt nhưng chưa có hệ thống tài chính bài bản để định hướng tương lai và kiến tạo di sản lâu dài?</p>
         <ul class='fl'>
           <li><span class='fck'>&#x2736;</span><span>Chủ doanh nghiệp SME / Startup, độ tuổi <strong>30-45</strong></span></li>
           <li><span class='fck'>&#x2736;</span><span>Doanh thu từ <strong>10 tỷ đồng / năm</strong> trở lên</span></li>
@@ -494,7 +502,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           <li><span class='fck'>&#x2736;</span><span>Hướng đến <strong>chiến lược kinh doanh dài hạn</strong> 3-5 năm</span></li>
           <li><span class='fck'>&#x2736;</span><span>Muốn <strong>chuyển giao di sản</strong> cho nhiều thế hệ tiếp theo</span></li>
         </ul>
-        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='color:var(--em);border-color:var(--eu);'><span>Tôi Phù Hợp &mdash; Đăng Ký Ngay</span></a>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='color:var(--em);border-color:var(--eu);'><span>Tôi Phù Hợp &mdash; Đặt Lịch Tư Vấn</span></a>
       </div>
       <div class='fu'>
         <div class='fbox'>
@@ -531,7 +539,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         </ul>
         <div class='pkg-div'></div>
         <div class='pkg-price'>40<small> Triệu</small></div>
-        <div class='pkg-price-note'>Phí đồng hành trọn gói</div>
+        <div class='pkg-price-note'>Phí đồng hành trọn gói &mdash; thấp hơn nhiều so với cái giá của một quyết định đầu tư sai trong 3 năm tới</div>
         <a href='#cta' class='btn' style='justify-content:center;'><span>Đăng Ký Health Check</span></a>
       </div>
       <div class='pkg-c feat fu'>
@@ -548,7 +556,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <div class='pkg-div'></div>
         <div class='pkg-price alt'>Theo Khối Lượng Công Việc</div>
         <div class='pkg-price-note'>Không công bố giá chính thức trên website &mdash; liên hệ để nhận báo giá phù hợp</div>
-        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn' style='justify-content:center;'><span>Đặt Lịch Tư Vấn Riêng</span></a>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn' style='justify-content:center;'><span>Đặt Lịch Tư Vấn 1:1 &mdash; Miễn Phí</span></a>
       </div>
     </div>
   </div>
@@ -557,7 +565,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='cta' id='cta'>
   <div class='ctac cnt'>
     <div class='orn'><span>Bắt Đầu Hành Trình</span></div>
-    <div class='ctat'>Sẵn sàng xây dựng<br><em>Di Sản Tài Chính?</em></div>
+    <div class='ctat'>Sẵn sàng kiến tạo<br><em>Di Sản Tài Chính?</em></div>
     <p class='ctas'>Điền thông tin đăng ký ngay bên dưới &mdash; Không ràng buộc</p>
     <form class='cform fu' onsubmit='handleSubmit(event)'>
       <div class='frow'>
@@ -575,7 +583,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       &#x2736; Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.
     </div>
     <div class='orn' style='margin:40px 0 32px;'><span>Còn Phân Vân? Đặt Lịch Tư Vấn 1:1</span></div>
-    <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn'><span>Chọn Lịch Hẹn Ngay Trên Calendly</span></a>
+    <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn'><span>Đặt Lịch Tư Vấn 1:1 &mdash; Miễn Phí</span></a>
   </div>
 </section>
 
