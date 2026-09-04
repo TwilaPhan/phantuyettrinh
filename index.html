@@ -38,8 +38,7 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover{opacity:1} .nav-links a:hover::after{transform:scaleX(1)}
 .nav-btn{padding:12px 28px;font-size:15px;letter-spacing:3px;flex-shrink:0}
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:url('Branding/hero-lotus.jpg') center/cover no-repeat}
-.hero::before{content:'';position:absolute;inset:0;background:rgba(10,51,35,0.88)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--em)}
 .hvg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .hvg svg{position:absolute;width:100%;height:100%}
 .hero .cnt{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:100px}
@@ -62,6 +61,7 @@ a{color:inherit;text-decoration:none}
 .hstat-i{display:flex;flex-direction:column;gap:6px;border:1px solid rgba(211,150,140,.35);border-radius:14px;padding:20px 22px;background:rgba(255,255,255,.03);transition:var(--tr)}
 .hstat-i:hover{border-color:rgba(211,150,140,.7);background:rgba(211,150,140,.08)}
 .hstat-n{font-family:var(--fr);font-size:32px;font-weight:700;color:var(--gl);line-height:1}
+.hstat-n.lg{font-size:42px}
 .hstat-l{font-size:13px;color:var(--iv);opacity:0.8;letter-spacing:0.3px}
 .hcard{background:rgba(211,150,140,.25);border:1px solid rgba(211,150,140,.4);padding:1px;position:relative;backdrop-filter:blur(8px);max-width:420px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:1px;overflow:hidden}
 .hcard::before{content:'';position:absolute;top:-1px;left:40px;right:40px;height:3px;background:linear-gradient(to right,transparent,var(--go),transparent);z-index:1}
@@ -128,6 +128,27 @@ a{color:inherit;text-decoration:none}
 .car-badge{display:inline-flex;align-items:center;padding:6px 20px;border:1px solid rgba(211,150,140,.4);border-radius:999px;font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--go);margin-bottom:14px}
 .car-title{font-family:var(--fr);font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:1px;color:var(--iv);margin-bottom:10px}
 .car-sub{font-size:15px;color:var(--iv);opacity:0.85;line-height:1.5}
+.car-anim{max-width:520px;margin:20px auto;position:relative}
+.car-svg{width:100%;height:auto;display:block;overflow:visible}
+.car-shadow{fill:rgba(0,0,0,.35)}
+.car-bob{animation:carBob 2.6s ease-in-out infinite}
+@keyframes carBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.car-body{fill:rgba(211,150,140,.1);stroke:var(--go);stroke-width:2.5;stroke-linejoin:round}
+.car-window{fill:rgba(247,244,213,.08);stroke:var(--go);stroke-width:1.5}
+.car-window-div{stroke:var(--go);stroke-width:1.5}
+.car-leader{stroke:rgba(211,150,140,.4);stroke-width:1.5;stroke-dasharray:3 3}
+.car-tag{fill:#062217;stroke:var(--go);stroke-width:2}
+.car-tag-t{font-family:var(--fr);font-size:16px;font-weight:700;fill:var(--gl);text-anchor:middle}
+.car-map path{fill:none;stroke:var(--gl);stroke-width:1.6;stroke-linejoin:round}
+.car-map-fold{opacity:.7}
+.car-wheel-icon{fill:none;stroke:var(--gl);stroke-width:1.6}
+.car-wheel-icon-hub{fill:var(--gl);stroke:none}
+.car-wheel{animation:carSpin 1.4s linear infinite}
+@keyframes carSpin{to{transform:rotate(360deg)}}
+.car-tire{fill:rgba(6,34,23,.9);stroke:var(--go);stroke-width:3}
+.car-hub{fill:var(--gl)}
+.car-spoke{stroke:#062217;stroke-width:2}
+.car-anim-labels{display:none}
 .car-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .car-c{background:rgba(255,255,255,.03);border:1px solid rgba(211,150,140,.25);border-radius:16px;padding:22px 20px;text-align:center;transition:var(--tr)}
 .car-c:hover{border-color:rgba(211,150,140,.55);background:rgba(211,150,140,.05)}
@@ -242,9 +263,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 .fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fu.vis{opacity:1;transform:translateY(0)}
 @media(max-width:1320px){.nav-links{display:none}}
-@media(min-width:1025px) and (max-height:820px){.pain{padding:88px 0 4px}.pain-i{margin-bottom:12px}.pain-v{height:88px}.pain-g{gap:16px}.pain-c .pain-stat{margin-top:10px;padding-top:8px}.car{padding:90px 0 24px}.car-i{margin-bottom:18px}.car-g{gap:14px}}
+@media(min-width:1025px) and (max-height:820px){.pain{padding:88px 0 4px}.pain-i{margin-bottom:12px}.pain-v{height:88px}.pain-g{gap:16px}.pain-c .pain-stat{margin-top:10px;padding-top:8px}.car{padding:90px 0 24px}.car-i{margin-bottom:18px}.car-g{gap:14px}.car-anim{max-width:360px;margin:8px auto}}
 @media(min-width:1025px) and (max-height:700px){.pain{padding:76px 0 18px}.pain-i .st{font-size:clamp(26px,3vw,36px)}.pain-i p{font-size:14px}.pain-v{height:80px}.pain-c .pt{font-size:16px}.pain-c .pd{font-size:13px;line-height:1.45}.car{padding:76px 0 16px}.car-title{font-size:clamp(22px,2.8vw,30px)}.car-sub{font-size:13px}.car-letter{font-size:32px;margin-bottom:6px}.car-c{padding:16px 16px}.inv{padding:126px 0 8px}.pkg-i{margin-bottom:10px}.pkg-i .st{font-size:clamp(20px,2.6vw,28px)}.pkg-i p{font-size:13px}.pkg-c{padding:14px 16px}.pkg-name{font-size:21px;margin-bottom:6px}.pkg-desc{font-size:12px;margin-bottom:6px}.pkg-list{gap:4px;margin-bottom:8px}.pkg-list li{font-size:11.5px}.pkg-price{font-size:22px}.pkg-price-note{font-size:10px;margin-bottom:6px}.pkg-c .btn{padding:9px 20px;font-size:11px}.cta{padding:126px 0 4px}.ctat{font-size:clamp(22px,3vw,32px);margin-bottom:6px}.ctas{margin-bottom:10px}.cform{gap:6px}.fg input,.fg textarea{padding:8px 14px}.fg textarea{min-height:40px}.fsb .btn{padding:10px 28px}.ctac .orn[style]{margin:12px 0 8px !important}.ctac a.calendly-btn[style]{padding:9px 24px !important}}
-@media(min-width:1025px) and (max-height:660px){.pain{padding:58px 0 6px}.pain-v{height:56px}.pain-c .pain-stat{margin-top:6px;padding-top:6px;font-size:11px}.pain-c .pain-stat b{font-size:17px}.inv{padding:126px 0 2px}.pkg-i{margin-bottom:6px}.pkg-c{padding:9px 12px}.pkg-name{font-size:18px;margin-bottom:3px}.pkg-desc{font-size:11px;margin-bottom:3px}.pkg-list{gap:2px;margin-bottom:4px}.pkg-list li{font-size:10.5px;line-height:1.3}.pkg-price{font-size:19px}.pkg-price-note{font-size:9px;margin-bottom:3px}.cta{padding:126px 0 2px}.ctac .orn{margin-bottom:6px}.ctat{margin-bottom:4px}.ctas{margin-bottom:6px}.cform{gap:4px}.fg input,.fg textarea{padding:6px 14px}.fg textarea{min-height:32px}.fsb .btn{padding:8px 24px}.ctac .orn[style]{margin:8px 0 6px !important}}
+@media(min-width:1025px) and (max-height:660px){.pain{padding:58px 0 6px}.pain-v{height:56px}.pain-c .pain-stat{margin-top:6px;padding-top:6px;font-size:11px}.pain-c .pain-stat b{font-size:17px}.car-anim{max-width:260px;margin:4px auto}.inv{padding:126px 0 2px}.pkg-i{margin-bottom:6px}.pkg-c{padding:9px 12px}.pkg-name{font-size:18px;margin-bottom:3px}.pkg-desc{font-size:11px;margin-bottom:3px}.pkg-list{gap:2px;margin-bottom:4px}.pkg-list li{font-size:10.5px;line-height:1.3}.pkg-price{font-size:19px}.pkg-price-note{font-size:9px;margin-bottom:3px}.cta{padding:126px 0 2px}.ctac .orn{margin-bottom:6px}.ctat{margin-bottom:4px}.ctas{margin-bottom:6px}.cform{gap:4px}.fg input,.fg textarea{padding:6px 14px}.fg textarea{min-height:32px}.fsb .btn{padding:8px 24px}.ctac .orn[style]{margin:8px 0 6px !important}}
 @media(max-width:1024px){.hero .cnt,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc,.hchk{margin:0 auto 48px}.pain-g,.pkg-g,.frow,.car-g,.quo-g,.test-g{grid-template-columns:1fr}.pain{min-height:0;display:block;padding:80px 0}.pain-c:nth-child(2){margin-top:0}.pain-g{max-width:480px;margin:0 auto;gap:24px}.quo-g{max-width:480px;margin:0 auto;gap:20px}.test-g{max-width:480px;margin:0 auto;gap:20px}.car{min-height:0;display:block;padding:80px 0}.car-g{max-width:480px;margin:0 auto}.inv{min-height:0;display:block;padding:80px 0}.pkg-g{max-width:480px;margin:0 auto}.cta{min-height:0;display:block;padding:80px 0}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-hdg{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}}
 @media(max-width:640px){
   .cnt{padding:0 20px}
@@ -252,6 +273,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   .hstat{grid-template-columns:repeat(2,1fr);gap:12px}
   .hstat-i{padding:16px 18px}
   .hstat-n{font-size:26px}
+  .hstat-n.lg{font-size:34px}
   .hstat-l{font-size:12px}
   .nav{padding:12px 14px;gap:6px}
   .nav-logo img{width:36px;height:36px}
@@ -334,7 +356,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <div class='abt-img hpimg'><img src='Expert/TCM_88-web.jpg' alt='Phan Tuyết Trinh'/></div>
     </div>
     <div class='hstat'>
-      <div class='hstat-i'><span class='hstat-n'>10+</span><span class='hstat-l'>Năm Tài Chính &ndash; Ngân Hàng</span></div>
+      <div class='hstat-i'><span class='hstat-n lg'>10+</span><span class='hstat-l'>Năm Tài Chính &ndash; Ngân Hàng</span></div>
       <div class='hstat-i'><span class='hstat-n'>Th.S</span><span class='hstat-l'>Tài Chính (UEH)</span></div>
       <div class='hstat-i'><span class='hstat-n'>ICF</span><span class='hstat-l'>Chứng Chỉ Khai Vấn Quốc Tế</span></div>
       <div class='hstat-i'><span class='hstat-n'>CFA-CFP</span><span class='hstat-l'>Chứng Chỉ Tài Chính Quốc Tế</span></div>
@@ -347,7 +369,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   <div class='cnt'>
     <div class='abt-g'>
       <div class='abt-v fu'>
-        <div class='abt-img'><img src='Expert/Avatar.jpg' alt='Phan Tuyết Trinh'/></div>
+        <div class='abt-img'><img src='Expert/Profile%20white.jpg' alt='Phan Tuyết Trinh'/></div>
       </div>
       <div class='fu'>
         <div class='abt-hdg'>Gặp Financial Coach</div>
@@ -367,13 +389,13 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     </div>
     <div class='quo-g'>
       <div class='quo-c fu'>
-        <div class='quo-ic'><svg viewBox='0 0 24 24'><path d='M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z'></path><polyline points='9 12 11 14 15 10'></polyline></svg></div>
-        <div class='quo-ct'>Chuẩn Mực ICF</div>
-        <p class='quo-cd'>Năng lực cốt lõi &amp; chuẩn mực đạo đức của International Coaching Federation (Level 1).</p>
+        <div class='quo-ic'><svg viewBox='0 0 24 24'><path d='M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z'></path></svg></div>
+        <div class='quo-ct'>Tận Tâm</div>
+        <p class='quo-cd'>Tìm hiểu sâu bối cảnh và nỗi đau của doanh nghiệp, trước khi đưa ra bất kỳ định hướng nào.</p>
       </div>
       <div class='quo-c fu'>
         <div class='quo-ic'><svg viewBox='0 0 24 24'><line x1='12' y1='3' x2='12' y2='19'></line><path d='M5 7l-3 6a3 3 0 0 0 6 0z'></path><path d='M19 7l-3 6a3 3 0 0 0 6 0z'></path><path d='M5 7h14'></path><path d='M8 21h8'></path></svg></div>
-        <div class='quo-ct'>Chuẩn Mực Đạo Đức</div>
+        <div class='quo-ct'>Trách Nhiệm</div>
         <p class='quo-cd'>Trung thực với số liệu, nói thẳng nói thật vào vấn đề, tuân thủ các quy định.</p>
       </div>
       <div class='quo-c fu'>
@@ -428,6 +450,68 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <span class='car-badge'>Khung Phương Pháp</span>
       <h2 class='car-title'>C.A.R. Framework</h2>
       <p class='car-sub'>Command your Financial CAR &mdash; Làm chủ chiếc xe tài chính Doanh nghiệp.</p>
+    </div>
+    <div class='car-anim fu'>
+      <svg viewBox='0 0 520 170' class='car-svg' aria-hidden='true'>
+        <ellipse cx='245' cy='158' rx='190' ry='7' class='car-shadow'></ellipse>
+        <g class='car-bob'>
+          <g transform='translate(520,0) scale(-1,1)'>
+            <path class='car-body' d='M40,130 L40,112 Q40,95 57,95 L95,95 L112,55 Q117,48 127,48 L233,48 Q243,48 248,55 L265,95 L428,95 Q450,95 450,116 L450,130 L410,130 A34,34 0 0 1 342,130 L172,130 A34,34 0 0 1 104,130 Z'></path>
+            <path class='car-window' d='M117,90 L130,58 L230,58 L253,90 Z'></path>
+            <line x1='180' y1='58' x2='180' y2='90' class='car-window-div'></line>
+            <g class='car-map' transform='translate(384,66) scale(-1,1)'>
+              <path d='M0,4 L9,0 L18,4 L18,22 L9,26 L0,22 Z'></path>
+              <path d='M9,0 L9,26' class='car-map-fold'></path>
+              <path d='M4,7 L13,10' class='car-map-fold'></path>
+              <path d='M5,14 L14,17' class='car-map-fold'></path>
+            </g>
+            <g class='car-wheel-icon' transform='translate(180,74)'>
+              <circle r='13'></circle>
+              <circle r='4' class='car-wheel-icon-hub'></circle>
+              <line x1='0' y1='-13' x2='0' y2='-6'></line>
+              <line x1='0' y1='6' x2='0' y2='13'></line>
+              <line x1='-13' y1='0' x2='-6' y2='0'></line>
+              <line x1='6' y1='0' x2='13' y2='0'></line>
+            </g>
+            <g class='car-wheel' style='transform-origin:104px 130px'>
+              <circle cx='104' cy='130' r='31' class='car-tire'></circle>
+              <circle cx='104' cy='130' r='11' class='car-hub'></circle>
+              <line x1='104' y1='106' x2='104' y2='154' class='car-spoke'></line>
+              <line x1='80' y1='130' x2='128' y2='130' class='car-spoke'></line>
+              <line x1='87' y1='113' x2='121' y2='147' class='car-spoke'></line>
+              <line x1='87' y1='147' x2='121' y2='113' class='car-spoke'></line>
+            </g>
+            <g class='car-wheel' style='transform-origin:376px 130px'>
+              <circle cx='376' cy='130' r='31' class='car-tire'></circle>
+              <circle cx='376' cy='130' r='11' class='car-hub'></circle>
+              <line x1='376' y1='106' x2='376' y2='154' class='car-spoke'></line>
+              <line x1='352' y1='130' x2='400' y2='130' class='car-spoke'></line>
+              <line x1='359' y1='113' x2='393' y2='147' class='car-spoke'></line>
+              <line x1='359' y1='147' x2='393' y2='113' class='car-spoke'></line>
+            </g>
+          </g>
+          <g class='car-label car-label-c'>
+            <line x1='120' y1='72' x2='120' y2='30' class='car-leader'></line>
+            <circle cx='120' cy='22' r='15' class='car-tag'></circle>
+            <text x='120' y='27' class='car-tag-t'>C</text>
+          </g>
+          <g class='car-label car-label-a'>
+            <line x1='340' y1='74' x2='340' y2='30' class='car-leader'></line>
+            <circle cx='340' cy='22' r='15' class='car-tag'></circle>
+            <text x='340' y='27' class='car-tag-t'>A</text>
+          </g>
+          <g class='car-label car-label-r'>
+            <line x1='416' y1='108' x2='416' y2='30' class='car-leader'></line>
+            <circle cx='416' cy='22' r='15' class='car-tag'></circle>
+            <text x='416' y='27' class='car-tag-t'>R</text>
+          </g>
+        </g>
+      </svg>
+      <div class='car-anim-labels'>
+        <span><b>C</b> &middot; Command</span>
+        <span><b>A</b> &middot; Alignment</span>
+        <span><b>R</b> &middot; Resilience</span>
+      </div>
     </div>
     <div class='car-g'>
       <div class='car-c fu'>
