@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Thẩm Định Sức Khỏe Tài Chính Doanh Nghiệp - Financial Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Fraunces:opsz,wght@9..144,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<style>
+:root{--em:#0A3323;--sa:#105666;--eu:#839958;--iv:#F7F4D5;--be:#F7F4D5;--go:#D3968C;--gl:#D3968C;--fs:'Alex Brush',cursive;--fb:'Poppins',sans-serif;--fr:'Cormorant Garamond',Georgia,serif;--tr:0.3s ease}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--em);color:var(--iv);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.cnt{max-width:820px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 36px;font-family:var(--fb);font-size:14px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;border:2px solid var(--go);color:var(--go);background:transparent;cursor:pointer;transition:var(--tr)}
+.btn:hover{background:var(--go);color:var(--em)}
+.btn.bf{background:var(--go);color:var(--em)}
+.btn.bf:hover{background:transparent;color:var(--go)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn:disabled:hover{background:var(--go);color:var(--em)}
+/* HEADER */
+header{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(211,150,140,.2);position:sticky;top:0;background:rgba(10,51,35,.96);backdrop-filter:blur(8px);z-index:50}
+.hd-logo{display:flex;align-items:center;gap:12px;font-family:var(--fs);font-size:24px;color:var(--gl)}
+.hd-logo small{display:block;font-family:var(--fb);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--iv);opacity:.8;margin-top:-2px}
+.hd-back{font-size:13px;letter-spacing:1px;color:var(--iv);opacity:.85;border:1px solid rgba(211,150,140,.4);padding:9px 18px}
+.hd-back:hover{border-color:var(--go);opacity:1}
+/* INTRO */
+.intro{padding:64px 0 40px;text-align:center}
+.intro-badge{display:inline-block;padding:8px 22px;border:1px solid rgba(211,150,140,.4);border-radius:999px;font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--go);margin-bottom:20px}
+.intro h1{font-family:var(--fr);font-weight:700;font-size:clamp(28px,4vw,40px);color:var(--iv);line-height:1.3;margin-bottom:16px}
+.intro p{font-size:16px;color:var(--iv);opacity:.85;max-width:600px;margin:0 auto 32px;line-height:1.7}
+.pillar-prev{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+.pillar-prev-c{background:rgba(255,255,255,.03);border:1px solid rgba(211,150,140,.2);border-radius:14px;padding:22px 16px}
+.pillar-prev-c .pn{font-family:var(--fr);font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gl);margin-bottom:8px}
+.pillar-prev-c p{font-size:13px;opacity:.8;margin:0;max-width:none}
+.intro-meta{font-size:13px;opacity:.65;margin-bottom:28px}
+/* QUIZ */
+#quiz{display:none;padding:0 0 60px}
+#quiz.active{display:block}
+.progress-wrap{position:sticky;top:69px;background:var(--em);padding:14px 0;z-index:40;border-bottom:1px solid rgba(211,150,140,.15)}
+.progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--go);width:0%;transition:width .3s ease}
+.progress-label{font-size:12px;opacity:.7;margin-top:8px;text-align:right}
+.scale-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:28px 0 8px;font-size:11px;text-align:center;opacity:.75}
+.scale-legend div b{display:block;color:var(--gl);font-family:var(--fr);font-size:16px}
+.pillar-sec{margin-top:44px}
+.pillar-sec-hd{margin-bottom:20px}
+.pillar-sec-hd .pk{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:2px solid var(--go);font-family:var(--fr);font-weight:700;color:var(--gl);margin-right:10px;font-size:15px}
+.pillar-sec-hd .pt{font-family:var(--fr);font-size:22px;font-weight:700;color:var(--iv);display:inline-flex;align-items:center}
+.pillar-sec-hd .pd{font-size:13px;opacity:.7;margin-top:4px;margin-left:42px}
+.q-card{background:rgba(255,255,255,.03);border:1px solid rgba(211,150,140,.2);border-radius:14px;padding:22px;margin-bottom:14px;transition:var(--tr)}
+.q-card.answered{border-color:rgba(211,150,140,.45)}
+.q-card .q-id{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--go);margin-bottom:6px}
+.q-card .q-text{font-size:16px;color:var(--iv);line-height:1.5;margin-bottom:16px}
+.q-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.q-opt{border:1px solid rgba(211,150,140,.35);border-radius:8px;padding:10px 6px;text-align:center;cursor:pointer;transition:var(--tr);background:transparent}
+.q-opt:hover{border-color:var(--go)}
+.q-opt .qo-n{font-family:var(--fr);font-size:20px;font-weight:700;color:var(--gl);line-height:1}
+.q-opt.sel{background:var(--go);border-color:var(--go)}
+.q-opt.sel .qo-n{color:var(--em)}
+.q-caption{font-size:12px;opacity:.75;margin-top:10px;min-height:16px}
+.quiz-actions{text-align:center;margin-top:40px}
+.quiz-hint{font-size:13px;color:var(--go);opacity:.9;margin-bottom:16px;min-height:18px}
+/* RESULTS */
+#results{display:none;padding:0 0 80px}
+#results.active{display:block}
+.res-band{text-align:center;padding:40px 28px;border-radius:16px;border:1px solid rgba(211,150,140,.35);background:rgba(255,255,255,.03);margin:32px 0}
+.res-band .rb-pct{font-family:var(--fs);font-size:56px;color:var(--gl);line-height:1}
+.res-band .rb-name{font-family:var(--fr);font-size:26px;font-weight:700;color:var(--iv);margin:6px 0 14px}
+.res-band .rb-desc{font-size:15px;opacity:.85;max-width:520px;margin:0 auto;line-height:1.7}
+.res-bars{margin:32px 0}
+.res-bar-row{margin-bottom:20px}
+.res-bar-top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+.res-bar-top b{color:var(--gl)}
+.res-bar-track{height:10px;background:rgba(255,255,255,.08);border-radius:5px;overflow:hidden}
+.res-bar-fill{height:100%;background:linear-gradient(90deg,var(--eu),var(--go));border-radius:5px;width:0%;transition:width .8s ease}
+.res-flag{background:rgba(211,150,140,.08);border:1px solid rgba(211,150,140,.3);border-radius:12px;padding:20px 22px;font-size:13.5px;line-height:1.7;opacity:.95;margin-bottom:32px}
+.res-flag b{color:var(--go)}
+.res-cta{text-align:center;border-top:1px solid rgba(211,150,140,.2);padding-top:36px}
+.res-cta h3{font-family:var(--fr);font-size:24px;font-weight:700;margin-bottom:10px}
+.res-cta p{font-size:14px;opacity:.8;max-width:480px;margin:0 auto 24px}
+.lead-form{max-width:420px;margin:0 auto 24px;display:flex;flex-direction:column;gap:12px}
+.lead-form input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(211,150,140,.5);color:var(--iv);padding:13px 16px;font-family:var(--fb);font-size:15px;outline:none;border-radius:6px}
+.lead-form input:focus{border-color:var(--go)}
+.res-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+#lead-success{display:none;color:var(--gl);font-size:14px;margin-bottom:20px}
+.retake{margin-top:24px;font-size:13px;opacity:.7}
+.retake a{text-decoration:underline}
+footer{text-align:center;padding:32px 24px;border-top:1px solid rgba(211,150,140,.15);font-size:12px;opacity:.6}
+@media(max-width:640px){
+  .pillar-prev{grid-template-columns:1fr;gap:12px}
+  .q-opts{gap:6px}
+  .q-opt{padding:8px 4px}
+  .scale-legend{font-size:10px}
+  .hd-logo{font-size:19px}
+  .progress-wrap{top:57px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class='hd-logo'><div>Coach Trinh Phan<small>Financial Coach</small></div></div>
+  <a class='hd-back' href='index.html'>&larr; Về Trang Chủ</a>
+</header>
+
+<section class='intro' id='intro'>
+  <div class='cnt'>
+    <span class='intro-badge'>Công Cụ Miễn Phí</span>
+    <h1>Thẩm Định Sức Khỏe Tài Chính Doanh Nghiệp</h1>
+    <p>18 câu hỏi nhanh giúp bạn nhìn thấy doanh nghiệp mình đang đau ở đâu &mdash; lợi nhuận, dòng tiền, công nợ, dữ liệu hay kiểm soát &mdash; và mức độ sẵn sàng để giải quyết vấn đề đó.</p>
+    <div class='pillar-prev'>
+      <div class='pillar-prev-c'>
+        <div class='pn'>Business Insight</div>
+        <p>CEO có đủ thông tin để ra quyết định?</p>
+      </div>
+      <div class='pillar-prev-c'>
+        <div class='pn'>Transactional Efficiency</div>
+        <p>Tài chính &ndash; kế toán vận hành có hiệu quả?</p>
+      </div>
+      <div class='pillar-prev-c'>
+        <div class='pn'>Compliance &amp; Control</div>
+        <p>Rủi ro, tiền và tuân thủ có được kiểm soát?</p>
+      </div>
+    </div>
+    <div class='intro-meta'>&#9201; Khoảng 8&ndash;10 phút &middot; 18 câu hỏi &middot; Kết quả hiện ngay, không cần đăng ký trước</div>
+    <button class='btn bf' id='start-btn'>Bắt Đầu Thẩm Định</button>
+  </div>
+</section>
+
+<div class='progress-wrap' id='progress-wrap' style='display:none'>
+  <div class='cnt'>
+    <div class='progress-bar'><div class='progress-fill' id='progress-fill'></div></div>
+    <div class='progress-label' id='progress-label'>0/18 câu đã trả lời</div>
+  </div>
+</div>
+
+<section id='quiz'>
+  <div class='cnt'>
+    <div class='scale-legend'>
+      <div><b>0</b>Không biết / chưa có thông tin</div>
+      <div><b>1</b>Rủi ro cao</div>
+      <div><b>2</b>Đang phát triển</div>
+      <div><b>3</b>Cơ bản kiểm soát</div>
+    </div>
+    <div id='pillars-mount'></div>
+    <div class='quiz-actions'>
+      <div class='quiz-hint' id='quiz-hint'></div>
+      <button class='btn bf' id='submit-btn'>Xem Kết Quả</button>
+    </div>
+  </div>
+</section>
+
+<section id='results'>
+  <div class='cnt'>
+    <div class='res-band'>
+      <div class='rb-pct' id='rb-pct'>0%</div>
+      <div class='rb-name' id='rb-name'></div>
+      <p class='rb-desc' id='rb-desc'></p>
+    </div>
+    <div class='res-bars'>
+      <div class='res-bar-row'>
+        <div class='res-bar-top'><span>Business Insight</span><b id='bar-a-n'>0/18</b></div>
+        <div class='res-bar-track'><div class='res-bar-fill' id='bar-a'></div></div>
+      </div>
+      <div class='res-bar-row'>
+        <div class='res-bar-top'><span>Transactional Efficiency</span><b id='bar-b-n'>0/18</b></div>
+        <div class='res-bar-track'><div class='res-bar-fill' id='bar-b'></div></div>
+      </div>
+      <div class='res-bar-row'>
+        <div class='res-bar-top'><span>Compliance &amp; Control</span><b id='bar-c-n'>0/18</b></div>
+        <div class='res-bar-track'><div class='res-bar-fill' id='bar-c'></div></div>
+      </div>
+    </div>
+    <div class='res-flag'><b>Lưu ý:</b> Điểm tổng cao không loại trừ rủi ro trọng yếu. Nếu doanh nghiệp bạn đang có một trong các dấu hiệu sau, nên đặt lịch tư vấn ngay &mdash; không cần chờ điểm: không đủ tiền trả lương/nợ trong 4&ndash;8 tuần; doanh thu tăng nhưng thiếu tiền kéo dài; nợ thuế/hóa đơn có rủi ro lớn; số liệu giữa các bộ phận (bán hàng &ndash; ngân hàng &ndash; kho &ndash; kế toán) chênh lệch đáng kể; hoặc đang chuẩn bị vay vốn, gọi vốn, M&amp;A hay chuyển giao.</div>
+    <div class='res-cta'>
+      <h3>Muốn Financial Coach đọc kết quả cùng bạn?</h3>
+      <p>Để lại thông tin, Trinh sẽ xem chi tiết kết quả thẩm định của bạn và tư vấn hướng đi phù hợp trong 1 buổi trao đổi 1:1.</p>
+      <div id='lead-success'>&#10003; Cảm ơn bạn! Trinh sẽ liên hệ trong vòng 24 giờ.</div>
+      <form class='lead-form' id='lead-form'>
+        <input type='text' name='name' placeholder='Họ và Tên' required/>
+        <input type='tel' name='phone' placeholder='Số Điện Thoại' required/>
+        <input type='text' name='company' placeholder='Tên Doanh Nghiệp'/>
+      </form>
+      <div class='res-actions'>
+        <button class='btn bf' id='lead-submit'>Gửi Kết Quả Cho Trinh</button>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn'>Đặt Lịch Tư Vấn 1:1</a>
+      </div>
+      <div class='retake'>Muốn làm lại? <a href='javascript:location.reload()'>Bắt đầu lại từ đầu</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>Financial Coach &middot; Kiến Tạo Di Sản Tài Chính &middot; Bộ câu hỏi tham khảo tinh thần Finance Function Framework (PwC), điều chỉnh cho SME Việt Nam. Đây là công cụ sàng lọc ban đầu, không thay thế đánh giá chuyên môn chi tiết.</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+const PILLARS=[
+{key:'A',name:'Business Insight',tagline:'CEO có đủ thông tin để ra quyết định?',questions:[
+  {id:'A1',q:'CEO có biết doanh nghiệp đang lãi thật bao nhiêu mỗi tháng không?'},
+  {id:'A2',q:'Doanh nghiệp có biết sản phẩm, dịch vụ, khách hàng hoặc kênh nào tạo lợi nhuận tốt nhất không?'},
+  {id:'A3',q:'Doanh nghiệp đã xác định điểm hòa vốn hoặc mức doanh thu tối thiểu chưa?'},
+  {id:'A4',q:'CEO có biết tiền hiện tại đủ vận hành trong bao lâu không?'},
+  {id:'A5',q:'Doanh nghiệp có dự báo dòng tiền ít nhất 4-13 tuần không?'},
+  {id:'A6',q:'CEO có nhận được báo cáo giải thích nguyên nhân chênh lệch và hành động cần làm không?'}
+]},
+{key:'B',name:'Transactional Efficiency',tagline:'Tài chính - kế toán vận hành có hiệu quả?',questions:[
+  {id:'B1',q:'Doanh nghiệp có một nguồn số liệu thống nhất cho kế toán, thuế và quản trị không?'},
+  {id:'B2',q:'Sổ kế toán có được khóa và báo cáo đúng hạn hằng tháng không?'},
+  {id:'B3',q:'Ngân hàng, công nợ, tồn kho và thuế có được đối chiếu định kỳ không?'},
+  {id:'B4',q:'Dữ liệu có đủ mã khách hàng, sản phẩm, chi nhánh, bộ phận hoặc JOB để phân tích không?'},
+  {id:'B5',q:'Quy trình từ bán hàng đến thu tiền có người chịu trách nhiệm rõ không?'},
+  {id:'B6',q:'Đội ngũ kế toán có dành thời gian phân tích hay chủ yếu nhập liệu và xử lý chứng từ?'}
+]},
+{key:'C',name:'Compliance &amp; Control',tagline:'Rủi ro, tiền và tuân thủ có được kiểm soát?',questions:[
+  {id:'C1',q:'Doanh nghiệp có báo cáo tuổi nợ và cơ chế xử lý nợ quá hạn không?'},
+  {id:'C2',q:'Tồn kho có được kiểm kê, phân tích tuổi hàng và xác định hàng chậm luân chuyển không?'},
+  {id:'C3',q:'Các khoản chi, giảm giá, mua hàng và đầu tư có ngưỡng phê duyệt rõ không?'},
+  {id:'C4',q:'Doanh nghiệp có kiểm soát hóa đơn đầu ra, đầu vào và hồ sơ chi phí không?'},
+  {id:'C5',q:'Tiền và giao dịch của chủ sở hữu có được tách bạch với doanh nghiệp không?'},
+  {id:'C6',q:'Doanh nghiệp có chỉ số cảnh báo sớm và người chịu trách nhiệm xử lý không?'}
+]}
+];
+const CAPTIONS=['Không biết / chưa có thông tin','Rủi ro cao','Đang phát triển','Cơ bản kiểm soát'];
+const TOTAL_Q=PILLARS.reduce((s,p)=>s+p.questions.length,0);
+const answers={};
+
+function buildQuiz(){
+  const mount=document.getElementById('pillars-mount');
+  PILLARS.forEach(p=>{
+    const sec=document.createElement('div');
+    sec.className='pillar-sec';
+    sec.innerHTML=`<div class='pillar-sec-hd'><span class='pk'>${p.key}</span><span class='pt'>${p.name}</span><div class='pd'>${p.tagline}</div></div>`;
+    p.questions.forEach(item=>{
+      const card=document.createElement('div');
+      card.className='q-card';
+      card.id='card-'+item.id;
+      const opts=[0,1,2,3].map(n=>`<div class='q-opt' data-id='${item.id}' data-val='${n}'><div class='qo-n'>${n}</div></div>`).join('');
+      card.innerHTML=`<div class='q-id'>${item.id}</div><div class='q-text'>${item.q}</div><div class='q-opts'>${opts}</div><div class='q-caption' id='cap-${item.id}'></div>`;
+      sec.appendChild(card);
+    });
+    mount.appendChild(sec);
+  });
+  mount.querySelectorAll('.q-opt').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const id=el.dataset.id,val=parseInt(el.dataset.val);
+      answers[id]=val;
+      document.querySelectorAll(`.q-opt[data-id='${id}']`).forEach(o=>o.classList.toggle('sel',parseInt(o.dataset.val)===val));
+      document.getElementById('cap-'+id).textContent=CAPTIONS[val];
+      document.getElementById('card-'+id).classList.add('answered');
+      updateProgress();
+    });
+  });
+}
+function updateProgress(){
+  const n=Object.keys(answers).length;
+  document.getElementById('progress-fill').style.width=(n/TOTAL_Q*100)+'%';
+  document.getElementById('progress-label').textContent=n+'/'+TOTAL_Q+' câu đã trả lời';
+}
+document.getElementById('start-btn').addEventListener('click',()=>{
+  buildQuiz();
+  document.getElementById('intro').style.display='none';
+  document.getElementById('progress-wrap').style.display='block';
+  document.getElementById('quiz').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+document.getElementById('submit-btn').addEventListener('click',()=>{
+  const missing=TOTAL_Q-Object.keys(answers).length;
+  if(missing>0){
+    document.getElementById('quiz-hint').textContent=`Còn ${missing} câu chưa trả lời — vui lòng hoàn thành tất cả để xem kết quả chính xác.`;
+    const firstMissing=PILLARS.flatMap(p=>p.questions).find(q=>!(q.id in answers));
+    if(firstMissing)document.getElementById('card-'+firstMissing.id).scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  showResults();
+});
+function showResults(){
+  const scores={A:0,B:0,C:0};
+  PILLARS.forEach(p=>p.questions.forEach(q=>{scores[p.key]+=answers[q.id]||0;}));
+  const total=scores.A+scores.B+scores.C;
+  const pct=Math.round(total/54*100);
+  document.getElementById('bar-a-n').textContent=scores.A+'/18';
+  document.getElementById('bar-b-n').textContent=scores.B+'/18';
+  document.getElementById('bar-c-n').textContent=scores.C+'/18';
+  document.getElementById('bar-a').style.width=(scores.A/18*100)+'%';
+  document.getElementById('bar-b').style.width=(scores.B/18*100)+'%';
+  document.getElementById('bar-c').style.width=(scores.C/18*100)+'%';
+  document.getElementById('rb-pct').textContent=pct+'%';
+  let band;
+  if(pct<40)band={name:'Cần Hỗ Trợ Khẩn Cấp',desc:'Nền tảng tài chính của bạn đang yếu hoặc thiếu dữ liệu nghiêm trọng. Ưu tiên ổn định dòng tiền, số liệu và nghĩa vụ thuế trước — nên đặt lịch tư vấn với Financial Coach càng sớm càng tốt.'};
+  else if(pct<60)band={name:'Đang Phát Triển',desc:'Bạn đã có một số nền tảng nhưng còn rời rạc. Một buổi thẩm định chuyên sâu sẽ giúp xác định đúng khoảng trống và lộ trình 30-90 ngày tiếp theo.'};
+  else if(pct<80)band={name:'Cơ Bản Kiểm Soát',desc:'Doanh nghiệp đang vận hành được, nhưng vẫn còn cơ hội cải thiện báo cáo quản trị, dự báo dòng tiền, vốn lưu động và kiểm soát nội bộ.'};
+  else band={name:'Nền Tảng Tốt',desc:'Doanh nghiệp có nền tảng tài chính tốt. Bạn có thể cân nhắc các bước tiếp theo như xây dựng ngân sách, cải thiện hiệu suất, tư vấn CFO chiến lược, hoặc chuẩn bị gọi vốn/vay vốn.'};
+  document.getElementById('rb-name').textContent=band.name;
+  document.getElementById('rb-desc').textContent=band.desc;
+  document.getElementById('quiz').classList.remove('active');
+  document.getElementById('progress-wrap').style.display='none';
+  document.getElementById('results').classList.add('active');
+  window._hcScores={scores,total,pct,bandName:band.name};
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+const GAS_URL='https://script.google.com/macros/s/AKfycby8dlPcqSOfsbqdIYRVcLQYQt7PmWprUz9-DyMgQbz8ZtMoX37xOLfevoNq-kTcx3G9/exec';
+document.getElementById('lead-submit').addEventListener('click',(e)=>{
+  e.preventDefault();
+  const form=document.getElementById('lead-form');
+  if(!form.checkValidity()){form.reportValidity();return;}
+  const s=window._hcScores||{};
+  const data={
+    name:form.name.value,
+    phone:form.phone.value,
+    company:form.company.value,
+    goal:`Kết quả Thẩm Định Sức Khỏe Tài Chính: ${s.pct||0}% — ${s.bandName||''}`,
+    message:`Business Insight ${s.scores?s.scores.A:0}/18 · Transactional Efficiency ${s.scores?s.scores.B:0}/18 · Compliance & Control ${s.scores?s.scores.C:0}/18`
+  };
+  const btn=document.getElementById('lead-submit');
+  btn.disabled=true;
+  fetch(GAS_URL,{method:'POST',body:JSON.stringify(data)})
+    .catch(err=>console.error('Gửi kết quả thất bại:',err))
+    .finally(()=>{
+      form.style.display='none';
+      document.getElementById('lead-success').style.display='block';
+    });
+});
+document.querySelectorAll('.calendly-btn').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    if(window.Calendly){Calendly.initPopupWidget({url:this.href});}
+    else{window.open(this.href,'_blank');}
+  });
+});
+</script>
+</body>
+</html>
