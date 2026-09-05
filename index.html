@@ -110,7 +110,16 @@ a{color:inherit;text-decoration:none}
 .pain-c{background:rgba(255,255,255,.03);border:1px solid rgba(211,150,140,.2);border-radius:16px;padding:0 0 20px;position:relative;transition:var(--tr);overflow:hidden}
 .pain-c:hover{border-color:rgba(211,150,140,.55);background:rgba(131,153,88,.08)}
 .pain-c:nth-child(2){margin-top:-20px}
-.pain-v{height:120px;display:flex;align-items:flex-end;padding:0 20px;margin-bottom:16px;background:linear-gradient(160deg,rgba(131,153,88,.35),rgba(10,51,35,.95))}
+.pain-v{height:120px;position:relative;display:flex;align-items:flex-end;padding:0 20px;margin-bottom:16px;background:linear-gradient(160deg,rgba(131,153,88,.35),rgba(10,51,35,.95));overflow:hidden}
+.pain-illus{position:absolute;inset:0;width:100%;height:100%}
+.pain-illus-line{fill:none;stroke:var(--go);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.pain-pulse{stroke-dasharray:340;stroke-dashoffset:340;animation:painPulse 2.6s ease-in-out infinite}
+@keyframes painPulse{0%{stroke-dashoffset:340}60%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+.pain-tangle-a{stroke:var(--go)}
+.pain-tangle-b{stroke:var(--gl);opacity:.55}
+.pain-illus-dot{fill:var(--gl)}
+.pain-illus-bar{fill:rgba(211,150,140,.35);stroke:var(--go);stroke-width:1.5}
+.pain-illus-flat{stroke:var(--iv);stroke-width:2;stroke-dasharray:5 4;opacity:.75}
 .pain-ic{width:42px;height:42px;border-radius:50%;background:var(--em);border:2px solid var(--go);display:flex;align-items:center;justify-content:center;transform:translateY(21px)}
 .pain-ic svg{width:19px;height:19px;stroke:var(--go);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .pain-c .pt,.pain-c .pd{padding-left:20px;padding-right:20px}
@@ -139,8 +148,10 @@ a{color:inherit;text-decoration:none}
 .car-leader{stroke:rgba(211,150,140,.4);stroke-width:1.5;stroke-dasharray:3 3}
 .car-tag{fill:#062217;stroke:var(--go);stroke-width:2}
 .car-tag-t{font-family:var(--fr);font-size:16px;font-weight:700;fill:var(--gl);text-anchor:middle}
-.car-map path{fill:none;stroke:var(--gl);stroke-width:1.6;stroke-linejoin:round}
-.car-map-fold{opacity:.7}
+.car-map polygon{fill:rgba(211,150,140,.12);stroke:var(--gl);stroke-width:1.6;stroke-linejoin:round}
+.car-map-fold{stroke:var(--gl);stroke-width:1.2;opacity:.6}
+.car-map-route{fill:none;stroke:var(--gl);stroke-width:1.3;stroke-dasharray:2 2;opacity:.85}
+.car-map-pin{fill:var(--gl);stroke:none}
 .car-wheel-icon{fill:none;stroke:var(--gl);stroke-width:1.6}
 .car-wheel-icon-hub{fill:var(--gl);stroke:none}
 .car-wheel{animation:carSpin 1.4s linear infinite}
@@ -188,7 +199,7 @@ a{color:inherit;text-decoration:none}
 .abt-ic{width:36px;height:36px;background:var(--go);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .abt-ic svg{width:18px;height:18px;fill:none;stroke:var(--em);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .abt-list span{font-size:19px;color:var(--iv);font-weight:500;line-height:1.6}
-.abt-cred{font-size:15px;color:var(--iv);opacity:0.95;line-height:1.55;margin-bottom:20px}
+.abt-cred{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:20px}
 .abt-hl{font-size:1.35em;font-weight:700;color:var(--gl)}
 .abt-kw{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
 .abt-kw span{padding:14px 28px;border-radius:999px;border:1px solid rgba(211,150,140,.35);background:rgba(255,255,255,.04);color:var(--iv);font-size:17px;font-weight:500;letter-spacing:0.3px;transition:var(--tr)}
@@ -231,7 +242,9 @@ a{color:inherit;text-decoration:none}
 .test-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
 .test-c{background:rgba(255,255,255,.03);border:1px solid rgba(211,150,140,.25);border-radius:16px;padding:36px 28px;text-align:center;transition:var(--tr)}
 .test-c:hover{border-color:rgba(211,150,140,.55);background:rgba(211,150,140,.05)}
-.test-av{width:64px;height:64px;border-radius:50%;border:2px solid var(--go);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:var(--fr);font-weight:700;font-size:19px;color:var(--gl)}
+.test-av{width:64px;height:64px;border-radius:50%;border:2px solid var(--go);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:var(--fr);font-weight:700;font-size:19px;color:var(--gl);overflow:hidden}
+.test-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.test-av img.zoom-minh{transform:scale(2.6);transform-origin:58% 75%}
 .test-stars{color:var(--go);font-size:15px;letter-spacing:3px;margin-bottom:14px}
 .test-name{font-weight:700;color:var(--iv);font-size:18px;margin-bottom:4px}
 .test-role{color:var(--go);font-size:13px;margin-bottom:22px}
@@ -320,7 +333,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 </head>
 <body>
 <nav class='nav' id='nav'>
-  <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Financial Coach<small>Kiến Tạo Di Sản Tài Chính</small></div></div>
+  <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Coach Trinh Phan<small>Financial Coach</small></div></div>
   <ul class='nav-links'>
     <li><a href='#home'>Giới Thiệu</a></li>
     <li><a href='#pain'>Thực Trạng</a></li>
@@ -418,6 +431,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     <div class='pain-g'>
       <div class='pain-c fu'>
         <div class='pain-v'>
+          <svg class='pain-illus' viewBox='0 0 300 100' preserveAspectRatio='xMidYMid meet'>
+            <path class='pain-illus-line pain-pulse' d='M10,55 L88,55 L101,25 L114,82 L127,40 L140,55 L198,55 L211,20 L224,86 L237,36 L250,55 L290,55'></path>
+          </svg>
           <div class='pain-ic'><svg viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='3'></rect><circle cx='8' cy='8' r='1.2' fill='currentColor'></circle><circle cx='16' cy='8' r='1.2' fill='currentColor'></circle><circle cx='8' cy='16' r='1.2' fill='currentColor'></circle><circle cx='16' cy='16' r='1.2' fill='currentColor'></circle><circle cx='12' cy='12' r='1.2' fill='currentColor'></circle></svg></div>
         </div>
         <div class='pt'>Bất An</div>
@@ -426,6 +442,12 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       </div>
       <div class='pain-c fu'>
         <div class='pain-v'>
+          <svg class='pain-illus' viewBox='0 0 300 100' preserveAspectRatio='xMidYMid meet'>
+            <path class='pain-illus-line pain-tangle-a' d='M15,30 C90,80 120,20 160,60 C200,95 240,15 285,55'></path>
+            <path class='pain-illus-line pain-tangle-b' d='M15,75 C90,20 120,90 160,45 C200,10 240,90 285,45'></path>
+            <circle cx='97' cy='52' r='4' class='pain-illus-dot'></circle>
+            <circle cx='198' cy='50' r='4' class='pain-illus-dot'></circle>
+          </svg>
           <div class='pain-ic'><svg viewBox='0 0 24 24'><path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path></svg></div>
         </div>
         <div class='pt'>Mập Mờ</div>
@@ -434,9 +456,16 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       </div>
       <div class='pain-c fu'>
         <div class='pain-v'>
+          <svg class='pain-illus' viewBox='0 0 300 100' preserveAspectRatio='xMidYMid meet'>
+            <rect x='30' y='70' width='24' height='20' class='pain-illus-bar'></rect>
+            <rect x='80' y='55' width='24' height='35' class='pain-illus-bar'></rect>
+            <rect x='130' y='40' width='24' height='50' class='pain-illus-bar'></rect>
+            <rect x='180' y='22' width='24' height='68' class='pain-illus-bar'></rect>
+            <line x1='15' y1='72' x2='285' y2='72' class='pain-illus-flat'></line>
+          </svg>
           <div class='pain-ic'><svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='10'></circle><polygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76'></polygon></svg></div>
         </div>
-        <div class='pt'>Muốn Bỏ Cuộc</div>
+        <div class='pt'>Mắc Kẹt</div>
         <p class='pd'>&ldquo;Tôi làm nhiều hơn mỗi năm, nhưng không thấy mình giàu hơn.&rdquo; Doanh thu tăng đều, tài sản thì giậm chân tại chỗ. Giỏi làm chủ — xoay xở, giữ máy chạy — nhưng chưa giỏi biến lợi nhuận thành tài sản.</p>
         <p class='pain-stat'><span style='opacity:.85'>&ldquo;Doanh nghiệp của bạn sẽ không bao giờ lớn hơn tư duy tài chính của chính bạn.&rdquo;</span><br><b style='font-size:14px;margin-top:6px'>— Robert Kiyosaki</b></p>
       </div>
@@ -459,11 +488,12 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
             <path class='car-body' d='M40,130 L40,112 Q40,95 57,95 L95,95 L112,55 Q117,48 127,48 L233,48 Q243,48 248,55 L265,95 L428,95 Q450,95 450,116 L450,130 L410,130 A34,34 0 0 1 342,130 L172,130 A34,34 0 0 1 104,130 Z'></path>
             <path class='car-window' d='M117,90 L130,58 L230,58 L253,90 Z'></path>
             <line x1='180' y1='58' x2='180' y2='90' class='car-window-div'></line>
-            <g class='car-map' transform='translate(384,66) scale(-1,1)'>
-              <path d='M0,4 L9,0 L18,4 L18,22 L9,26 L0,22 Z'></path>
-              <path d='M9,0 L9,26' class='car-map-fold'></path>
-              <path d='M4,7 L13,10' class='car-map-fold'></path>
-              <path d='M5,14 L14,17' class='car-map-fold'></path>
+            <g class='car-map' transform='translate(385,53) scale(-1,1)'>
+              <polygon points='1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2 1,6'></polygon>
+              <line x1='8' y1='2' x2='8' y2='18' class='car-map-fold'></line>
+              <line x1='16' y1='6' x2='16' y2='22' class='car-map-fold'></line>
+              <path d='M5,13 Q9,8 12,12 T19,9' class='car-map-route'></path>
+              <circle cx='19' cy='9' r='1.8' class='car-map-pin'></circle>
             </g>
             <g class='car-wheel-icon' transform='translate(180,74)'>
               <circle r='13'></circle>
@@ -613,21 +643,21 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     </div>
     <div class='test-g'>
       <div class='test-c fu'>
-        <div class='test-av'>TCM</div>
+        <div class='test-av'><img src='Testimonial/Profile_Nh%C3%A3%20%C3%9D.png' alt='Nguyễn Lương Nhã Ý'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class='test-name'>Thái Cao Minh</div>
-        <div class='test-role'>CEO &middot; Công Ty TNHH Sản Xuất Duy Hàng</div>
+        <div class='test-name'>Nguyễn Lương Nhã Ý</div>
+        <div class='test-role'>CEO &middot; Ytrade Agency</div>
         <p class='test-q'>&ldquo;Trinh không dừng lại ở dữ liệu và phân tích tài chính, mà còn <b>tìm hiểu câu chuyện của doanh nghiệp để góp ý chiến lược</b> sau khi đã nắm rõ bối cảnh.&rdquo;</p>
       </div>
       <div class='test-c fu'>
-        <div class='test-av'>TCM</div>
+        <div class='test-av'><img class='zoom-minh' src='Testimonial/Profile_anh%20Minh.png' alt='Thái Cao Minh'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Thái Cao Minh</div>
         <div class='test-role'>CEO &middot; Công Ty TNHH Sản Xuất Duy Hàng</div>
         <p class='test-q'>&ldquo;Bước tiến quan trọng nhất là sự phản hồi của một nhà quản trị tài chính — <b>chất lượng ra quyết định của doanh chủ được bàn bạc và cải thiện</b>.&rdquo;</p>
       </div>
       <div class='test-c fu'>
-        <div class='test-av'>TCM</div>
+        <div class='test-av'><img class='zoom-minh' src='Testimonial/Profile_anh%20Minh.png' alt='Thái Cao Minh'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Thái Cao Minh</div>
         <div class='test-role'>CEO &middot; Công Ty TNHH Sản Xuất Duy Hàng</div>
@@ -664,7 +694,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 
 <footer>
   <div class='ftop'>
-    <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Financial Coach<small>Kiến Tạo Di Sản Tài Chính</small></div></div>
+    <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Coach Trinh Phan<small>Financial Coach</small></div></div>
     <div class='fcontact'>
       <a href='tel:0937511594'>093 751 1594</a>
       <span class='fdot'>&middot;</span>
