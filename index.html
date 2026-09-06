@@ -365,9 +365,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 </head>
 <body>
 <nav class='nav' id='nav'>
-  <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Phan Tuyết Trinh<small>Financial Coach</small></div></div>
+  <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Tài Chính Doanh Chủ<small>Financial Coach</small></div></div>
   <ul class='nav-links'>
-    <li><a href='#home'>Giới Thiệu</a></li>
+    <li><a href='#about'>Về Trinh</a></li>
     <li><a href='#pain'>Thực Trạng</a></li>
     <li><a href='#car'>Phương Pháp</a></li>
     <li><a href='#inv'>Lộ Trình</a></li>
@@ -681,7 +681,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           <div class='rm-card fu'>
             <div class='pkg-name'>Strategic Discovery</div>
             <p class='pkg-desc'>60 phút cùng Trinh đọc kết quả sức khỏe tài chính chuyên sâu và đề xuất lộ trình tiếp theo.</p>
-            <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span>Đặt Lịch</span></a>
+            <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span>Đặt Lịch Ngay</span></a>
           </div>
         </div>
         <div class='rm-step'></div>
@@ -711,10 +711,10 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <p class='test-q'>&ldquo;Trinh không dừng lại ở dữ liệu và phân tích tài chính, mà còn <b>tìm hiểu câu chuyện của doanh nghiệp để góp ý chiến lược</b> sau khi đã nắm rõ bối cảnh.&rdquo;</p>
       </div>
       <div class='test-c fu'>
-        <div class='test-av'><img class='zoom-minh' src='Testimonial/Profile_anh%20Minh.png' alt='Thái Cao Minh'/></div>
+        <div class='test-av'><img src='Testimonial/Profile_anh%20Trung.png' alt='Nguyễn Quang Trung'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class='test-name'>Thái Cao Minh</div>
-        <div class='test-role'>CEO &middot; Công Ty TNHH Sản Xuất Duy Hàng</div>
+        <div class='test-name'>Nguyễn Quang Trung</div>
+        <div class='test-role'>CEO &middot; Công Ty TNHH Sản Xuất Thương Mại Bao Bì Asia</div>
         <p class='test-q'>&ldquo;Bước tiến quan trọng nhất là sự phản hồi của một nhà quản trị tài chính — <b>chất lượng ra quyết định của doanh chủ được bàn bạc và cải thiện</b>.&rdquo;</p>
       </div>
       <div class='test-c fu'>
@@ -748,6 +748,19 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     <div id='form-success' style='display:none;margin-top:32px;padding:24px;border:1px solid rgba(211,150,140,.3);color:var(--gl);font-family:var(--fr);font-size:22px;letter-spacing:1px;'>
       &#x2736; Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.
     </div>
+    <div id='payment-panel' style='display:none;margin-top:32px;padding:28px 24px;border:1px solid rgba(211,150,140,.4);background:rgba(255,255,255,.04);text-align:center;'>
+      <div style='color:var(--gl);font-family:var(--fr);font-size:21px;letter-spacing:1px;margin-bottom:18px;'>&#x2736; Quét mã QR để hoàn tất đăng ký</div>
+      <img id='payment-qr' src='' alt='QR thanh toán'
+        style='width:220px;height:auto;max-width:100%;margin:0 auto 18px;display:block;background:#fff;padding:8px;border-radius:10px;'/>
+      <div style='color:var(--iv);font-size:15px;line-height:1.8;'>
+        Số tiền: <b id='payment-amount' style='color:var(--gl)'></b><br/>
+        Nội dung chuyển khoản: <b id='payment-code' style='color:var(--gl);letter-spacing:1px'></b><br/>
+        <span style='opacity:.75;font-size:13px'>Ngân hàng ACB &middot; STK 33635257 &middot; PHAN TUYET TRINH</span>
+      </div>
+      <p style='color:var(--iv);opacity:.8;font-size:13px;margin-top:16px;line-height:1.6;max-width:420px;margin-left:auto;margin-right:auto'>
+        Vui lòng chuyển khoản đúng số tiền và giữ nguyên nội dung ở trên. Hệ thống sẽ tự động ghi nhận thanh toán và chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất.
+      </p>
+    </div>
     <div class='orn' style='margin:20px 0 14px;'><span>Còn Phân Vân? Đặt Lịch Tư Vấn 1:1</span></div>
     <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='padding:12px 28px;font-size:13px;letter-spacing:2px;'><span>Đặt Lịch Tư Vấn 1:1 &mdash; Miễn Phí</span></a>
   </div>
@@ -755,7 +768,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 
 <footer>
   <div class='ftop'>
-    <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Phan Tuyết Trinh<small>Financial Coach</small></div></div>
+    <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Tài Chính Doanh Chủ<small>Financial Coach</small></div></div>
     <div class='fcontact'>
       <a href='tel:0937511594'>093 751 1594</a>
       <span class='fdot'>&middot;</span>
@@ -772,15 +785,24 @@ window.addEventListener('scroll',()=>nav.classList.toggle('sc',window.scrollY>60
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 const GAS_URL='https://script.google.com/macros/s/AKfycby8dlPcqSOfsbqdIYRVcLQYQt7PmWprUz9-DyMgQbz8ZtMoX37xOLfevoNq-kTcx3G9/exec';
+// Thông tin nhận thanh toán qua VietQR (SePay theo dõi tài khoản này)
+const BANK_BIN='970416';        // ACB
+const BANK_ACCOUNT='33635257';
+const BANK_ACCOUNT_NAME='PHAN TUYET TRINH';
+const PAYMENT_AMOUNT=3000000;   // 3.000.000đ
 function handleSubmit(e){
   e.preventDefault();
   const form=e.target;
+  const orderCode='DKTC'+Date.now().toString().slice(-6);
   const data={
     name:form.name.value,
     phone:form.phone.value,
     company:form.company.value,
     goal:form.goal.value,
-    message:form.message.value
+    message:form.message.value,
+    orderCode:orderCode,
+    amount:PAYMENT_AMOUNT,
+    status:'Chờ thanh toán'
   };
   const btn=form.querySelector('button[type=submit]');
   btn.disabled=true;
@@ -788,7 +810,10 @@ function handleSubmit(e){
     .catch(err=>console.error('Gửi form thất bại:',err))
     .finally(()=>{
       form.style.display='none';
-      document.getElementById('form-success').style.display='block';
+      document.getElementById('payment-amount').textContent=PAYMENT_AMOUNT.toLocaleString('vi-VN')+'đ';
+      document.getElementById('payment-code').textContent=orderCode;
+      document.getElementById('payment-qr').src='https://img.vietqr.io/image/'+BANK_BIN+'-'+BANK_ACCOUNT+'-compact2.png?amount='+PAYMENT_AMOUNT+'&addInfo='+encodeURIComponent(orderCode)+'&accountName='+encodeURIComponent(BANK_ACCOUNT_NAME);
+      document.getElementById('payment-panel').style.display='block';
     });
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
