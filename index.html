@@ -210,34 +210,60 @@ a{color:inherit;text-decoration:none}
 .abt-kw span{padding:14px 28px;border-radius:999px;border:1px solid rgba(211,150,140,.35);background:rgba(255,255,255,.04);color:var(--iv);font-size:17px;font-weight:500;letter-spacing:0.3px;transition:var(--tr)}
 .abt-kw span:hover{border-color:rgba(211,150,140,.7);background:rgba(211,150,140,.1)}
 /* INV / CTA / FOOTER */
-.inv{min-height:100vh;display:flex;align-items:center;padding:126px 0 4px;background:#062217;text-align:center;position:relative}
+.inv{min-height:100vh;display:flex;align-items:center;padding:104px 0 8px;background:#062217;text-align:center;position:relative}
 .inv .cnt{width:100%}
 .inv::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
 .iey{font-size:13px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:var(--go);margin-bottom:12px}
 /* PACKAGES */
-.pkg-i{text-align:center;max-width:760px;margin:0 auto 16px}
-.pkg-i .st{font-size:clamp(24px,3vw,34px);margin-bottom:10px}
-.pkg-i .gl{margin:0 auto 12px}
-.pkg-i p{font-size:14px;line-height:1.5}
-.pkg-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1140px;margin:0 auto}
-.pkg-c{background:rgba(10,51,35,.8);border:1px solid rgba(211,150,140,.3);padding:16px 20px;position:relative;display:flex;flex-direction:column;text-align:left}
+.pkg-i{text-align:center;max-width:760px;margin:0 auto 12px}
+.pkg-i .st{font-size:clamp(24px,3vw,34px);margin-bottom:8px}
+.pkg-i .gl{margin:0 auto 10px}
+.pkg-i p{font-size:14px;line-height:1.4}
+/* ROADMAP */
+.roadmap{position:relative;max-width:1140px;margin:0 auto}
+.rm-row-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.rm-top-row,.rm-bottom-row{align-items:end}
+.rm-bottom-row{align-items:start}
+.rm-road-row{position:relative;height:96px;margin:2px 0}
+.rm-road-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rm-road-fill{fill:none;stroke:#6d6d63;stroke-width:44;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 6px 8px rgba(0,0,0,.4))}
+.rm-road-path{fill:none;stroke:var(--iv);stroke-width:3;stroke-linecap:round;stroke-dasharray:11 11;opacity:.9;vector-effect:non-scaling-stroke}
+.rm-car-icon path{fill:var(--iv);stroke:var(--em);stroke-width:1.6;vector-effect:non-scaling-stroke}
+.rm-car-icon{filter:drop-shadow(0 1px 2px rgba(6,34,23,.9))}
+.rm-car-wheel{fill:var(--go)}
+.rm-marker-row{position:relative;z-index:1;height:100%}
+.rm-marker-row .rm-row-4{height:100%}
+.rm-marker{width:46px;height:46px;border-radius:50%;background:var(--go);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:absolute;left:50%;transform:translateX(-50%);z-index:2;box-shadow:0 0 0 5px var(--em),0 4px 10px rgba(0,0,0,.4)}
+.rm-marker.c2{background:var(--eu)}
+.rm-marker.c3{background:var(--sa)}
+.rm-marker svg{width:20px;height:20px;stroke:var(--iv);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rm-marker-row .rm-step:nth-child(odd) .rm-marker{top:2px}
+.rm-marker-row .rm-step:nth-child(even) .rm-marker{bottom:2px}
+.rm-step{position:relative;display:flex;justify-content:center}
+.rm-card{max-width:250px;text-align:center;margin:0 auto}
+.rm-top-row .rm-card{margin-bottom:18px}
+.rm-bottom-row .rm-card{margin-top:18px}
+.pkg-ribbon-inline{display:inline-block;background:var(--go);color:var(--em);font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;margin-bottom:10px}
+.pkg-c{background:rgba(10,51,35,.85);border:1px solid rgba(211,150,140,.3);padding:32px 28px;position:relative;display:flex;flex-direction:column;text-align:left}
 .pkg-c.feat{border-color:var(--go);background:rgba(211,150,140,.07)}
 .pkg-c.feat::before,.pkg-c.feat::after{content:'';position:absolute;width:20px;height:20px;border-color:var(--go);border-style:solid}
 .pkg-c.feat::before{top:-2px;left:-2px;border-width:2px 0 0 2px}
 .pkg-c.feat::after{bottom:-2px;right:-2px;border-width:0 2px 2px 0}
 .pkg-ribbon{position:absolute;top:-12px;right:20px;background:var(--go);color:var(--em);font-size:11px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px}
-.pkg-badge{display:inline-block;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:var(--go);margin-bottom:8px}
-.pkg-name{font-family:var(--fr);font-size:26px;font-weight:800;color:var(--gl);margin-bottom:8px;line-height:1.25}
-.pkg-desc{font-size:13px;color:var(--iv);opacity:0.9;line-height:1.45;margin-bottom:10px}
-.pkg-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:12px;flex-grow:1}
-.pkg-list li{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--iv);line-height:1.4}
-.pkg-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--go);flex-shrink:0;margin-top:5px}
-.pkg-div{width:100%;height:1px;background:rgba(211,150,140,.25);margin-bottom:10px}
-.pkg-price{font-family:var(--fs);font-size:28px;color:var(--gl);line-height:1;margin-bottom:4px}
-.pkg-price small{font-size:15px;font-family:var(--fb);opacity:0.85}
-.pkg-price.alt{font-family:var(--fr);font-size:16px;font-weight:600;color:var(--gl)}
-.pkg-price-note{font-size:11px;color:var(--iv);opacity:0.75;margin-bottom:10px;line-height:1.35}
-.pkg-c .btn{padding:11px 24px;font-size:12px;letter-spacing:2px}
+.pkg-badge{display:inline-block;font-size:13px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:var(--go);margin-bottom:10px}
+.pkg-name{font-family:var(--fr);font-size:22px;font-weight:800;color:var(--gl);margin-bottom:8px;line-height:1.2}
+.pkg-desc{font-size:14.5px;color:var(--iv);opacity:0.9;line-height:1.5;margin-bottom:12px}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:18px;flex-grow:1}
+.pkg-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--iv);line-height:1.5}
+.pkg-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--go);flex-shrink:0;margin-top:8px}
+.pkg-div{width:100%;height:1px;background:rgba(211,150,140,.25);margin-bottom:14px}
+.pkg-price{font-family:var(--fs);font-size:32px;color:var(--gl);line-height:1;margin-bottom:6px}
+.pkg-price small{font-size:17px;font-family:var(--fb);opacity:0.85}
+.pkg-price.alt{font-family:var(--fr);font-size:19px;font-weight:600;color:var(--gl)}
+.pkg-price-note{font-size:12px;color:var(--iv);opacity:0.75;margin-bottom:12px;line-height:1.4}
+.pkg-c .btn{padding:14px 28px;font-size:13px;letter-spacing:2px}
+.rm-card{width:100%;text-align:center;align-items:center}
+.rm-card .pkg-list{align-items:center}
 /* TESTIMONIALS */
 .test{padding:100px 0;background:#062217;position:relative}
 .test::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
@@ -282,9 +308,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 .fu.vis{opacity:1;transform:translateY(0)}
 @media(max-width:1320px){.nav-links{display:none}}
 @media(min-width:1025px) and (max-height:820px){.pain{padding:88px 0 4px}.pain-i{margin-bottom:12px}.pain-v{height:88px}.pain-g{gap:16px}.pain-c .pain-stat{margin-top:10px;padding-top:8px}.car{padding:90px 0 24px}.car-i{margin-bottom:18px}.car-g{gap:14px}.car-anim{max-width:360px;margin:8px auto}}
-@media(min-width:1025px) and (max-height:700px){.pain{padding:76px 0 18px}.pain-i .st{font-size:clamp(26px,3vw,36px)}.pain-i p{font-size:14px}.pain-v{height:80px}.pain-c .pt{font-size:16px}.pain-c .pd{font-size:13px;line-height:1.45}.car{padding:76px 0 16px}.car-title{font-size:clamp(22px,2.8vw,30px)}.car-sub{font-size:13px}.car-letter{font-size:32px;margin-bottom:6px}.car-c{padding:16px 16px}.inv{padding:126px 0 8px}.pkg-i{margin-bottom:10px}.pkg-i .st{font-size:clamp(20px,2.6vw,28px)}.pkg-i p{font-size:13px}.pkg-c{padding:14px 16px}.pkg-name{font-size:21px;margin-bottom:6px}.pkg-desc{font-size:12px;margin-bottom:6px}.pkg-list{gap:4px;margin-bottom:8px}.pkg-list li{font-size:11.5px}.pkg-price{font-size:22px}.pkg-price-note{font-size:10px;margin-bottom:6px}.pkg-c .btn{padding:9px 20px;font-size:11px}.cta{padding:126px 0 4px}.ctat{font-size:clamp(22px,3vw,32px);margin-bottom:6px}.ctas{margin-bottom:10px}.cform{gap:6px}.fg input,.fg textarea{padding:8px 14px}.fg textarea{min-height:40px}.fsb .btn{padding:10px 28px}.ctac .orn[style]{margin:12px 0 8px !important}.ctac a.calendly-btn[style]{padding:9px 24px !important}}
-@media(min-width:1025px) and (max-height:660px){.pain{padding:58px 0 6px}.pain-v{height:56px}.pain-c .pain-stat{margin-top:6px;padding-top:6px;font-size:11px}.pain-c .pain-stat b{font-size:17px}.car-anim{max-width:260px;margin:4px auto}.inv{padding:126px 0 2px}.pkg-i{margin-bottom:6px}.pkg-c{padding:9px 12px}.pkg-name{font-size:18px;margin-bottom:3px}.pkg-desc{font-size:11px;margin-bottom:3px}.pkg-list{gap:2px;margin-bottom:4px}.pkg-list li{font-size:10.5px;line-height:1.3}.pkg-price{font-size:19px}.pkg-price-note{font-size:9px;margin-bottom:3px}.cta{padding:126px 0 2px}.ctac .orn{margin-bottom:6px}.ctat{margin-bottom:4px}.ctas{margin-bottom:6px}.cform{gap:4px}.fg input,.fg textarea{padding:6px 14px}.fg textarea{min-height:32px}.fsb .btn{padding:8px 24px}.ctac .orn[style]{margin:8px 0 6px !important}}
-@media(max-width:1024px){.hero .cnt,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc,.hchk{margin:0 auto 48px}.pain-g,.pkg-g,.frow,.car-g,.quo-g,.test-g{grid-template-columns:1fr}.pain{min-height:0;display:block;padding:80px 0}.pain-c:nth-child(2){margin-top:0}.pain-g{max-width:480px;margin:0 auto;gap:24px}.quo-g{max-width:480px;margin:0 auto;gap:20px}.test-g{max-width:480px;margin:0 auto;gap:20px}.car{min-height:0;display:block;padding:80px 0}.car-g{max-width:480px;margin:0 auto}.inv{min-height:0;display:block;padding:80px 0}.pkg-g{max-width:480px;margin:0 auto}.cta{min-height:0;display:block;padding:80px 0}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-hdg{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}}
+@media(min-width:1025px) and (max-height:700px){.pain{padding:76px 0 18px}.pain-i .st{font-size:clamp(26px,3vw,36px)}.pain-i p{font-size:14px}.pain-v{height:80px}.pain-c .pt{font-size:16px}.pain-c .pd{font-size:13px;line-height:1.45}.car{padding:76px 0 16px}.car-title{font-size:clamp(22px,2.8vw,30px)}.car-sub{font-size:13px}.car-letter{font-size:32px;margin-bottom:6px}.car-c{padding:16px 16px}.cta{padding:126px 0 4px}.ctat{font-size:clamp(22px,3vw,32px);margin-bottom:6px}.ctas{margin-bottom:10px}.cform{gap:6px}.fg input,.fg textarea{padding:8px 14px}.fg textarea{min-height:40px}.fsb .btn{padding:10px 28px}.ctac .orn[style]{margin:12px 0 8px !important}.ctac a.calendly-btn[style]{padding:9px 24px !important}.inv{padding:70px 0 8px}.pkg-i{margin-bottom:10px}.pkg-i .st{font-size:clamp(20px,2.6vw,28px);margin-bottom:6px}.pkg-i .gl{margin:0 auto 8px !important}.pkg-i p{font-size:12px;line-height:1.35}.rm-road-row{height:70px}.pkg-name{font-size:16px;margin-bottom:4px}.pkg-desc{font-size:12px;line-height:1.3;margin-bottom:6px}.rm-top-row .rm-card{margin-bottom:6px}.rm-bottom-row .rm-card{margin-top:6px}.rm-marker{width:36px;height:36px;box-shadow:0 0 0 4px var(--em),0 4px 8px rgba(0,0,0,.4)}.rm-marker svg{width:16px;height:16px}}
+@media(min-width:1025px) and (max-height:660px){.pain{padding:58px 0 6px}.pain-v{height:56px}.pain-c .pain-stat{margin-top:6px;padding-top:6px;font-size:11px}.pain-c .pain-stat b{font-size:17px}.car-anim{max-width:260px;margin:4px auto}.cta{padding:126px 0 2px}.ctac .orn{margin-bottom:6px}.ctat{margin-bottom:4px}.ctas{margin-bottom:6px}.cform{gap:4px}.fg input,.fg textarea{padding:6px 14px}.fg textarea{min-height:32px}.fsb .btn{padding:8px 24px}.ctac .orn[style]{margin:8px 0 6px !important}.inv{padding:50px 0 6px}.pkg-i{margin-bottom:6px}.pkg-i .st{margin-bottom:4px}.pkg-i p{display:none}.rm-road-row{height:52px}.pkg-name{font-size:14px;margin-bottom:2px}.pkg-desc{font-size:11px;line-height:1.25;margin-bottom:4px}.rm-marker{width:30px;height:30px;box-shadow:0 0 0 3px var(--em),0 3px 6px rgba(0,0,0,.4)}.rm-marker svg{width:14px;height:14px}}
+@media(max-width:1024px){.hero .cnt,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc,.hchk{margin:0 auto 48px}.pain-g,.pkg-g,.frow,.car-g,.quo-g,.test-g{grid-template-columns:1fr}.pain{min-height:0;display:block;padding:80px 0}.pain-c:nth-child(2){margin-top:0}.pain-g{max-width:480px;margin:0 auto;gap:24px}.quo-g{max-width:480px;margin:0 auto;gap:20px}.test-g{max-width:480px;margin:0 auto;gap:20px}.car{min-height:0;display:block;padding:80px 0}.car-g{max-width:480px;margin:0 auto}.cta{min-height:0;display:block;padding:80px 0}.inv{min-height:0;display:block;padding:80px 0}.roadmap{max-width:480px;margin:0 auto;display:flex;flex-direction:column}.rm-top-row,.rm-bottom-row{display:contents}.rm-road-row{display:none}.rm-step:empty{display:none}.rm-top-row .rm-step:nth-child(1){order:1}.rm-bottom-row .rm-step:nth-child(2){order:2}.rm-top-row .rm-step:nth-child(3){order:3}.rm-bottom-row .rm-step:nth-child(4){order:4}.rm-card{max-width:none;margin:0 0 32px !important}.rm-step:last-child .rm-card{margin-bottom:0 !important}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-hdg{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}}
 @media(max-width:640px){
   .cnt{padding:0 20px}
   .quo-t{font-size:21px}
@@ -364,7 +390,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   </div>
   <div class='cnt'>
     <div>
-      <h1 class='ht'><span>Làm Chủ</span><span><em>Chiếc Xe Tài Chính</em></span><span>Của Doanh Nghiệp Bạn</span></h1>
+      <h1 class='ht'><span>Kiến Tạo</span><span><em>Di Sản Tài Chính</em></span></h1>
       <p class='hdesc'>Đồng hành cùng Chủ Doanh nghiệp trên hành trình Kiến tạo Di sản Tài chính &mdash; thông qua khai vấn theo chuẩn ICF và 10 năm thực chiến trong lĩnh vực Tài chính &ndash; Ngân hàng.</p>
       <div class='hctas'>
         <a href='#inv' class='btn bf'><span>Khám Phá Chương Trình</span></a>
@@ -605,47 +631,66 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <div class='gl'></div>
       <p style='color:var(--iv);font-size:20px;opacity:0.9;'>Từ thẩm định nhanh sức khỏe tài chính đến đồng hành xây dựng giải pháp dài hạn &mdash; chọn lộ trình phù hợp với giai đoạn phát triển của doanh nghiệp bạn.</p>
     </div>
-    <div class='pkg-g'>
-      <div class='pkg-c fu'>
-        <span class='pkg-badge'>Cơ Bản &middot; 3 Tháng</span>
-        <div class='pkg-name'>Financial Health Diagnostic</div>
-        <p class='pkg-desc'>Thẩm định sức khỏe tài chính Doanh nghiệp.</p>
-        <ul class='pkg-list'>
-          <li>Xác định ngưỡng điểm sức khỏe của Doanh nghiệp</li>
-          <li>Các rủi ro đang hiện hữu và có khả năng phát sinh</li>
-          <li>Hệ thống số liệu tài chính có đủ tin cậy để ra quyết định</li>
-          <li>Các yếu tố tác động đến hiệu quả kinh doanh của Doanh nghiệp</li>
-        </ul>
-        <div class='pkg-div'></div>
-        <div class='pkg-price'>40<small> Triệu</small></div>
-        <a href='#cta' class='btn' style='justify-content:center;'><span>Đăng Ký Diagnostic</span></a>
+    <div class='roadmap'>
+      <div class='rm-top-row rm-row-4'>
+        <div class='rm-step'>
+          <div class='rm-card fu'>
+            <div class='pkg-name'>Financial Health Diagnostic</div>
+            <p class='pkg-desc'>Thẩm định nhanh sức khỏe tài chính, nhận diện rủi ro và mức độ an toàn của Doanh nghiệp.</p>
+            <a href='financial-health-check.html' class='btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span>Thẩm Định Ngay</span></a>
+          </div>
+        </div>
+        <div class='rm-step'></div>
+        <div class='rm-step'>
+          <div class='rm-card fu'>
+            <div class='pkg-name'>Growth Mastery</div>
+            <p class='pkg-desc'>Xây dựng kế hoạch và chiến lược kinh doanh 3&ndash;5 năm tới.</p>
+          </div>
+        </div>
+        <div class='rm-step'></div>
       </div>
-      <div class='pkg-c fu'>
-        <span class='pkg-badge'>Tiêu Chuẩn &middot; 6 Tháng</span>
-        <div class='pkg-name'>Growth Mastery</div>
-        <p class='pkg-desc'>Thẩm định sức khỏe tài chính doanh nghiệp, xây dựng kế hoạch và chiến lược kinh doanh trong 3-5 năm tới.</p>
-        <ul class='pkg-list'>
-          <li>Thẩm định sức khỏe tài chính toàn diện</li>
-          <li>Xây dựng kế hoạch tài chính chiến lược</li>
-          <li>Phương án đầu tư kinh doanh 3-5 năm</li>
-        </ul>
-        <div class='pkg-div'></div>
-        <div class='pkg-price'>70<small> Triệu</small></div>
-        <a href='#cta' class='btn' style='justify-content:center;'><span>Đăng Ký Growth Mastery</span></a>
+
+      <div class='rm-road-row'>
+        <svg class='rm-road-svg' viewBox='0 0 1000 120' preserveAspectRatio='none' aria-hidden='true'>
+          <path class='rm-road-fill' d='M0,60 C50,60 75,8 125,8 C175,8 200,60 250,60 C300,60 325,112 375,112 C425,112 450,60 500,60 C550,60 575,8 625,8 C675,8 700,60 750,60 C800,60 825,112 875,112 C925,112 950,60 1000,60'></path>
+          <path id='rm-road-path' class='rm-road-path' d='M0,60 C50,60 75,8 125,8 C175,8 200,60 250,60 C300,60 325,112 375,112 C425,112 450,60 500,60 C550,60 575,8 625,8 C675,8 700,60 750,60 C800,60 825,112 875,112 C925,112 950,60 1000,60'></path>
+          <g class='rm-car-icon'>
+            <g transform='scale(1.6)'>
+              <path d='M-19,5 L-19,2 Q-19,-1 -16,-1 L-11,-1 L-8,-6 Q-7,-8 -4,-8 L6,-8 Q9,-8 10,-6 L13,-1 L16,-1 Q19,-1 19,2 L19,5 Z'></path>
+              <circle class='rm-car-wheel' cx='-10' cy='5' r='3'></circle>
+              <circle class='rm-car-wheel' cx='10' cy='5' r='3'></circle>
+            </g>
+            <animateMotion dur='8s' repeatCount='indefinite' rotate='auto'>
+              <mpath href='#rm-road-path'></mpath>
+            </animateMotion>
+          </g>
+        </svg>
+        <div class='rm-marker-row'>
+          <div class='rm-row-4'>
+            <div class='rm-step'><div class='rm-marker'><svg viewBox='0 0 24 24'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'></polyline></svg></div></div>
+            <div class='rm-step'><div class='rm-marker c2'><svg viewBox='0 0 24 24'><circle cx='11' cy='11' r='7'></circle><line x1='21' y1='21' x2='16.2' y2='16.2'></line></svg></div></div>
+            <div class='rm-step'><div class='rm-marker c3'><svg viewBox='0 0 24 24'><polyline points='23 6 13.5 15.5 8.5 10.5 1 18'></polyline><polyline points='17 6 23 6 23 12'></polyline></svg></div></div>
+            <div class='rm-step'><div class='rm-marker'><svg viewBox='0 0 24 24'><circle cx='12' cy='8' r='6.5'></circle><polyline points='8.2 13.9 7 22 12 19.3 17 22 15.8 13.9'></polyline></svg></div></div>
+          </div>
+        </div>
       </div>
-      <div class='pkg-c feat fu'>
-        <div class='pkg-ribbon'>Đồng Hành Dài Hạn</div>
-        <span class='pkg-badge'>Chuyên Sâu &middot; 1 Năm</span>
-        <div class='pkg-name'>Financial Legacy Coaching</div>
-        <p class='pkg-desc'>Đồng hành kiến tạo các giải pháp tài chính thông minh cùng chủ doanh nghiệp trong vòng 1 năm.</p>
-        <ul class='pkg-list'>
-          <li>Thiết lập hệ thống tài chính quản trị có thể đo lường và kiểm soát tự động</li>
-          <li>Nâng cấp chất lượng quyết định tài chính ở cấp độ chiến lược</li>
-          <li>Xây dựng cấu trúc tài chính dài hạn để tối ưu giá trị doanh nghiệp</li>
-        </ul>
-        <div class='pkg-div'></div>
-        <div class='pkg-price alt'>Theo Quy Mô Công Ty</div>
-        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn' style='justify-content:center;'><span>Đặt Lịch Tư Vấn 1:1 &mdash; Miễn Phí</span></a>
+
+      <div class='rm-bottom-row rm-row-4'>
+        <div class='rm-step'></div>
+        <div class='rm-step'>
+          <div class='rm-card fu'>
+            <div class='pkg-name'>Strategic Discovery</div>
+            <p class='pkg-desc'>60 phút cùng Trinh đọc kết quả sức khỏe tài chính chuyên sâu và đề xuất lộ trình tiếp theo.</p>
+            <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span>Đặt Lịch</span></a>
+          </div>
+        </div>
+        <div class='rm-step'></div>
+        <div class='rm-step'>
+          <div class='rm-card fu'>
+            <div class='pkg-name'>Financial Legacy</div>
+            <p class='pkg-desc'>Đồng hành 1 năm, kiến tạo Di sản tài chính dài hạn cho Doanh nghiệp.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
