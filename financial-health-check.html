@@ -24,6 +24,7 @@ a{color:inherit;text-decoration:none}
 /* HEADER */
 header{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(211,150,140,.2);position:sticky;top:0;background:rgba(10,51,35,.96);backdrop-filter:blur(8px);z-index:50}
 .hd-logo{display:flex;align-items:center;gap:12px;font-family:var(--fs);font-size:24px;color:var(--gl)}
+.hd-logo img{width:44px;height:44px;object-fit:contain;flex-shrink:0}
 .hd-logo small{display:block;font-family:var(--fb);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--iv);opacity:.8;margin-top:-2px}
 .hd-back{font-size:13px;letter-spacing:1px;color:var(--iv);opacity:.85;border:1px solid rgba(211,150,140,.4);padding:9px 18px}
 .hd-back:hover{border-color:var(--go);opacity:1}
@@ -37,6 +38,12 @@ header{padding:20px 24px;display:flex;align-items:center;justify-content:space-b
 .pillar-prev-c .pn{font-family:var(--fr);font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gl);margin-bottom:8px}
 .pillar-prev-c p{font-size:13px;opacity:.8;margin:0;max-width:none}
 .intro-meta{font-size:13px;opacity:.65;margin-bottom:28px}
+.gate-form{display:none;max-width:420px;margin:0 auto;flex-direction:column;gap:12px;text-align:left}
+.gate-form.active{display:flex}
+.gate-title{font-family:var(--fr);font-size:18px;color:var(--gl);text-align:center;margin-bottom:2px}
+.gate-form input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(211,150,140,.5);color:var(--iv);padding:13px 16px;font-family:var(--fb);font-size:15px;outline:none;border-radius:6px}
+.gate-form input:focus{border-color:var(--go)}
+.gate-form .btn{margin-top:4px}
 /* QUIZ */
 #quiz{display:none;padding:0 0 60px}
 #quiz.active{display:block}
@@ -95,20 +102,21 @@ footer{text-align:center;padding:32px 24px;border-top:1px solid rgba(211,150,140
   .q-opts{gap:6px}
   .q-opt{padding:8px 4px}
   .scale-legend{font-size:10px}
-  .hd-logo{font-size:19px}
+  .hd-logo{font-size:19px;gap:8px}
+  .hd-logo img{width:34px;height:34px}
   .progress-wrap{top:57px}
 }
 </style>
 </head>
 <body>
 <header>
-  <div class='hd-logo'><div>Phan Tuyết Trinh<small>Financial Coach</small></div></div>
+  <div class='hd-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Tài Chính Doanh Chủ<small>Financial Coach</small></div></div>
   <a class='hd-back' href='index.html'>&larr; Về Trang Chủ</a>
 </header>
 
 <section class='intro' id='intro'>
   <div class='cnt'>
-    <span class='intro-badge'>Công Cụ Miễn Phí</span>
+    <span class='intro-badge'>Công Cụ Thẩm Định</span>
     <h1>Thẩm Định Sức Khỏe Tài Chính Doanh Nghiệp</h1>
     <p>18 câu hỏi nhanh giúp bạn nhìn thấy doanh nghiệp mình đang đau ở đâu &mdash; lợi nhuận, dòng tiền, công nợ, dữ liệu hay kiểm soát &mdash; và mức độ sẵn sàng để giải quyết vấn đề đó.</p>
     <div class='pillar-prev'>
@@ -125,8 +133,17 @@ footer{text-align:center;padding:32px 24px;border-top:1px solid rgba(211,150,140
         <p>Rủi ro, tiền và tuân thủ có được kiểm soát?</p>
       </div>
     </div>
-    <div class='intro-meta'>&#9201; Khoảng 8&ndash;10 phút &middot; 18 câu hỏi &middot; Kết quả hiện ngay, không cần đăng ký trước</div>
-    <button class='btn bf' id='start-btn'>Bắt Đầu Thẩm Định</button>
+    <div class='intro-meta'>&#9201; Khoảng 8&ndash;10 phút &middot; 18 câu hỏi &middot; Kết quả hiện ngay</div>
+    <form class='gate-form active' id='gate-form'>
+      <div class='gate-title'>Điền thông tin để bắt đầu</div>
+      <input type='text' name='name' placeholder='Họ và Tên' required/>
+      <input type='email' name='email' placeholder='Email' required/>
+      <input type='tel' name='phone' placeholder='Số Điện Thoại' required/>
+      <input type='text' name='company' placeholder='Tên Công Ty' required/>
+      <input type='text' name='revenue' placeholder='Doanh Thu Hàng Năm' required/>
+      <input type='text' name='margin' placeholder='Biên Lợi Nhuận' required/>
+      <button type='submit' class='btn bf'>Bắt Đầu Thẩm Định</button>
+    </form>
   </div>
 </section>
 
@@ -179,14 +196,9 @@ footer{text-align:center;padding:32px 24px;border-top:1px solid rgba(211,150,140
       <h3>Muốn Financial Coach đọc kết quả cùng bạn?</h3>
       <p>Để lại thông tin, Trinh sẽ xem chi tiết kết quả thẩm định của bạn và tư vấn hướng đi phù hợp trong 1 buổi trao đổi 1:1.</p>
       <div id='lead-success'>&#10003; Cảm ơn bạn! Trinh sẽ liên hệ trong vòng 24 giờ.</div>
-      <form class='lead-form' id='lead-form'>
-        <input type='text' name='name' placeholder='Họ và Tên' required/>
-        <input type='tel' name='phone' placeholder='Số Điện Thoại' required/>
-        <input type='text' name='company' placeholder='Tên Doanh Nghiệp'/>
-      </form>
       <div class='res-actions'>
         <button class='btn bf' id='lead-submit'>Gửi Kết Quả Cho Trinh</button>
-        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn'>Đặt Lịch Tư Vấn 1:1</a>
+        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn'>Đặt Lịch Ngay 1:1</a>
       </div>
       <div class='retake'>Muốn làm lại? <a href='javascript:location.reload()'>Bắt đầu lại từ đầu</a></div>
     </div>
@@ -259,7 +271,28 @@ function updateProgress(){
   document.getElementById('progress-fill').style.width=(n/TOTAL_Q*100)+'%';
   document.getElementById('progress-label').textContent=n+'/'+TOTAL_Q+' câu đã trả lời';
 }
-document.getElementById('start-btn').addEventListener('click',()=>{
+const leadInfo={name:'',email:'',phone:'',company:'',revenue:'',margin:''};
+document.getElementById('gate-form').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const form=e.target;
+  if(!form.checkValidity()){form.reportValidity();return;}
+  leadInfo.name=form.name.value;
+  leadInfo.email=form.email.value;
+  leadInfo.phone=form.phone.value;
+  leadInfo.company=form.company.value;
+  leadInfo.revenue=form.revenue.value;
+  leadInfo.margin=form.margin.value;
+  fetch(GAS_URL,{method:'POST',body:JSON.stringify({
+    name:leadInfo.name,
+    email:leadInfo.email,
+    phone:leadInfo.phone,
+    company:leadInfo.company,
+    revenue:leadInfo.revenue,
+    margin:leadInfo.margin,
+    goal:'Bắt đầu bài Thẩm Định Sức Khỏe Tài Chính',
+    message:'',
+    status:'Bắt đầu thẩm định'
+  })}).catch(err=>console.error('Gửi thông tin bắt đầu thất bại:',err));
   buildQuiz();
   document.getElementById('intro').style.display='none';
   document.getElementById('progress-wrap').style.display='block';
@@ -299,27 +332,39 @@ function showResults(){
   document.getElementById('progress-wrap').style.display='none';
   document.getElementById('results').classList.add('active');
   window._hcScores={scores,total,pct,bandName:band.name};
+  fetch(GAS_URL,{method:'POST',body:JSON.stringify({
+    name:leadInfo.name,
+    email:leadInfo.email,
+    phone:leadInfo.phone,
+    company:leadInfo.company,
+    revenue:leadInfo.revenue,
+    margin:leadInfo.margin,
+    goal:`Kết quả Thẩm Định Sức Khỏe Tài Chính: ${pct}% — ${band.name}`,
+    message:`Business Insight ${scores.A}/18 · Transactional Efficiency ${scores.B}/18 · Compliance & Control ${scores.C}/18`,
+    status:'Đã có kết quả'
+  })}).catch(err=>console.error('Gửi kết quả tự động thất bại:',err));
   window.scrollTo({top:0,behavior:'smooth'});
 }
 const GAS_URL='https://script.google.com/macros/s/AKfycby8dlPcqSOfsbqdIYRVcLQYQt7PmWprUz9-DyMgQbz8ZtMoX37xOLfevoNq-kTcx3G9/exec';
 document.getElementById('lead-submit').addEventListener('click',(e)=>{
   e.preventDefault();
-  const form=document.getElementById('lead-form');
-  if(!form.checkValidity()){form.reportValidity();return;}
   const s=window._hcScores||{};
   const data={
-    name:form.name.value,
-    phone:form.phone.value,
-    company:form.company.value,
+    name:leadInfo.name,
+    email:leadInfo.email,
+    phone:leadInfo.phone,
+    company:leadInfo.company,
+    revenue:leadInfo.revenue,
+    margin:leadInfo.margin,
     goal:`Kết quả Thẩm Định Sức Khỏe Tài Chính: ${s.pct||0}% — ${s.bandName||''}`,
-    message:`Business Insight ${s.scores?s.scores.A:0}/18 · Transactional Efficiency ${s.scores?s.scores.B:0}/18 · Compliance & Control ${s.scores?s.scores.C:0}/18`
+    message:`Business Insight ${s.scores?s.scores.A:0}/18 · Transactional Efficiency ${s.scores?s.scores.B:0}/18 · Compliance & Control ${s.scores?s.scores.C:0}/18`,
+    status:'Yêu cầu tư vấn 1:1'
   };
   const btn=document.getElementById('lead-submit');
   btn.disabled=true;
   fetch(GAS_URL,{method:'POST',body:JSON.stringify(data)})
     .catch(err=>console.error('Gửi kết quả thất bại:',err))
     .finally(()=>{
-      form.style.display='none';
       document.getElementById('lead-success').style.display='block';
     });
 });
