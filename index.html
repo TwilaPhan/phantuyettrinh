@@ -136,9 +136,18 @@ a{color:inherit;text-decoration:none}
 .pain-c .pain-stat{margin:14px 20px 0;padding-top:12px;border-top:1px solid rgba(211,150,140,.22);font-size:12.5px;line-height:1.5;color:rgba(240,236,225,.72)}
 /* HEALTH CHECK TEASER */
 .hc-teaser{padding:56px 0;background:#062217;text-align:center}
-.hc-teaser-box{max-width:600px;margin:0 auto;border:1px solid rgba(211,150,140,.3);border-radius:16px;padding:36px 32px;background:rgba(255,255,255,.03)}
+.hc-teaser-box{max-width:760px;margin:0 auto;border:1px solid rgba(211,150,140,.3);border-radius:16px;padding:36px 32px;background:rgba(255,255,255,.03)}
 .hc-teaser-t{font-family:var(--fr);font-size:24px;font-weight:700;color:var(--iv);margin-bottom:10px}
 .hc-teaser-d{font-size:15px;color:var(--iv);opacity:.85;margin-bottom:22px;line-height:1.6}
+.hc-bands{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 26px}
+.hc-band{display:flex;flex-direction:column;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.04)}
+.hc-band-r{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;padding:12px 8px}
+.hc-band-l{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 10px;font-size:14px;font-weight:600;color:var(--iv);line-height:1.35}
+.hc-band.b1 .hc-band-r{background:#C0433B}
+.hc-band.b2 .hc-band-r{background:#E07C0E}
+.hc-band.b3 .hc-band-r{background:#127C71}
+.hc-band.b4 .hc-band-r{background:#0E3A30}
+@media(max-width:560px){.hc-bands{grid-template-columns:repeat(2,1fr)}}
 .pain-c .pain-stat b{display:block;font-family:var(--fr);font-size:22px;font-weight:600;color:var(--go);margin-bottom:2px}
 .pt{font-family:var(--fr);font-size:26px;font-weight:600;color:var(--iv);margin-bottom:12px;line-height:1.4}
 .pd{font-size:19px;color:var(--iv);opacity:0.9;line-height:1.7}
@@ -297,6 +306,9 @@ a{color:inherit;text-decoration:none}
 .ctat{font-family:var(--fs);font-size:clamp(28px,4vw,42px);color:var(--iv);margin-bottom:8px}
 .ctat em{color:var(--gl);font-style:normal}
 .ctas{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--iv);opacity:0.95;margin-bottom:18px}
+.cta-price{max-width:520px;margin:0 auto 22px;padding:12px 20px;border:1px solid rgba(211,150,140,.4);border-radius:10px;background:rgba(255,255,255,.04);font-size:15px;color:var(--iv);line-height:1.6}
+.cta-price b{color:var(--gl);font-size:19px;letter-spacing:.5px}
+.cta-price span{display:inline-block;margin-top:2px;font-size:12.5px;opacity:.75}
 .cform{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .fg input,.fg textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(211,150,140,.5);color:var(--iv);padding:11px 16px;font-family:var(--fb);font-size:14px;letter-spacing:0.5px;outline:none;transition:var(--tr)}
@@ -516,8 +528,14 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='hc-teaser'>
   <div class='cnt'>
     <div class='hc-teaser-box fu'>
-      <div class='hc-teaser-t'>Bạn thấy mình ở đâu trong 3 điều trên?</div>
+      <div class='hc-teaser-t'>Sức khỏe Doanh nghiệp của Bạn đang như thế nào?</div>
       <p class='hc-teaser-d'>Làm bài thẩm định sức khỏe tài chính — 18 câu hỏi, khoảng 8&ndash;10 phút, có kết quả ngay.</p>
+      <div class='hc-bands'>
+        <div class='hc-band b1'><div class='hc-band-r'>0%&ndash;39%</div><div class='hc-band-l'>Cần hỗ trợ khẩn cấp</div></div>
+        <div class='hc-band b2'><div class='hc-band-r'>40%&ndash;59%</div><div class='hc-band-l'>Đang phát triển</div></div>
+        <div class='hc-band b3'><div class='hc-band-r'>60%&ndash;79%</div><div class='hc-band-l'>Cơ bản kiểm soát</div></div>
+        <div class='hc-band b4'><div class='hc-band-r'>80%&ndash;100%</div><div class='hc-band-l'>Nền tảng tốt</div></div>
+      </div>
       <a href='financial-health-check.html' class='btn bf'><span>Bắt Đầu Thẩm Định</span></a>
     </div>
   </div>
@@ -739,8 +757,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='cta' id='cta'>
   <div class='ctac cnt'>
     <div class='orn'><span>Bắt Đầu Hành Trình</span></div>
-    <div class='ctat'>Sẵn sàng kiến tạo<br><em>Di Sản Tài Chính?</em></div>
-    <p class='ctas'>Điền thông tin đăng ký ngay bên dưới &mdash; Không ràng buộc</p>
+    <div class='ctat'>Sẵn sàng Thẩm định<br><em>Sức khỏe Tài chính chuyên sâu?</em></div>
+    <p class='ctas'>Điền thông tin đăng ký ngay bên dưới</p>
+    <p class='cta-price'>Giá trị chương trình: <b>30.000.000&#273;</b><br/><span>Bạn sẽ thanh toán qua mã QR sau khi gửi đăng ký</span></p>
     <form class='cform fu' onsubmit='handleSubmit(event)'>
       <div class='frow'>
         <div class='fg'><input type='text' name='name' placeholder='Họ và Tên' required/></div>
@@ -802,7 +821,7 @@ const GAS_URL='https://script.google.com/macros/s/AKfycby8dlPcqSOfsbqdIYRVcLQYQt
 const BANK_BIN='970416';        // ACB
 const BANK_ACCOUNT='33635257';
 const BANK_ACCOUNT_NAME='PHAN TUYET TRINH';
-const PAYMENT_AMOUNT=3000000;   // 3.000.000đ
+const PAYMENT_AMOUNT=30000000;   // 30.000.000đ
 function handleSubmit(e){
   e.preventDefault();
   const form=e.target;
