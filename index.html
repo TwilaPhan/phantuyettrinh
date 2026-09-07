@@ -37,6 +37,12 @@ a{color:inherit;text-decoration:none}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--go);transform:scaleX(0);transition:var(--tr)}
 .nav-links a:hover{opacity:1} .nav-links a:hover::after{transform:scaleX(1)}
 .nav-btn{padding:12px 28px;font-size:15px;letter-spacing:3px;flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;flex-shrink:0;font-family:var(--fb);font-size:14px;font-weight:700;letter-spacing:1px}
+.lang-switch button{background:none;border:0;padding:2px 4px;font:inherit;letter-spacing:inherit;color:var(--iv);opacity:.45;cursor:pointer;transition:var(--tr)}
+.lang-switch button:hover{opacity:.85}
+.lang-switch button.active{opacity:1;color:var(--go)}
+.lang-switch .sep{opacity:.3}
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--em)}
 .hvg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
@@ -330,7 +336,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 @media(min-width:1025px) and (max-height:820px){.pain{padding:88px 0 2px}.pain-i{margin-bottom:12px}.pain-v{height:82px}.pain-g{gap:16px}.pain-c .pain-stat{margin-top:10px;padding-top:8px}.car{padding:90px 0 24px}.car-i{margin-bottom:18px}.car-g{gap:14px}.car-anim{max-width:360px;margin:8px auto}}
 @media(min-width:1025px) and (max-height:700px){.pain{padding:76px 0 18px}.pain-i .st{font-size:clamp(26px,3vw,36px)}.pain-i p{font-size:14px}.pain-v{height:80px}.pain-c .pt{font-size:22px}.pain-c .pd{font-size:13px;line-height:1.45}.car{padding:76px 0 16px}.car-title{font-size:clamp(22px,2.8vw,30px)}.car-sub{font-size:13px}.car-letter{font-size:32px;margin-bottom:6px}.car-c{padding:16px 16px}.cta{padding:126px 0 4px}.ctat{font-size:clamp(22px,3vw,32px);margin-bottom:6px}.ctas{margin-bottom:10px}.cform{gap:6px}.fg input,.fg textarea{padding:8px 14px}.fg textarea{min-height:40px}.fsb .btn{padding:10px 28px}.ctac .orn[style]{margin:12px 0 8px !important}.ctac a.calendly-btn[style]{padding:9px 24px !important}.inv{padding:70px 0 8px}.pkg-i{margin-bottom:10px}.pkg-i .st{font-size:clamp(20px,2.6vw,28px);margin-bottom:6px}.pkg-i .gl{margin:0 auto 8px !important}.pkg-i p{font-size:12px;line-height:1.35}.rm-road-row{height:70px}.pkg-name{font-size:16px;margin-bottom:4px}.pkg-desc{font-size:12px;line-height:1.3;margin-bottom:6px}.rm-top-row .rm-card{margin-bottom:6px}.rm-bottom-row .rm-card{margin-top:6px}.rm-marker{width:36px;height:36px;box-shadow:0 0 0 4px var(--em),0 4px 8px rgba(0,0,0,.4)}.rm-marker svg{width:16px;height:16px}}
 @media(min-width:1025px) and (max-height:660px){.pain{padding:58px 0 6px}.pain-v{height:56px}.pain-c .pain-stat{margin-top:6px;padding-top:6px;font-size:11px}.pain-c .pain-stat b{font-size:17px}.car-anim{max-width:260px;margin:4px auto}.cta{padding:126px 0 2px}.ctac .orn{margin-bottom:6px}.ctat{margin-bottom:4px}.ctas{margin-bottom:6px}.cform{gap:4px}.fg input,.fg textarea{padding:6px 14px}.fg textarea{min-height:32px}.fsb .btn{padding:8px 24px}.ctac .orn[style]{margin:8px 0 6px !important}.inv{padding:50px 0 6px}.pkg-i{margin-bottom:6px}.pkg-i .st{margin-bottom:4px}.pkg-i p{display:none}.rm-road-row{height:52px}.pkg-name{font-size:14px;margin-bottom:2px}.pkg-desc{font-size:11px;line-height:1.25;margin-bottom:4px}.rm-marker{width:30px;height:30px;box-shadow:0 0 0 3px var(--em),0 3px 6px rgba(0,0,0,.4)}.rm-marker svg{width:14px;height:14px}}
-@media(max-width:1024px){.hero .cnt,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc,.hchk{margin:0 auto 48px}.pain-g,.pkg-g,.frow,.car-g,.quo-g,.test-g{grid-template-columns:1fr}.pain{min-height:0;display:block;padding:80px 0}.pain-c:nth-child(2){margin-top:0}.pain-g{max-width:480px;margin:0 auto;gap:24px}.quo-g{max-width:480px;margin:0 auto;gap:20px}.test-g{max-width:480px;margin:0 auto;gap:20px}.car{min-height:0;display:block;padding:80px 0}.car-g{max-width:480px;margin:0 auto}.cta{min-height:0;display:block;padding:80px 0}.inv{min-height:0;display:block;padding:80px 0}.roadmap{max-width:480px;margin:0 auto;display:flex;flex-direction:column}.rm-top-row,.rm-bottom-row{display:contents}.rm-road-row{display:none}.rm-step:empty{display:none}.rm-top-row .rm-step:nth-child(1){order:1}.rm-bottom-row .rm-step:nth-child(2){order:2}.rm-top-row .rm-step:nth-child(3){order:3}.rm-bottom-row .rm-step:nth-child(4){order:4}.rm-card{max-width:none;margin:0 0 32px !important}.rm-step:last-child .rm-card{margin-bottom:0 !important}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-hdg{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}}
+@media(max-width:1024px){.hero .cnt,.abt-g{grid-template-columns:1fr;gap:56px}.hvis{order:-1}.hctas{justify-content:center}.hdesc,.hchk{margin:0 auto 48px}.pain-g,.pkg-g,.frow,.car-g,.quo-g,.test-g{grid-template-columns:1fr}.pain{min-height:0;display:block;padding:80px 0}.pain-c:nth-child(2){margin-top:0}.pain-g{max-width:480px;margin:0 auto;gap:24px}.quo-g{max-width:480px;margin:0 auto;gap:20px}.test-g{max-width:480px;margin:0 auto;gap:20px}.car{min-height:0;display:block;padding:80px 0}.car-g{max-width:480px;margin:0 auto}.cta{min-height:0;display:block;padding:80px 0}.inv{min-height:0;display:block;padding:80px 0}.roadmap{max-width:480px;margin:0 auto;display:flex;flex-direction:column}.rm-top-row,.rm-bottom-row{display:contents}.rm-road-row{display:none}.rm-step:empty{display:none}.rm-top-row .rm-step:nth-child(1){order:1}.rm-bottom-row .rm-step:nth-child(2){order:2}.rm-top-row .rm-step:nth-child(3){order:3}.rm-bottom-row .rm-step:nth-child(4){order:4}.rm-card{max-width:none;margin:0 0 32px !important}.rm-step:last-child .rm-card{margin-bottom:0 !important}.abt-d{margin-left:auto;margin-right:auto}.abt-name,.abt-hdg{text-align:center}.abt-list{max-width:480px;margin-left:auto;margin-right:auto}.nav{padding:16px 20px;gap:12px}.nav-right{gap:12px}.lang-switch{font-size:13px}}
 @media(max-width:640px){
   .cnt{padding:0 20px}
   .quo-t{font-size:21px}
@@ -344,6 +350,8 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   .nav-logo{font-size:19px;gap:6px}
   .nav-logo small{font-size:9px;letter-spacing:0.5px}
   .nav-btn{padding:8px 14px;font-size:11px;letter-spacing:0.5px}
+  .nav-right{gap:10px}
+  .lang-switch{font-size:12px;gap:2px}
   .abt,.inv,.cta,.car,.test,.hc-teaser{padding:64px 0}
   .hc-teaser-box{padding:28px 22px}
   .pain{padding:64px 0}
@@ -387,13 +395,18 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <nav class='nav' id='nav'>
   <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Tài Chính Doanh Chủ<small>Financial Coach</small></div></div>
   <ul class='nav-links'>
-    <li><a href='#about'>Về Trinh</a></li>
-    <li><a href='#pain'>Thực Trạng</a></li>
-    <li><a href='#car'>Giải Pháp</a></li>
-    <li><a href='#inv'>Lộ Trình</a></li>
-    <li><a href='#cta'>Bắt Đầu</a></li>
+    <li><a href='#about' data-i18n='nav.about'>Về Trinh</a></li>
+    <li><a href='#pain' data-i18n='nav.pain'>Thực Trạng</a></li>
+    <li><a href='#car' data-i18n='nav.solution'>Giải Pháp</a></li>
+    <li><a href='#inv' data-i18n='nav.roadmap'>Lộ Trình</a></li>
+    <li><a href='#cta' data-i18n='nav.start'>Bắt Đầu</a></li>
   </ul>
-  <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn nav-btn'><span>Đặt Lịch Ngay</span></a>
+  <div class='nav-right'>
+    <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn nav-btn'><span data-i18n='nav.book'>Đặt Lịch Ngay</span></a>
+    <div class='lang-switch' role='group' aria-label='Language'>
+      <button type='button' data-lang='vi'>VI</button><span class='sep'>/</span><button type='button' data-lang='en'>EN</button>
+    </div>
+  </div>
 </nav>
 
 <section class='hero' id='home'>
@@ -410,21 +423,21 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   </div>
   <div class='cnt'>
     <div>
-      <h1 class='ht'><span>Kiến Tạo</span><span><em>Di Sản Tài Chính</em></span></h1>
-      <p class='hdesc'>Đồng hành cùng Chủ Doanh nghiệp trên hành trình Kiến tạo Di sản Tài chính &mdash; thông qua khai vấn theo chuẩn ICF và 10 năm thực chiến trong lĩnh vực Tài chính &ndash; Ngân hàng.</p>
+      <h1 class='ht' data-i18n='hero.title'><span>Kiến Tạo</span><span><em>Di Sản Tài Chính</em></span></h1>
+      <p class='hdesc' data-i18n='hero.desc'>Đồng hành cùng Chủ Doanh nghiệp trên hành trình Kiến tạo Di sản Tài chính &mdash; thông qua khai vấn theo chuẩn ICF và 10 năm thực chiến trong lĩnh vực Tài chính &ndash; Ngân hàng.</p>
       <div class='hctas'>
-        <a href='#inv' class='btn bf'><span>Khám Phá Chương Trình</span></a>
-        <a href='#about' class='btn'><span>Về Coach Trinh</span></a>
+        <a href='#inv' class='btn bf'><span data-i18n='hero.cta1'>Khám Phá Chương Trình</span></a>
+        <a href='#about' class='btn'><span data-i18n='hero.cta2'>Về Coach Trinh</span></a>
       </div>
     </div>
     <div class='hvis'>
       <div class='abt-img hpimg'><img src='Expert/TCM_88-web.jpg' alt='Phan Tuyết Trinh'/></div>
     </div>
     <div class='hstat'>
-      <div class='hstat-i'><span class='hstat-n lg'>10+</span><span class='hstat-l'>Năm Tài Chính &ndash; Ngân Hàng</span></div>
-      <div class='hstat-i'><span class='hstat-n'>Th.S</span><span class='hstat-l'>Tài Chính (UEH)</span></div>
-      <div class='hstat-i'><span class='hstat-n'>ICF</span><span class='hstat-l'>Chứng Chỉ Khai Vấn Quốc Tế</span></div>
-      <div class='hstat-i'><span class='hstat-n'>CFA-CFP</span><span class='hstat-l'>Chứng Chỉ Tài Chính Quốc Tế</span></div>
+      <div class='hstat-i' data-i18n='hero.stat1'><span class='hstat-n lg'>10+</span><span class='hstat-l'>Năm Tài Chính &ndash; Ngân Hàng</span></div>
+      <div class='hstat-i' data-i18n='hero.stat2'><span class='hstat-n'>Th.S</span><span class='hstat-l'>Tài Chính (UEH)</span></div>
+      <div class='hstat-i' data-i18n='hero.stat3'><span class='hstat-n'>ICF</span><span class='hstat-l'>Chứng Chỉ Khai Vấn Quốc Tế</span></div>
+      <div class='hstat-i' data-i18n='hero.stat4'><span class='hstat-n'>CFA-CFP</span><span class='hstat-l'>Chứng Chỉ Tài Chính Quốc Tế</span></div>
     </div>
   </div>
 
@@ -437,10 +450,10 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <div class='abt-img'><img src='Expert/Profile%20white.jpg' alt='Phan Tuyết Trinh'/></div>
       </div>
       <div class='fu'>
-        <div class='abt-hdg'>Gặp Financial Coach</div>
+        <div class='abt-hdg' data-i18n='abt.hdg'>Gặp Financial Coach</div>
         <div class='abt-name'>Phan Tuyết Trinh</div>
-        <p class='abt-d'>Với 10+ năm kinh nghiệm ở vai trò CFO, Cố vấn Tài chính và Financial Coach tại Ngân hàng hàng đầu Việt Nam (ACB) và các Doanh nghiệp SME/Start-up, Trinh thấu hiểu sâu sắc nỗi đau của Chủ Doanh nghiệp, sát cánh xây dựng bản đồ tài chính thông minh, giúp Doanh nghiệp vững tay lái đạt sự thịnh vượng và phát triển bền vững qua nhiều thế hệ.</p>
-        <p class='abt-cred'>Đồng hành cùng Coach Trinh, doanh nghiệp SME đã tăng trưởng lợi nhuận <span class='abt-hl'>20&ndash;50%</span> chỉ sau 6&ndash;12 tháng, không ít Start-up bứt phá lợi nhuận gấp <span class='abt-hl'>2&ndash;3 lần</span>, và tiết kiệm hàng chục <span class='abt-hl'>tỷ đồng</span> mỗi năm.</p>
+        <p class='abt-d' data-i18n='abt.d'>Với 10+ năm kinh nghiệm ở vai trò CFO, Cố vấn Tài chính và Financial Coach tại Ngân hàng hàng đầu Việt Nam (ACB) và các Doanh nghiệp SME/Start-up, Trinh thấu hiểu sâu sắc nỗi đau của Chủ Doanh nghiệp, sát cánh xây dựng bản đồ tài chính thông minh, giúp Doanh nghiệp vững tay lái đạt sự thịnh vượng và phát triển bền vững qua nhiều thế hệ.</p>
+        <p class='abt-cred' data-i18n='abt.cred'>Đồng hành cùng Coach Trinh, doanh nghiệp SME đã tăng trưởng lợi nhuận <span class='abt-hl'>20&ndash;50%</span> chỉ sau 6&ndash;12 tháng, không ít Start-up bứt phá lợi nhuận gấp <span class='abt-hl'>2&ndash;3 lần</span>, và tiết kiệm hàng chục <span class='abt-hl'>tỷ đồng</span> mỗi năm.</p>
       </div>
     </div>
   </div>
@@ -449,24 +462,24 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='quo'>
   <div class='cnt'>
     <div class='quo-b fu'>
-      <span class='quo-badge'>Triết Lý Đồng Hành</span>
-      <h2 class='quo-h'>Tôi không đưa ra <em>lời khuyên</em>.<br>Tôi cùng bạn <em>tạo kết quả đột phá</em></h2>
+      <span class='quo-badge' data-i18n='quo.badge'>Triết Lý Đồng Hành</span>
+      <h2 class='quo-h' data-i18n='quo.h'>Tôi không đưa ra <em>lời khuyên</em>.<br>Tôi cùng bạn <em>tạo kết quả đột phá</em></h2>
     </div>
     <div class='quo-g'>
       <div class='quo-c fu'>
         <div class='quo-ic'><svg viewBox='0 0 24 24'><path d='M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z'></path></svg></div>
-        <div class='quo-ct'>Tận Tâm</div>
-        <p class='quo-cd'>Tìm hiểu sâu bối cảnh và nỗi đau của doanh nghiệp, trước khi đưa ra bất kỳ định hướng nào.</p>
+        <div class='quo-ct' data-i18n='quo.ct1'>Tận Tâm</div>
+        <p class='quo-cd' data-i18n='quo.cd1'>Tìm hiểu sâu bối cảnh và nỗi đau của doanh nghiệp, trước khi đưa ra bất kỳ định hướng nào.</p>
       </div>
       <div class='quo-c fu'>
         <div class='quo-ic'><svg viewBox='0 0 24 24'><line x1='12' y1='3' x2='12' y2='19'></line><path d='M5 7l-3 6a3 3 0 0 0 6 0z'></path><path d='M19 7l-3 6a3 3 0 0 0 6 0z'></path><path d='M5 7h14'></path><path d='M8 21h8'></path></svg></div>
-        <div class='quo-ct'>Trách Nhiệm</div>
-        <p class='quo-cd'>Trung thực với số liệu, nói thẳng nói thật vào vấn đề, tuân thủ các quy định.</p>
+        <div class='quo-ct' data-i18n='quo.ct2'>Trách Nhiệm</div>
+        <p class='quo-cd' data-i18n='quo.cd2'>Trung thực với số liệu, nói thẳng nói thật vào vấn đề, tuân thủ các quy định.</p>
       </div>
       <div class='quo-c fu'>
         <div class='quo-ic'><svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='9'></circle><circle cx='12' cy='12' r='5'></circle><circle cx='12' cy='12' r='1.3' fill='currentColor'></circle></svg></div>
-        <div class='quo-ct'>Thực Chiến</div>
-        <p class='quo-cd'>Chủ doanh nghiệp cần chủ động vận dụng để tạo ra kết quả, không chỉ là giải pháp trên giấy tờ.</p>
+        <div class='quo-ct' data-i18n='quo.ct3'>Thực Chiến</div>
+        <p class='quo-cd' data-i18n='quo.cd3'>Chủ doanh nghiệp cần chủ động vận dụng để tạo ra kết quả, không chỉ là giải pháp trên giấy tờ.</p>
       </div>
     </div>
   </div>
@@ -475,10 +488,10 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='pain' id='pain'>
   <div class='cnt'>
     <div class='pain-i fu'>
-      <span class='pain-badge'>Bạn Có Đang Như Vậy Không?</span>
-      <h2 class='st'>Tăng trưởng bên ngoài,<br>bất an bên trong.</h2>
+      <span class='pain-badge' data-i18n='pain.badge'>Bạn Có Đang Như Vậy Không?</span>
+      <h2 class='st' data-i18n='pain.h'>Tăng trưởng bên ngoài,<br>bất an bên trong.</h2>
       <div class='gl'></div>
-      <p style='color:var(--iv);font-size:22px;opacity:0.9;'>Doanh thu tăng mỗi năm. Nhưng cảm giác bên trong thì không đổi. Bạn thấy mình ở đâu trong ba điều dưới đây?</p>
+      <p style='color:var(--iv);font-size:22px;opacity:0.9;' data-i18n='pain.sub'>Doanh thu tăng mỗi năm. Nhưng cảm giác bên trong thì không đổi. Bạn thấy mình ở đâu trong ba điều dưới đây?</p>
     </div>
     <div class='pain-g'>
       <div class='pain-c fu'>
@@ -488,9 +501,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           </svg>
           <div class='pain-ic'><svg viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='3'></rect><circle cx='8' cy='8' r='1.2' fill='currentColor'></circle><circle cx='16' cy='8' r='1.2' fill='currentColor'></circle><circle cx='8' cy='16' r='1.2' fill='currentColor'></circle><circle cx='16' cy='16' r='1.2' fill='currentColor'></circle><circle cx='12' cy='12' r='1.2' fill='currentColor'></circle></svg></div>
         </div>
-        <div class='pt'>Bất An</div>
-        <p class='pd'>&ldquo;Nếu ngày mai có biến cố, tôi không biết công ty trụ được mấy tháng.&rdquo; Không quỹ dự phòng, không kịch bản xấu — chỉ có hy vọng chuyện đó không xảy ra. Một cú sụt doanh thu là đủ để &ldquo;đang ổn&rdquo; thành khủng hoảng.</p>
-        <p class='pain-stat'><b>54%</b>doanh nghiệp Việt không có quỹ khẩn cấp đủ 3 tháng chi phí <span style='opacity:.7'>(UOB, 2024)</span></p>
+        <div class='pt' data-i18n='pain.pt1'>Bất An</div>
+        <p class='pd' data-i18n='pain.pd1'>&ldquo;Nếu ngày mai có biến cố, tôi không biết công ty trụ được mấy tháng.&rdquo; Không quỹ dự phòng, không kịch bản xấu — chỉ có hy vọng chuyện đó không xảy ra. Một cú sụt doanh thu là đủ để &ldquo;đang ổn&rdquo; thành khủng hoảng.</p>
+        <p class='pain-stat' data-i18n='pain.stat1'><b>54%</b>doanh nghiệp Việt không có quỹ khẩn cấp đủ 3 tháng chi phí <span style='opacity:.7'>(UOB, 2024)</span></p>
       </div>
       <div class='pain-c fu'>
         <div class='pain-v'>
@@ -502,9 +515,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           </svg>
           <div class='pain-ic'><svg viewBox='0 0 24 24'><path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path></svg></div>
         </div>
-        <div class='pt'>Nhập Nhằng</div>
-        <p class='pd'>&ldquo;Tôi không tách được đâu là tiền của mình, đâu là tiền của công ty.&rdquo; Lấy tiền túi rót vào công ty, rồi rút tiền công ty lo việc riêng. Khi hai dòng tiền lẫn nhau, bạn không còn biết công ty đang lãi hay lỗ.</p>
-        <p class='pain-stat'><b>7/10</b>chủ doanh nghiệp đang dùng vốn cá nhân để nuôi công ty <span style='opacity:.7'>(Funding Societies, 2023)</span></p>
+        <div class='pt' data-i18n='pain.pt2'>Nhập Nhằng</div>
+        <p class='pd' data-i18n='pain.pd2'>&ldquo;Tôi không tách được đâu là tiền của mình, đâu là tiền của công ty.&rdquo; Lấy tiền túi rót vào công ty, rồi rút tiền công ty lo việc riêng. Khi hai dòng tiền lẫn nhau, bạn không còn biết công ty đang lãi hay lỗ.</p>
+        <p class='pain-stat' data-i18n='pain.stat2'><b>7/10</b>chủ doanh nghiệp đang dùng vốn cá nhân để nuôi công ty <span style='opacity:.7'>(Funding Societies, 2023)</span></p>
       </div>
       <div class='pain-c fu'>
         <div class='pain-v'>
@@ -517,9 +530,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           </svg>
           <div class='pain-ic'><svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='10'></circle><polygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76'></polygon></svg></div>
         </div>
-        <div class='pt'>Mắc Kẹt</div>
-        <p class='pd'>&ldquo;Tôi làm nhiều hơn mỗi năm, nhưng không thấy mình giàu hơn.&rdquo; Doanh thu tăng đều, tài sản thì giậm chân tại chỗ. Giỏi làm chủ — xoay xở, giữ máy chạy — nhưng chưa giỏi biến lợi nhuận thành tài sản.</p>
-        <p class='pain-stat'><span style='opacity:.85'>&ldquo;Doanh nghiệp của bạn sẽ không bao giờ lớn hơn tư duy tài chính của chính bạn.&rdquo;</span><br><b style='font-size:14px;margin-top:6px'>— Robert Kiyosaki</b></p>
+        <div class='pt' data-i18n='pain.pt3'>Mắc Kẹt</div>
+        <p class='pd' data-i18n='pain.pd3'>&ldquo;Tôi làm nhiều hơn mỗi năm, nhưng không thấy mình giàu hơn.&rdquo; Doanh thu tăng đều, tài sản thì giậm chân tại chỗ. Giỏi làm chủ — xoay xở, giữ máy chạy — nhưng chưa giỏi biến lợi nhuận thành tài sản.</p>
+        <p class='pain-stat' data-i18n='pain.stat3'><span style='opacity:.85'>&ldquo;Doanh nghiệp của bạn sẽ không bao giờ lớn hơn tư duy tài chính của chính bạn.&rdquo;</span><br><b style='font-size:14px;margin-top:6px'>— Robert Kiyosaki</b></p>
       </div>
     </div>
   </div>
@@ -528,15 +541,15 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='hc-teaser'>
   <div class='cnt'>
     <div class='hc-teaser-box fu'>
-      <div class='hc-teaser-t'>Sức khỏe Doanh nghiệp của Bạn đang như thế nào?</div>
-      <p class='hc-teaser-d'>Làm bài thẩm định sức khỏe tài chính — 18 câu hỏi, khoảng 8&ndash;10 phút, có kết quả ngay.</p>
+      <div class='hc-teaser-t' data-i18n='hc.t'>Sức khỏe Doanh nghiệp của Bạn đang như thế nào?</div>
+      <p class='hc-teaser-d' data-i18n='hc.d'>Làm bài thẩm định sức khỏe tài chính — 18 câu hỏi, khoảng 8&ndash;10 phút, có kết quả ngay.</p>
       <div class='hc-bands'>
-        <div class='hc-band b1'><div class='hc-band-r'>0%&ndash;39%</div><div class='hc-band-l'>Cần hỗ trợ khẩn cấp</div></div>
-        <div class='hc-band b2'><div class='hc-band-r'>40%&ndash;59%</div><div class='hc-band-l'>Đang phát triển</div></div>
-        <div class='hc-band b3'><div class='hc-band-r'>60%&ndash;79%</div><div class='hc-band-l'>Cơ bản kiểm soát</div></div>
-        <div class='hc-band b4'><div class='hc-band-r'>80%&ndash;100%</div><div class='hc-band-l'>Nền tảng tốt</div></div>
+        <div class='hc-band b1'><div class='hc-band-r'>0%&ndash;39%</div><div class='hc-band-l' data-i18n='hc.b1'>Cần hỗ trợ khẩn cấp</div></div>
+        <div class='hc-band b2'><div class='hc-band-r'>40%&ndash;59%</div><div class='hc-band-l' data-i18n='hc.b2'>Đang phát triển</div></div>
+        <div class='hc-band b3'><div class='hc-band-r'>60%&ndash;79%</div><div class='hc-band-l' data-i18n='hc.b3'>Cơ bản kiểm soát</div></div>
+        <div class='hc-band b4'><div class='hc-band-r'>80%&ndash;100%</div><div class='hc-band-l' data-i18n='hc.b4'>Nền tảng tốt</div></div>
       </div>
-      <a href='financial-health-check.html' class='btn bf'><span>Bắt Đầu Thẩm Định</span></a>
+      <a href='financial-health-check.html' class='btn bf'><span data-i18n='hc.btn'>Bắt Đầu Thẩm Định</span></a>
     </div>
   </div>
 </section>
@@ -544,9 +557,9 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='car' id='car'>
   <div class='cnt'>
     <div class='car-i fu'>
-      <span class='car-badge'>Khung Giải Pháp</span>
+      <span class='car-badge' data-i18n='car.badge'>Khung Giải Pháp</span>
       <h2 class='car-title'>C.A.R. Framework</h2>
-      <p class='car-sub'>Command your Financial CAR &mdash; Làm chủ chiếc xe tài chính Doanh nghiệp.</p>
+      <p class='car-sub' data-i18n='car.sub'>Command your Financial CAR &mdash; Làm chủ chiếc xe tài chính Doanh nghiệp.</p>
     </div>
     <div class='car-anim fu'>
       <svg viewBox='0 0 520 170' class='car-svg' aria-hidden='true'>
@@ -614,10 +627,10 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     <div class='car-g'>
       <div class='car-c fu'>
         <div class='car-letter'>C</div>
-        <div class='car-pillar'>Trụ Cột 1 &middot; Command</div>
-        <div class='car-name'>Làm Chủ Bản Đồ Tài Chính</div>
-        <p class='car-desc'>Thấu hiểu, làm chủ và điều khiển toàn cảnh bức tranh tài chính doanh nghiệp.</p>
-        <ul class='car-list'>
+        <div class='car-pillar' data-i18n='car.pillar1'>Trụ Cột 1 &middot; Command</div>
+        <div class='car-name' data-i18n='car.name1'>Làm Chủ Bản Đồ Tài Chính</div>
+        <p class='car-desc' data-i18n='car.desc1'>Thấu hiểu, làm chủ và điều khiển toàn cảnh bức tranh tài chính doanh nghiệp.</p>
+        <ul class='car-list' data-i18n='car.list1'>
           <li>Hiểu Doanh nghiệp của mình đang đứng ở đâu</li>
           <li>Đích đến của Doanh nghiệp là gì</li>
           <li>Doanh nghiệp cần chuẩn bị những gì</li>
@@ -625,10 +638,10 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       </div>
       <div class='car-c fu'>
         <div class='car-letter'>A</div>
-        <div class='car-pillar'>Trụ Cột 2 &middot; Alignment</div>
-        <div class='car-name'>Điều Khiển Tay Lái Đúng Hướng</div>
-        <p class='car-desc'>Đưa ra những quyết định chính xác dựa trên dữ liệu.</p>
-        <ul class='car-list'>
+        <div class='car-pillar' data-i18n='car.pillar2'>Trụ Cột 2 &middot; Alignment</div>
+        <div class='car-name' data-i18n='car.name2'>Điều Khiển Tay Lái Đúng Hướng</div>
+        <p class='car-desc' data-i18n='car.desc2'>Đưa ra những quyết định chính xác dựa trên dữ liệu.</p>
+        <ul class='car-list' data-i18n='car.list2'>
           <li>Hiểu dòng tiền Doanh nghiệp đang vận hành</li>
           <li>Tách bạch dòng tiền cá nhân và dòng tiền Doanh nghiệp</li>
           <li>Biến dữ liệu tài chính rời rạc thành cơ sở ra quyết định chính xác, kịp thời</li>
@@ -636,10 +649,10 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       </div>
       <div class='car-c fu'>
         <div class='car-letter'>R</div>
-        <div class='car-pillar'>Trụ Cột 3 &middot; Resilience</div>
-        <div class='car-name'>Vận Hành Bánh Xe Bền Bỉ</div>
-        <p class='car-desc'>Doanh nghiệp vận hành an toàn, quản trị rủi ro chủ động.</p>
-        <ul class='car-list'>
+        <div class='car-pillar' data-i18n='car.pillar3'>Trụ Cột 3 &middot; Resilience</div>
+        <div class='car-name' data-i18n='car.name3'>Vận Hành Bánh Xe Bền Bỉ</div>
+        <p class='car-desc' data-i18n='car.desc3'>Doanh nghiệp vận hành an toàn, quản trị rủi ro chủ động.</p>
+        <ul class='car-list' data-i18n='car.list3'>
           <li>Xây dựng cấu trúc tài chính vững chắc, đủ sức chống chịu biến động</li>
           <li>Phân bổ nguồn vốn hiệu quả, tối ưu từng quyết định đầu tư</li>
           <li>Chủ động nhận diện và kiểm soát rủi ro trước khi nó xảy ra</li>
@@ -652,25 +665,25 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='inv' id='inv'>
   <div class='cnt'>
     <div class='pkg-i fu'>
-      <span class='iey'>Lộ Trình</span>
-      <h2 class='st'>Chọn hành trình phù hợp với bạn</h2>
+      <span class='iey' data-i18n='inv.ey'>Lộ Trình</span>
+      <h2 class='st' data-i18n='inv.h'>Chọn hành trình phù hợp với bạn</h2>
       <div class='gl'></div>
-      <p style='color:var(--iv);font-size:20px;opacity:0.9;'>Từ thẩm định nhanh sức khỏe tài chính đến đồng hành xây dựng giải pháp dài hạn &mdash; chọn lộ trình phù hợp với giai đoạn phát triển của doanh nghiệp bạn.</p>
+      <p style='color:var(--iv);font-size:20px;opacity:0.9;' data-i18n='inv.sub'>Từ thẩm định nhanh sức khỏe tài chính đến đồng hành xây dựng giải pháp dài hạn &mdash; chọn lộ trình phù hợp với giai đoạn phát triển của doanh nghiệp bạn.</p>
     </div>
     <div class='roadmap'>
       <div class='rm-top-row rm-row-4'>
         <div class='rm-step'>
           <div class='rm-card fu'>
             <div class='pkg-name'>Financial Health Diagnostic</div>
-            <p class='pkg-desc'>Thẩm định nhanh sức khỏe tài chính, nhận diện rủi ro và mức độ an toàn của Doanh nghiệp.</p>
-            <a href='financial-health-check.html' class='btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span>Thẩm Định Ngay</span></a>
+            <p class='pkg-desc' data-i18n='rm.desc1'>Thẩm định nhanh sức khỏe tài chính, nhận diện rủi ro và mức độ an toàn của Doanh nghiệp.</p>
+            <a href='financial-health-check.html' class='btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span data-i18n='rm.btn1'>Thẩm Định Ngay</span></a>
           </div>
         </div>
         <div class='rm-step'></div>
         <div class='rm-step'>
           <div class='rm-card fu'>
             <div class='pkg-name'>Growth Mastery</div>
-            <p class='pkg-desc'>Xây dựng kế hoạch và chiến lược kinh doanh 3&ndash;5 năm tới.</p>
+            <p class='pkg-desc' data-i18n='rm.desc2'>Xây dựng kế hoạch và chiến lược kinh doanh 3&ndash;5 năm tới.</p>
           </div>
         </div>
         <div class='rm-step'></div>
@@ -706,15 +719,15 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <div class='rm-step'>
           <div class='rm-card fu'>
             <div class='pkg-name'>Strategic Discovery</div>
-            <p class='pkg-desc'>60 phút cùng Trinh đọc kết quả sức khỏe tài chính chuyên sâu và đề xuất lộ trình tiếp theo.</p>
-            <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span>Đặt Lịch Ngay</span></a>
+            <p class='pkg-desc' data-i18n='rm.desc3'>60 phút cùng Trinh đọc kết quả sức khỏe tài chính chuyên sâu và đề xuất lộ trình tiếp theo.</p>
+            <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='justify-content:center;padding:12px 22px;font-size:11px;letter-spacing:1.5px;white-space:nowrap;'><span data-i18n='rm.btn3'>Đặt Lịch Ngay</span></a>
           </div>
         </div>
         <div class='rm-step'></div>
         <div class='rm-step'>
           <div class='rm-card fu'>
             <div class='pkg-name'>Financial Legacy</div>
-            <p class='pkg-desc'>Đồng hành 1 năm, kiến tạo Di sản tài chính dài hạn cho Doanh nghiệp.</p>
+            <p class='pkg-desc' data-i18n='rm.desc4'>Đồng hành 1 năm, kiến tạo Di sản tài chính dài hạn cho Doanh nghiệp.</p>
           </div>
         </div>
       </div>
@@ -725,30 +738,30 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <section class='test'>
   <div class='cnt'>
     <div class='test-i fu'>
-      <span class='test-badge'>Khách Hàng Chia Sẻ</span>
-      <h2 class='st'>Doanh nghiệp nói gì về hành trình đồng hành</h2>
+      <span class='test-badge' data-i18n='test.badge'>Khách Hàng Chia Sẻ</span>
+      <h2 class='st' data-i18n='test.h'>Doanh nghiệp nói gì về hành trình đồng hành</h2>
     </div>
     <div class='test-g'>
       <div class='test-c fu'>
         <div class='test-av'><img src='Testimonial/Profile_Nh%C3%A3%20%C3%9D.png' alt='Nguyễn Lương Nhã Ý'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Nguyễn Lương Nhã Ý</div>
-        <div class='test-role'>CEO &middot; Ytrade Agency</div>
-        <p class='test-q'>&ldquo;Trinh không dừng lại ở dữ liệu và phân tích tài chính, mà còn <b>tìm hiểu câu chuyện của doanh nghiệp để góp ý chiến lược</b> sau khi đã nắm rõ bối cảnh.&rdquo;</p>
+        <div class='test-role' data-i18n='test.role1'>CEO &middot; Ytrade Agency</div>
+        <p class='test-q' data-i18n='test.q1'>&ldquo;Trinh không dừng lại ở dữ liệu và phân tích tài chính, mà còn <b>tìm hiểu câu chuyện của doanh nghiệp để góp ý chiến lược</b> sau khi đã nắm rõ bối cảnh.&rdquo;</p>
       </div>
       <div class='test-c fu'>
         <div class='test-av'><img src='Testimonial/Profile_anh%20Trung.png' alt='Nguyễn Quang Trung'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Nguyễn Quang Trung</div>
-        <div class='test-role'>CEO &middot; Công Ty TNHH Sản Xuất Thương Mại Bao Bì Asia</div>
-        <p class='test-q'>&ldquo;Bước tiến quan trọng nhất là sự phản hồi của một nhà quản trị tài chính — <b>chất lượng ra quyết định của doanh chủ được bàn bạc và cải thiện</b>.&rdquo;</p>
+        <div class='test-role' data-i18n='test.role2'>CEO &middot; Công Ty TNHH Sản Xuất Thương Mại Bao Bì Asia</div>
+        <p class='test-q' data-i18n='test.q2'>&ldquo;Bước tiến quan trọng nhất là sự phản hồi của một nhà quản trị tài chính — <b>chất lượng ra quyết định của doanh chủ được bàn bạc và cải thiện</b>.&rdquo;</p>
       </div>
       <div class='test-c fu'>
         <div class='test-av'><img class='zoom-minh' src='Testimonial/Profile_anh%20Minh.png' alt='Thái Cao Minh'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Thái Cao Minh</div>
-        <div class='test-role'>CEO &middot; Công Ty TNHH Sản Xuất Duy Hàng</div>
-        <p class='test-q'>&ldquo;Trinh có năng lực <b>định kỳ thăm khám sức khỏe tài chính nội tại của doanh nghiệp</b>, làm rõ rủi ro tiềm ẩn và tham mưu vào các quyết định vận hành, phát triển.&rdquo;</p>
+        <div class='test-role' data-i18n='test.role3'>CEO &middot; Công Ty TNHH Sản Xuất Duy Hàng</div>
+        <p class='test-q' data-i18n='test.q3'>&ldquo;Trinh có năng lực <b>định kỳ thăm khám sức khỏe tài chính nội tại của doanh nghiệp</b>, làm rõ rủi ro tiềm ẩn và tham mưu vào các quyết định vận hành, phát triển.&rdquo;</p>
       </div>
     </div>
   </div>
@@ -756,45 +769,45 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 
 <section class='cta' id='cta'>
   <div class='ctac cnt'>
-    <div class='orn'><span>Bắt Đầu Hành Trình</span></div>
-    <div class='ctat'>Sẵn sàng Thẩm định<br><em>Sức khỏe Tài chính chuyên sâu?</em></div>
-    <p class='ctas'>Điền thông tin đăng ký ngay bên dưới</p>
-    <p class='cta-price'>Giá trị chương trình: <b>30.000.000&#273;</b><br/><span>Bạn sẽ thanh toán qua mã QR sau khi gửi đăng ký</span></p>
+    <div class='orn'><span data-i18n='cta.orn'>Bắt Đầu Hành Trình</span></div>
+    <div class='ctat' data-i18n='cta.t'>Sẵn sàng Thẩm định<br><em>Sức khỏe Tài chính chuyên sâu?</em></div>
+    <p class='ctas' data-i18n='cta.s'>Điền thông tin đăng ký ngay bên dưới</p>
+    <p class='cta-price' data-i18n='cta.price'>Giá trị chương trình: <b>30.000.000&#273;</b><br/><span>Bạn sẽ thanh toán qua mã QR sau khi gửi đăng ký</span></p>
     <form class='cform fu' onsubmit='handleSubmit(event)'>
       <div class='frow'>
-        <div class='fg'><input type='text' name='name' placeholder='Họ và Tên' required/></div>
-        <div class='fg'><input type='tel' name='phone' placeholder='Số Điện Thoại' required/></div>
+        <div class='fg'><input type='text' name='name' placeholder='Họ và Tên' data-i18n-ph='ph.name' required/></div>
+        <div class='fg'><input type='tel' name='phone' placeholder='Số Điện Thoại' data-i18n-ph='ph.phone' required/></div>
       </div>
-      <div class='fg'><input type='email' name='email' placeholder='Email' required/></div>
+      <div class='fg'><input type='email' name='email' placeholder='Email' data-i18n-ph='ph.email' required/></div>
       <div class='frow'>
-        <div class='fg'><input type='text' name='company' placeholder='Tên Doanh Nghiệp'/></div>
-        <div class='fg'><input type='text' name='revenue' placeholder='Doanh Thu Hàng Năm'/></div>
+        <div class='fg'><input type='text' name='company' placeholder='Tên Doanh Nghiệp' data-i18n-ph='ph.company'/></div>
+        <div class='fg'><input type='text' name='revenue' placeholder='Doanh Thu Hàng Năm' data-i18n-ph='ph.revenue'/></div>
       </div>
-      <div class='fg'><input type='text' name='margin' placeholder='Biên Lợi Nhuận' required/></div>
-      <div class='fg'><input type='text' name='goal' placeholder='Mục Tiêu Bạn Muốn Đạt Được'/></div>
-      <div class='fg'><textarea name='message' placeholder='Thách thức tài chính bạn đang gặp phải...'></textarea></div>
+      <div class='fg'><input type='text' name='margin' placeholder='Biên Lợi Nhuận' data-i18n-ph='ph.margin' required/></div>
+      <div class='fg'><input type='text' name='goal' placeholder='Mục Tiêu Bạn Muốn Đạt Được' data-i18n-ph='ph.goal'/></div>
+      <div class='fg'><textarea name='message' placeholder='Thách thức tài chính bạn đang gặp phải...' data-i18n-ph='ph.message'></textarea></div>
       <div class='fsb'>
-        <button type='submit' class='btn bf' style='border:none;'><span>Gửi Đăng Ký Ngay</span></button>
+        <button type='submit' class='btn bf' style='border:none;'><span data-i18n='cta.submit'>Gửi Đăng Ký Ngay</span></button>
       </div>
     </form>
-    <div id='form-success' style='display:none;margin-top:32px;padding:24px;border:1px solid rgba(211,150,140,.3);color:var(--gl);font-family:var(--fr);font-size:22px;letter-spacing:1px;'>
+    <div id='form-success' style='display:none;margin-top:32px;padding:24px;border:1px solid rgba(211,150,140,.3);color:var(--gl);font-family:var(--fr);font-size:22px;letter-spacing:1px;' data-i18n='form.success'>
       &#x2736; Cảm ơn! Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.
     </div>
     <div id='payment-panel' style='display:none;margin-top:32px;padding:28px 24px;border:1px solid rgba(211,150,140,.4);background:rgba(255,255,255,.04);text-align:center;'>
-      <div style='color:var(--gl);font-family:var(--fr);font-size:21px;letter-spacing:1px;margin-bottom:18px;'>&#x2736; Quét mã QR để hoàn tất đăng ký</div>
+      <div style='color:var(--gl);font-family:var(--fr);font-size:21px;letter-spacing:1px;margin-bottom:18px;' data-i18n='pay.title'>&#x2736; Quét mã QR để hoàn tất đăng ký</div>
       <img id='payment-qr' src='' alt='QR thanh toán'
         style='width:220px;height:auto;max-width:100%;margin:0 auto 18px;display:block;background:#fff;padding:8px;border-radius:10px;'/>
       <div style='color:var(--iv);font-size:15px;line-height:1.8;'>
-        Số tiền: <b id='payment-amount' style='color:var(--gl)'></b><br/>
-        Nội dung chuyển khoản: <b id='payment-code' style='color:var(--gl);letter-spacing:1px'></b><br/>
+        <span data-i18n='pay.amountLabel'>Số tiền:</span> <b id='payment-amount' style='color:var(--gl)'></b><br/>
+        <span data-i18n='pay.codeLabel'>Nội dung chuyển khoản:</span> <b id='payment-code' style='color:var(--gl);letter-spacing:1px'></b><br/>
         <span style='opacity:.75;font-size:13px'>Ngân hàng ACB &middot; STK 33635257 &middot; PHAN TUYET TRINH</span>
       </div>
-      <p style='color:var(--iv);opacity:.8;font-size:13px;margin-top:16px;line-height:1.6;max-width:420px;margin-left:auto;margin-right:auto'>
+      <p style='color:var(--iv);opacity:.8;font-size:13px;margin-top:16px;line-height:1.6;max-width:420px;margin-left:auto;margin-right:auto' data-i18n='pay.note'>
         Vui lòng chuyển khoản đúng số tiền và giữ nguyên nội dung ở trên. Hệ thống sẽ tự động ghi nhận thanh toán và chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất.
       </p>
     </div>
-    <div class='orn' style='margin:20px 0 14px;'><span>Còn Phân Vân? Đặt Lịch Ngay 1:1</span></div>
-    <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='padding:12px 28px;font-size:13px;letter-spacing:2px;'><span>Đặt Lịch Ngay 1:1</span></a>
+    <div class='orn' style='margin:20px 0 14px;'><span data-i18n='cta.orn2'>Còn Phân Vân? Đặt Lịch Ngay 1:1</span></div>
+    <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn' style='padding:12px 28px;font-size:13px;letter-spacing:2px;'><span data-i18n='cta.book1on1'>Đặt Lịch Ngay 1:1</span></a>
   </div>
 </section>
 
@@ -807,7 +820,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <a href='mailto:coachtrinhphan@gmail.com'>coachtrinhphan@gmail.com</a>
     </div>
   </div>
-  <div class='ftg'>Kiến Tạo Di Sản Tài Chính &mdash; Bền Vững Qua Nhiều Thế Hệ</div>
+  <div class='ftg' data-i18n='foot.tagline'>Kiến Tạo Di Sản Tài Chính &mdash; Bền Vững Qua Nhiều Thế Hệ</div>
   <div class='fcp'>&copy; 2024 Financial Coach. All rights reserved.</div>
 </footer>
 
@@ -862,6 +875,110 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     }
   });
 });
+</script>
+<script>
+/* ---- Song ngữ VI/EN ---- */
+(function(){
+  var EN = {
+    'nav.about':'About','nav.pain':'Reality Check','nav.solution':'Solution','nav.roadmap':'Roadmap','nav.start':'Get Started','nav.book':'Book a Call',
+    'hero.title':"<span>Building Your</span><span><em>Financial Legacy</em></span>",
+    'hero.desc':"Walking beside business owners on the journey to build a Financial Legacy &mdash; through ICF-standard coaching and 10 years of hands-on experience in Finance &amp; Banking.",
+    'hero.cta1':'Explore the Program','hero.cta2':'About Coach Trinh',
+    'hero.stat1':"<span class='hstat-n lg'>10+</span><span class='hstat-l'>Years in Finance &amp; Banking</span>",
+    'hero.stat2':"<span class='hstat-n'>MSc</span><span class='hstat-l'>in Finance (UEH)</span>",
+    'hero.stat3':"<span class='hstat-n'>ICF</span><span class='hstat-l'>Certified International Coach</span>",
+    'hero.stat4':"<span class='hstat-n'>CFA-CFP</span><span class='hstat-l'>International Finance Credentials</span>",
+    'abt.hdg':'Meet the Financial Coach',
+    'abt.d':"With 10+ years as a CFO, Financial Advisor and Financial Coach at a leading Vietnamese bank (ACB) and across SMEs and start-ups, Trinh deeply understands the pain of business owners &mdash; and works alongside them to build a smart financial map that keeps the business steady, prosperous and sustainable across generations.",
+    'abt.cred':"Working with Coach Trinh, SMEs have grown profit <span class='abt-hl'>20&ndash;50%</span> in just 6&ndash;12 months, many start-ups have multiplied profit <span class='abt-hl'>2&ndash;3&times;</span>, and businesses save <span class='abt-hl'>billions of VND</span> every year.",
+    'quo.badge':'Coaching Philosophy',
+    'quo.h':"I don't hand out <em>advice</em>.<br>I help you <em>create breakthrough results</em>",
+    'quo.ct1':'Dedication','quo.cd1':'Understanding the full context and pain of the business before offering any direction.',
+    'quo.ct2':'Accountability','quo.cd2':'Honest with the numbers, straight to the point, and compliant with regulations.',
+    'quo.ct3':'Hands-On','quo.cd3':'Owners must actively apply the work to create results &mdash; not just solutions on paper.',
+    'pain.badge':'Does This Sound Like You?',
+    'pain.h':'Growth on the outside,<br>unease on the inside.',
+    'pain.sub':'Revenue grows every year. But the feeling inside stays the same. Where do you see yourself in the three points below?',
+    'pain.pt1':'Insecurity',
+    'pain.pd1':"&ldquo;If something goes wrong tomorrow, I don't know how many months the company could survive.&rdquo; No reserve fund, no worst-case plan &mdash; only the hope that it won't happen. One revenue drop is enough to turn &ldquo;doing fine&rdquo; into a crisis.",
+    'pain.stat1':"<b>54%</b>of Vietnamese businesses have no emergency fund covering 3 months of expenses <span style='opacity:.7'>(UOB, 2024)</span>",
+    'pain.pt2':'Blurred Lines',
+    'pain.pd2':"&ldquo;I can't tell which money is mine and which belongs to the company.&rdquo; Personal cash goes into the business, company cash covers personal needs. When the two flows mix, you no longer know whether the company is profitable.",
+    'pain.stat2':"<b>7/10</b>business owners are using personal capital to fund their company <span style='opacity:.7'>(Funding Societies, 2023)</span>",
+    'pain.pt3':'Stuck',
+    'pain.pd3':"&ldquo;I work harder every year, but I don't feel any wealthier.&rdquo; Revenue climbs steadily, assets stand still. Great at running the business &mdash; hustling, keeping the engine going &mdash; but not yet at turning profit into wealth.",
+    'pain.stat3':"<span style='opacity:.85'>&ldquo;Your business will never be bigger than your own financial thinking.&rdquo;</span><br><b style='font-size:14px;margin-top:6px'>&mdash; Robert Kiyosaki</b>",
+    'hc.t':'How healthy is your business, really?',
+    'hc.d':'Take the financial health assessment &mdash; 18 questions, about 8&ndash;10 minutes, results right away.',
+    'hc.b1':'Needs urgent support','hc.b2':'Developing','hc.b3':'Basically in control','hc.b4':'Strong foundation',
+    'hc.btn':'Start the Assessment',
+    'car.badge':'The Solution Framework',
+    'car.sub':"Command your Financial CAR &mdash; take the wheel of your company's finances.",
+    'car.pillar1':'Pillar 1 &middot; Command','car.name1':'Own Your Financial Map',
+    'car.desc1':'Understand, own and steer the full picture of your company finances.',
+    'car.list1':"<li>Know where your business stands today</li><li>Define where the business is headed</li><li>Know what the business needs to prepare</li>",
+    'car.pillar2':'Pillar 2 &middot; Alignment','car.name2':'Steer in the Right Direction',
+    'car.desc2':'Make accurate decisions grounded in data.',
+    'car.list2':"<li>Understand how your company's cash flow runs</li><li>Separate personal cash flow from company cash flow</li><li>Turn scattered financial data into a basis for accurate, timely decisions</li>",
+    'car.pillar3':'Pillar 3 &middot; Resilience','car.name3':'Run a Durable Wheel',
+    'car.desc3':'Operate safely with proactive risk management.',
+    'car.list3':"<li>Build a solid financial structure that can withstand volatility</li><li>Allocate capital efficiently, optimizing every investment decision</li><li>Identify and control risks before they happen</li>",
+    'inv.ey':'Roadmap','inv.h':'Choose the journey that fits you',
+    'inv.sub':'From a quick financial health check to a long-term partnership building your solution &mdash; choose the path that fits your business stage.',
+    'rm.desc1':'A quick financial health check that surfaces risks and how safe your business really is.',
+    'rm.btn1':'Assess Now',
+    'rm.desc2':'Build your business plan and strategy for the next 3&ndash;5 years.',
+    'rm.desc3':'60 minutes with Trinh to read your in-depth financial health results and propose the next roadmap.',
+    'rm.btn3':'Book a Call',
+    'rm.desc4':'A one-year partnership building a long-term Financial Legacy for your business.',
+    'test.badge':'Client Stories','test.h':'What business owners say about the journey',
+    'test.role1':'CEO &middot; Ytrade Agency',
+    'test.q1':"&ldquo;Trinh doesn't stop at data and financial analysis &mdash; she also <b>learns the company's story to advise on strategy</b> once she understands the context.&rdquo;",
+    'test.role2':'CEO &middot; Asia Packaging Manufacturing &amp; Trading Co., Ltd',
+    'test.q2':"&ldquo;The biggest step forward was having the input of a financial manager &mdash; <b>the owner's decision quality gets discussed and improved</b>.&rdquo;",
+    'test.role3':'CEO &middot; Duy Hang Manufacturing Co., Ltd',
+    'test.q3':"&ldquo;Trinh has the ability to <b>regularly check the internal financial health of the business</b>, clarify hidden risks and advise on operating and growth decisions.&rdquo;",
+    'cta.orn':'Begin the Journey',
+    'cta.t':"Ready for an<br><em>in-depth financial health assessment?</em>",
+    'cta.s':'Fill in your details below to register',
+    'cta.price':"Program value: <b>30,000,000&#273;</b><br/><span>You'll pay via QR code after submitting the form</span>",
+    'cta.submit':'Register Now',
+    'form.success':"&#x2736; Thank you! We'll contact you within 24 hours.",
+    'pay.title':'&#x2736; Scan the QR code to complete registration',
+    'pay.amountLabel':'Amount:','pay.codeLabel':'Transfer note:',
+    'pay.note':'Please transfer the exact amount and keep the note above unchanged. The system records the payment automatically and we will contact you to confirm as soon as possible.',
+    'cta.orn2':'Still Deciding? Book a 1:1 Call','cta.book1on1':'Book a 1:1 Call',
+    'ph.name':'Full Name','ph.phone':'Phone Number','ph.email':'Email','ph.company':'Company Name','ph.revenue':'Annual Revenue','ph.margin':'Profit Margin','ph.goal':'The goal you want to achieve','ph.message':"The financial challenge you're facing...",
+    'foot.tagline':'Building Financial Legacy &mdash; Enduring Across Generations'
+  };
+  var TITLE = { vi: document.title, en: 'Financial Coach - Building Financial Legacy' };
+  var cache = new WeakMap();
+  function apply(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(!cache.has(el)) cache.set(el, el.innerHTML);
+      var v = EN[k];
+      el.innerHTML = (lang==='en' && v!=null) ? v : cache.get(el);
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+      if(!el.__phvi) el.__phvi = el.getAttribute('placeholder')||'';
+      var v = EN[el.getAttribute('data-i18n-ph')];
+      el.setAttribute('placeholder',(lang==='en' && v!=null) ? v : el.__phvi);
+    });
+    document.title = (lang==='en') ? TITLE.en : TITLE.vi;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-switch [data-lang]').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+    });
+    try{ localStorage.setItem('site_lang', lang); }catch(e){}
+  }
+  var start='vi';
+  try{ start = localStorage.getItem('site_lang') || 'vi'; }catch(e){}
+  apply(start);
+  document.querySelectorAll('.lang-switch [data-lang]').forEach(function(b){
+    b.addEventListener('click',function(){ apply(b.getAttribute('data-lang')); });
+  });
+})();
 </script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
