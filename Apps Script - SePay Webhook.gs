@@ -1,14 +1,19 @@
 /* ============================================================
-   SEPAY WEBHOOK — Tự động ghi nhận thanh toán + gửi email
+   SEPAY WEBHOOK + BREVO SYNC — Tự động ghi nhận thanh toán,
+   gửi email, và đồng bộ contact sang Brevo
    ============================================================
    Đây là bản SAO LƯU của code đã triển khai thực tế trong Apps
    Script (project "Untitled project", gắn với Google Sheet
    "Landing Page Collect") — dùng để đối chiếu / khôi phục khi cần,
    KHÔNG cần dán lại trừ khi Code.gs gốc bị mất.
 
-   Đã deploy: Version 6 (06/09/2026)
    Webhook URL cấu hình bên SePay:
      https://script.google.com/macros/s/AKfycby8dlPcqSOfsbqdIYRVcLQYQt7PmWprUz9-DyMgQbz8ZtMoX37xOLfevoNq-kTcx3G9/exec?token=trinh2026sepay
+
+   Brevo: cần Script Property "BREVO_API_KEY" = API Key thật
+   (dạng xkeysib-..., lấy ở Settings > SMTP & API > API Keys —
+   KHÔNG dùng SMTP Key dạng xsmtpsib-...).
+   List "Landing Page - Tài chính Doanh chủ" có ID = 3.
 
    LƯU Ý: cột trong Sheet "Landing Page Collect" có tiêu đề bị lệch
    nhãn từ trước (cột E ghi "Thách Thức Tài Chính" nhưng thực chứa
@@ -18,9 +23,48 @@
    5=Message) thay vì dò theo tên tiêu đề.
 ============================================================ */
 
-// ============ CẤU HÌNH SEPAY ============
+// ============ CAU HINH SEPAY ============
 const SEPAY_TOKEN = 'trinh2026sepay';
 const NOTIFY_EMAIL = 'coachtrinhphan@gmail.com';
+
+// ============ CAU HINH BREVO ============
+const BREVO_LIST_ID = 3;
+
+// Chuyển số điện thoại VN (vd 0937511594) sang định dạng quốc tế
+// Brevo yêu cầu (vd +84937511594)
+function formatVNPhone(phone) {
+  if (!phone) return '';
+  var digits = String(phone).replace(/\D/g, '');
+  if (digits.indexOf('0') === 0) digits = '84' + digits.slice(1);
+  else if (digits.indexOf('84') !== 0) digits = '84' + digits;
+  return '+' + digits;
+}
+
+function addContactToBrevo(email, name, phone) {
+  var apiKey = PropertiesService.getScriptProperties().getProperty('BREVO_API_KEY');
+  if (!apiKey || !email) return;
+  try {
+    var res = UrlFetchApp.fetch('https://api.brevo.com/v3/contacts', {
+      method: 'post',
+      contentType: 'application/json',
+      headers: { 'api-key': apiKey },
+      payload: JSON.stringify({
+        email: email,
+        attributes: { FULLNAME: name || '', SMS: formatVNPhone(phone) },
+        listIds: [BREVO_LIST_ID],
+        updateEnabled: true
+      }),
+      muteHttpExceptions: true
+    });
+    Logger.log('Brevo response: ' + res.getResponseCode() + ' ' + res.getContentText());
+  } catch (err) {
+    Logger.log('Brevo error: ' + err);
+  }
+}
+
+function testBrevoDebug() {
+  addContactToBrevo('phantuyettrinhueh@gmail.com', 'Debug Test', '0900000000');
+}
 
 function doPost(e) {
   try {
@@ -38,9 +82,9 @@ function doPost(e) {
       sheet.appendRow(['Thời Gian', 'Họ và Tên', 'Số Điện Thoại', 'Doanh Nghiệp / Doanh Thu', 'Mục Tiêu Muốn Đạt Được', 'Thách Thức Tài Chính']);
     }
 
-    // Tự thêm 3 cột phục vụ flow thanh toán nếu Sheet chưa có
+    // Tự thêm các cột phục vụ flow thanh toán + Brevo nếu Sheet chưa có
     var headerRow = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-    ['Mã Đơn Hàng', 'Số Tiền', 'Trạng Thái'].forEach(function(label) {
+    ['Email', 'Doanh Thu Hàng Năm', 'Biên Lợi Nhuận', 'Mã Đơn Hàng', 'Số Tiền', 'Trạng Thái'].forEach(function(label) {
       if (headerRow.indexOf(label) === -1) {
         sheet.getRange(1, sheet.getLastColumn() + 1).setValue(label);
         headerRow.push(label);
@@ -56,8 +100,14 @@ function doPost(e) {
       data.message || '',
       data.orderCode || '',
       data.amount || '',
-      data.status || ''
+      data.status || '',
+      data.email || '',
+      data.revenue || '',
+      data.margin || ''
     ]);
+
+    // Tự động đồng bộ contact sang Brevo (không chặn luồng chính nếu lỗi)
+    addContactToBrevo(data.email, data.name, data.phone);
 
     return ContentService.createTextOutput(JSON.stringify({ result: 'success' }))
       .setMimeType(ContentService.MimeType.JSON);
