@@ -30,7 +30,7 @@ a{color:inherit;text-decoration:none}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:all .4s}
 .nav.sc{background:rgba(10,51,35,.98);backdrop-filter:blur(12px);padding:14px 40px;border-bottom:1px solid rgba(211,150,140,.2)}
-.nav-logo{display:flex;align-items:center;gap:16px;font-family:var(--fs);font-size:28px;font-weight:700;color:var(--gl);flex-shrink:0;white-space:nowrap}
+.nav-logo{display:flex;align-items:center;gap:16px;font-family:var(--fs);font-size:28px;font-weight:700;color:var(--gl);flex-shrink:0;white-space:nowrap;text-align:left}
 .nav-logo img{width:60px;height:60px;object-fit:contain;flex-shrink:0}
 .nav-logo small{display:block;font-family:var(--fb);font-size:14px;font-weight:700;font-style:normal;letter-spacing:2px;text-transform:uppercase;color:var(--iv);margin-top:-4px;opacity:0.8;white-space:nowrap}
 .nav-links{display:flex;gap:32px;list-style:none;flex-shrink:1;flex-wrap:nowrap}
@@ -328,10 +328,12 @@ a{color:inherit;text-decoration:none}
 .fsb .btn{width:100%;justify-content:center;font-size:14px;padding:14px 32px;}
 footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1px solid rgba(211,150,140,.2)}
 .ftop{max-width:1140px;margin:0 auto 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.fcontact{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.fcontact a{font-size:17px;font-weight:700;letter-spacing:0.5px;color:var(--iv);transition:color .3s}
+.fcontact,.fsecure{display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left}
+.fl{font-family:var(--fb);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--eu);opacity:0.9}
+.fcontact a{font-size:20px;font-weight:700;letter-spacing:0.5px;color:var(--iv);transition:color .3s}
 .fcontact a:hover{color:var(--go)}
-.fcontact .fdot{color:var(--go);opacity:0.6}
+.fsecure{max-width:320px}
+.fsecure p{font-size:18px;font-weight:700;letter-spacing:0.3px;line-height:1.5;color:var(--iv);opacity:0.9;margin:0}
 .ftg{text-align:center;font-size:16px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--eu);opacity:0.9}
 .fcp{font-size:15px;color:rgba(247,244,213,.5);letter-spacing:1px;text-align:center;margin-top:32px}
 .fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
@@ -506,7 +508,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   <div class='cnt'>
     <div class='hc-teaser-box fu'>
       <div class='hc-teaser-t' data-i18n='hc.t'>Sức khỏe Doanh nghiệp của Bạn đang như thế nào?</div>
-      <p class='hc-teaser-d' data-i18n='hc.d'>Làm bài thẩm định sức khỏe tài chính — 18 câu hỏi, khoảng 3&ndash;5 phút, có kết quả ngay.</p>
+      <p class='hc-teaser-d' data-i18n='hc.d'>Làm bài thẩm định sức khỏe tài chính 18 câu hỏi, khoảng 3&ndash;5 phút, có kết quả ngay.</p>
       <div class='hc-bands'>
         <div class='hc-band b1'><div class='hc-band-r'>0%&ndash;39%</div><div class='hc-band-l' data-i18n='hc.b1'>Cần hỗ trợ khẩn cấp</div></div>
         <div class='hc-band b2'><div class='hc-band-r'>40%&ndash;59%</div><div class='hc-band-l' data-i18n='hc.b2'>Đang phát triển</div></div>
@@ -794,13 +796,17 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   <div class='ftop'>
     <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Tài Chính Doanh Chủ<small>Financial Coach</small></div></div>
     <div class='fcontact'>
-      <a href='tel:0937511594'>093 751 1594</a>
-      <span class='fdot'>&middot;</span>
+      <span class='fl' data-i18n='foot.contact'>Liên Hệ</span>
       <a href='mailto:coachtrinhphan@gmail.com'>coachtrinhphan@gmail.com</a>
+      <a href='tel:0937511594'>093 751 1594</a>
+    </div>
+    <div class='fsecure'>
+      <span class='fl' data-i18n='foot.secure.t'>Bảo Mật</span>
+      <p data-i18n='foot.secure.d'>Mọi thông tin bạn chia sẻ được bảo mật, chỉ dùng để tư vấn trực tiếp.</p>
     </div>
   </div>
   <div class='ftg' data-i18n='foot.tagline'>Kiến Tạo Di Sản Tài Chính &mdash; Bền Vững Qua Nhiều Thế Hệ</div>
-  <div class='fcp'>&copy; 2024 Financial Coach. All rights reserved.</div>
+  <div class='fcp'>&copy; 2026 Phan Tuyết Trinh.</div>
 </footer>
 
 <script>
@@ -878,7 +884,7 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'pain.pd3':"&ldquo;I work harder every year, but I don't feel any wealthier.&rdquo; Revenue climbs steadily, assets stand still. Great at running the business: hustling, keeping the engine going, but not yet turning profit into wealth.",
     'pain.stat3':"<span style='opacity:.85'>&ldquo;Your business will never be bigger than your own financial thinking.&rdquo;</span><br><b style='font-size:14px;margin-top:6px'>Robert Kiyosaki</b>",
     'hc.t':'How healthy is your business, really?',
-    'hc.d':'Take the financial health assessment &mdash; 18 questions, about 3&ndash;5 minutes, results right away.',
+    'hc.d':'Take the financial health assessment, 18 questions, about 3&ndash;5 minutes, results right away.',
     'hc.b1':'Needs urgent support','hc.b2':'Developing','hc.b3':'Basically in control','hc.b4':'Strong foundation',
     'hc.btn':'Start the Assessment',
     'car.badge':'The Solution Framework',
@@ -921,7 +927,10 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'form.success':"&#x2736; Thank you! We'll contact you within 24 hours.",
     'cta.orn2':'Still Deciding? Book a 1:1 Call','cta.book1on1':'Book a 1:1 Call',
     'ph.name':'Full Name','ph.phone':'Phone Number','ph.email':'Email',
-    'foot.tagline':'Building Financial Legacy &mdash; Enduring Across Generations'
+    'foot.tagline':'Building Financial Legacy &mdash; Enduring Across Generations',
+    'foot.contact':'Contact',
+    'foot.secure.t':'Privacy',
+    'foot.secure.d':'All information you share is kept confidential and used only for direct consultation.'
   };
   var TITLE = { vi: document.title, en: 'Financial Coach for Business Owners | From Business Cash Flow to Personal Wealth' };
   var cache = new WeakMap();
