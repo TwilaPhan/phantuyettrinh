@@ -50,7 +50,7 @@ a{color:inherit;text-decoration:none}
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background-image:linear-gradient(135deg,rgba(10,51,35,1) 0%,rgba(10,51,35,.40) 100%),url('Branding/B2.jpg');background-size:cover,cover;background-position:center,center;background-repeat:no-repeat,no-repeat;background-color:var(--em);background-blend-mode:multiply,normal}
 .hvg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .hvg svg{position:absolute;width:100%;height:100%}
-.hero .cnt{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:100px}
+.hero .cnt{max-width:1320px;position:relative;z-index:2;display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:center;padding-top:100px}
 .hero .cnt>div{min-width:0}
 .hbadge{display:inline-flex;align-items:center;gap:12px;margin-bottom:32px}
 .hbadge::before,.hbadge::after{content:'';width:40px;height:2px;background:var(--go)}
@@ -59,9 +59,12 @@ a{color:inherit;text-decoration:none}
 .ht span{display:block;white-space:nowrap}
 .ht em{color:var(--gl);font-style:normal}
 .htag{font-family:var(--fr);font-size:26px;font-style:italic;letter-spacing:0.3px;color:var(--gl);margin-bottom:24px;font-weight:600;max-width:520px;line-height:1.4}
-.hdesc{font-size:19px;color:var(--iv);opacity:0.9;max-width:520px;margin-bottom:32px;line-height:1.6}
-.hchk{list-style:none;max-width:540px;margin-bottom:36px}
-.hchk li{display:flex;align-items:flex-start;gap:12px;font-size:22px;color:var(--iv);opacity:0.95;line-height:1.5;margin-bottom:10px}
+.hdesc{font-size:19px;color:var(--iv);opacity:0.9;max-width:680px;margin-bottom:32px;line-height:1.6}
+.hcore-wrap{margin-top:8px}
+.hctas-full{grid-column:1/-1;margin-top:0}
+.hcore-t{font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--go);margin:20px 0 14px}
+.hchk{list-style:none;max-width:680px;margin-bottom:36px}
+.hchk li{display:flex;align-items:flex-start;gap:12px;font-size:19px;color:var(--iv);opacity:0.9;line-height:1.6;margin-bottom:10px}
 .hchk li:last-child{margin-bottom:0}
 .hchk-ic{color:var(--go);font-weight:700;flex-shrink:0;margin-top:3px}
 .hctas{display:flex;gap:20px;flex-wrap:wrap}
@@ -84,12 +87,11 @@ a{color:inherit;text-decoration:none}
 .hscroll span{font-size:15px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--iv)}
 @media(max-height:840px){
   .hero .cnt{padding-top:90px;gap:40px}
-  .hvis .hpimg{max-width:360px}
   .ht{font-size:clamp(29px,3.5vw,45px);margin-bottom:12px}
   .htag{margin-bottom:14px;font-size:19px}
   .hdesc{margin-bottom:20px;font-size:17px;line-height:1.55}
   .hchk{margin-bottom:24px}
-  .hchk li{font-size:20px;margin-bottom:8px}
+  .hchk li{font-size:17px;margin-bottom:8px}
   .hctas .btn{padding:16px 40px;font-size:16px}
   .hs{padding:22px 16px}
   .hsn{font-size:42px;margin-bottom:4px}
@@ -209,6 +211,23 @@ a{color:inherit;text-decoration:none}
 .abt-v{position:relative}
 .abt-img{position:relative;max-width:400px;margin:0 auto;aspect-ratio:3/4;overflow:hidden;border-radius:28px}
 .abt-img img{width:100%;height:100%;object-fit:cover;object-position:center 12%;position:relative;z-index:1;display:block}
+/* Hero photo: full-height layer on the right, fading into the green background */
+.hphoto{position:absolute;top:0;right:0;bottom:0;width:min(52vw,780px);z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%),linear-gradient(to top,transparent 0,#000 30%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 38%),linear-gradient(to top,transparent 0,#000 30%);mask-composite:intersect}
+.hphoto img{width:100%;height:100%;object-fit:cover;object-position:40% 15%;display:block}
+.hphoto::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,51,35,.6) 0,rgba(10,51,35,0) 20%),rgba(10,51,35,.14)}
+@media(min-width:1025px){
+  .hero .cnt{width:100%;grid-template-columns:minmax(0,680px) 1fr;row-gap:24px;padding-top:124px;padding-bottom:28px}
+  .hero .hchk{margin-bottom:0}
+  .hero .hstat{margin-top:0}
+  .hctas-full{grid-column:1}
+  .ht{text-shadow:0 2px 18px rgba(10,51,35,.5)}
+}
+@media(max-width:1024px){
+  .hero{flex-direction:column;align-items:stretch}
+  .hphoto{position:relative;width:100%;height:60vh;min-height:360px;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 35%);mask-image:linear-gradient(to top,transparent 0,#000 35%)}
+  .hphoto img{object-position:40% 12%}
+  .hero .cnt{width:100%;margin-top:-90px;padding-top:0}
+}
 .abt-hdg{font-family:var(--fr);font-size:32px;font-weight:700;color:var(--iv);line-height:1.15;margin-bottom:2px}
 .abt-name{font-family:'Alex Brush',cursive;font-size:clamp(56px,6vw,74px);font-weight:400;color:var(--gl);margin-bottom:8px;line-height:1.1}
 .abt-d{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:24px;max-width:560px}
@@ -434,18 +453,24 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <line x1='900' y1='120' x2='900' y2='240' stroke='rgba(211,150,140,0.15)' stroke-width='0.5'/>
     </svg>
   </div>
+  <div class='hphoto'><img src='Expert/PNJ_Hero.jpg' alt='Phan Tuyết Trinh'/></div>
   <div class='cnt'>
     <div>
       <span class='iey' data-i18n='hero.tag'>Wealth &middot; Freedom &middot; Shine</span>
       <h1 class='ht' data-i18n='hero.title'><span>Kiến Tạo</span><span><em>Di Sản Tài Chính</em></span></h1>
-      <p class='hdesc' data-i18n='hero.desc'>Giúp Chủ Doanh nghiệp biến thành quả kinh doanh thành tài sản cá nhân bền vững thông qua khai vấn theo chuẩn ICF và 10 năm thực chiến trong lĩnh vực Tài chính &ndash; Ngân hàng.</p>
-      <div class='hctas'>
-        <a href='#inv' class='btn bf'><span data-i18n='hero.cta1'>Khám Phá Chương Trình</span></a>
-        <a href='#about' class='btn'><span data-i18n='hero.cta2'>Về Trinh</span></a>
+      <p class='hdesc' data-i18n='hero.desc'>Giúp Chủ Doanh nghiệp SME nhìn rõ dòng tiền, lợi nhuận và rủi ro, chuyển thành quả kinh doanh thành tài sản cá nhân bền vững thông qua phương pháp khai vấn và cố vấn chuẩn quốc tế với 10 năm thực chiến trong lĩnh vực Tài chính &ndash; Ngân hàng.</p>
+      <div class='hcore-wrap'>
+        <div class='hcore-t' data-i18n='hero.core.t'>Ba giá trị cốt lõi</div>
+        <ul class='hchk'>
+          <li><span class='hchk-ic'>&#10003;</span><span data-i18n='hero.core1'>Rõ dòng tiền, chặn thất thoát</span></li>
+          <li><span class='hchk-ic'>&#10003;</span><span data-i18n='hero.core2'>Tăng trưởng mà vẫn an toàn</span></li>
+          <li><span class='hchk-ic'>&#10003;</span><span data-i18n='hero.core3'>Biến lợi nhuận thành tài sản</span></li>
+        </ul>
       </div>
     </div>
-    <div class='hvis'>
-      <div class='abt-img hpimg'><img src='Expert/TCM_88-web.jpg' alt='Phan Tuyết Trinh'/></div>
+    <div class='hctas hctas-full'>
+      <a href='#inv' class='btn bf'><span data-i18n='hero.cta1'>Khám Phá Chương Trình</span></a>
+      <a href='#about' class='btn'><span data-i18n='hero.cta2'>Về Trinh</span></a>
     </div>
     <div class='hstat'>
       <div class='hstat-i' data-i18n='hero.stat1'><span class='hstat-n lg'>10+</span><span class='hstat-l'>Năm Tài Chính &ndash; Ngân Hàng</span></div>
@@ -522,23 +547,6 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <div class='hc-band b4'><div class='hc-band-r'>80%&ndash;100%</div><div class='hc-band-l' data-i18n='hc.b4'>Nền tảng tốt</div></div>
       </div>
       <a href='financial-health-check.html' class='btn bf'><span data-i18n='hc.btn'>Bắt Đầu Thẩm Định</span></a>
-    </div>
-  </div>
-</section>
-
-<section class='abt' id='about'>
-  <div class='cnt'>
-    <div class='abt-g'>
-      <div class='abt-v fu'>
-        <div class='abt-img'><img src='Expert/Profile%20white.jpg' alt='Phan Tuyết Trinh'/></div>
-      </div>
-      <div class='fu'>
-        <div class='abt-hdg' data-i18n='abt.hdg'>Gặp Financial Coach</div>
-        <div class='abt-name'>Phan Tuyết Trinh</div>
-        <p class='abt-d' data-i18n='abt.d'>Với 10+ năm kinh nghiệm ở vai trò CFO, Cố vấn Tài chính và Financial Coach tại Ngân hàng hàng đầu Việt Nam (ACB) và các Doanh nghiệp SME/Start-up, Trinh thấu hiểu sâu sắc nỗi đau của Chủ Doanh nghiệp, sát cánh xây dựng bản đồ tài chính thông minh, giúp Doanh nghiệp vững tay lái đạt sự thịnh vượng và phát triển bền vững qua nhiều thế hệ.</p>
-        <p class='abt-cred' data-i18n='abt.cred'>Đồng hành cùng Coach Trinh, doanh nghiệp SME đã tăng trưởng lợi nhuận <span class='abt-hl'>20&ndash;50%</span> chỉ sau 6&ndash;12 tháng, không ít Start-up bứt phá lợi nhuận gấp <span class='abt-hl'>2&ndash;3 lần</span>, và tiết kiệm hàng chục <span class='abt-hl'>tỷ đồng</span> mỗi năm.</p>
-        <p class='abt-quote' data-i18n='abt.quote'>Triết lý đồng hành: <span>&ldquo;Tôi không chỉ đưa ra <em>lời khuyên</em>, tôi cùng bạn tạo ra <em>kết quả đột phá</em>&rdquo;</span></p>
-      </div>
     </div>
   </div>
 </section>
@@ -646,6 +654,23 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           <li>Phân bổ vốn hiệu quả, tối ưu đầu tư</li>
           <li>Chủ động nhận diện và kiểm soát rủi ro</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='abt' id='about'>
+  <div class='cnt'>
+    <div class='abt-g'>
+      <div class='abt-v fu'>
+        <div class='abt-img'><img src='Expert/Profile%20white.jpg' alt='Phan Tuyết Trinh'/></div>
+      </div>
+      <div class='fu'>
+        <div class='abt-hdg' data-i18n='abt.hdg'>Gặp Financial Coach</div>
+        <div class='abt-name'>Phan Tuyết Trinh</div>
+        <p class='abt-d' data-i18n='abt.d'>Với 10+ năm kinh nghiệm ở vai trò CFO, Cố vấn Tài chính và Financial Coach tại Ngân hàng hàng đầu Việt Nam (ACB) và các Doanh nghiệp SME/Start-up, Trinh thấu hiểu sâu sắc nỗi đau của Chủ Doanh nghiệp, sát cánh xây dựng bản đồ tài chính thông minh, giúp Doanh nghiệp vững tay lái đạt sự thịnh vượng và phát triển bền vững qua nhiều thế hệ.</p>
+        <p class='abt-cred' data-i18n='abt.cred'>Đồng hành cùng Coach Trinh, doanh nghiệp SME đã tăng trưởng lợi nhuận <span class='abt-hl'>20&ndash;50%</span> chỉ sau 6&ndash;12 tháng, không ít Start-up bứt phá lợi nhuận gấp <span class='abt-hl'>2&ndash;3 lần</span>, và tiết kiệm hàng chục <span class='abt-hl'>tỷ đồng</span> mỗi năm.</p>
+        <p class='abt-quote' data-i18n='abt.quote'>Triết lý đồng hành: <span>&ldquo;Tôi không chỉ đưa ra <em>lời khuyên</em>, tôi cùng bạn tạo ra <em>kết quả đột phá</em>&rdquo;</span></p>
       </div>
     </div>
   </div>
@@ -875,7 +900,11 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'nav.about':'About','nav.pain':'Reality Check','nav.solution':'Solution','nav.roadmap':'Roadmap','nav.start':'Get Started','nav.book':'Book a Call',
     'hero.tag':'Wealth &middot; Freedom &middot; Shine',
     'hero.title':"<span>Building Your</span><span><em>Financial Legacy</em></span>",
-    'hero.desc':"Helping business owners turn business results into durable personal wealth through ICF-standard coaching and 10 years of hands-on experience in Finance &amp; Banking.",
+    'hero.desc':"Helping SME business owners see cash flow, profit and risk clearly, turning business results into durable personal wealth through internationally certified coaching and advisory methods, backed by 10 years of hands-on experience in Finance &amp; Banking.",
+    'hero.core.t':'Three core values',
+    'hero.core1':'Clear cash flow, no leaks',
+    'hero.core2':'Grow without the risk',
+    'hero.core3':'Turn profit into wealth',
     'hero.cta1':'Explore the Program','hero.cta2':'About Trinh',
     'hero.stat1':"<span class='hstat-n lg'>10+</span><span class='hstat-l'>Years in Finance &amp; Banking</span>",
     'hero.stat2':"<span class='hstat-n'>MSc</span><span class='hstat-l'>in Finance (UEH)</span>",
