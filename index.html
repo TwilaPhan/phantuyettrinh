@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600;700&family=DM+Sans:wght@400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet"/>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <style>
-:root{--em:#0A3323;--sa:#105666;--eu:#839958;--iv:#F7F4D5;--be:#F7F4D5;--go:#D3968C;--gl:#D3968C;--fs:'Spectral',serif;--fb:'DM Sans',sans-serif;--fr:'Spectral',Georgia,serif;--tr:0.4s ease}
+:root{--em:#0A3323;--sa:#105666;--eu:#839958;--iv:#F7F4D5;--be:#F7F4D5;--go:#C9A24B;--gl:#C9A24B;--fs:'Spectral',serif;--fb:'DM Sans',sans-serif;--fr:'Spectral',Georgia,serif;--tr:0.4s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--em);color:var(--iv);font-family:var(--fb);font-size:22px;line-height:1.7;overflow-x:hidden}
@@ -111,6 +111,7 @@ a{color:inherit;text-decoration:none}
 @keyframes sd{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}
 /* PAIN */
 .pain{min-height:100vh;display:flex;align-items:center;padding:110px 0 20px;background:linear-gradient(180deg,var(--em) 0%,#1f3a12 100%);position:relative}
+.pain .cnt{max-width:1440px}
 .pain::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
 .pain-i{text-align:center;max-width:720px;margin:0 auto 24px}
 .pain-badge{display:inline-block;padding:8px 24px;border:1px solid rgba(211,150,140,.4);border-radius:999px;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--go);font-weight:600;margin-bottom:16px}
@@ -164,6 +165,7 @@ a{color:inherit;text-decoration:none}
 .pd{font-size:19px;color:var(--iv);opacity:0.9;line-height:1.7}
 /* CAR FRAMEWORK */
 .car{min-height:100vh;display:flex;align-items:center;padding:110px 0 32px;background:linear-gradient(160deg,#1f3a12 0%,var(--em) 100%);position:relative}
+.car .cnt{max-width:1440px}
 .car::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
 .car .cnt{width:100%}
 .car-i{text-align:center;max-width:760px;margin:0 auto 28px}
@@ -206,6 +208,7 @@ a{color:inherit;text-decoration:none}
 /* QUOTE */
 /* ABOUT */
 .abt{padding:100px 0;background:var(--em);position:relative;overflow:hidden}
+.abt .cnt{max-width:1440px}
 .abt::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
 .abt-g{display:grid;grid-template-columns:0.8fr 1.2fr;gap:80px;align-items:center}
 .abt-v{position:relative}
@@ -229,8 +232,8 @@ a{color:inherit;text-decoration:none}
   .hero .cnt{width:100%;margin-top:-90px;padding-top:0}
 }
 .abt-hdg{font-family:var(--fr);font-size:32px;font-weight:700;color:var(--iv);line-height:1.15;margin-bottom:2px}
-.abt-name{font-family:'Alex Brush',cursive;font-size:clamp(56px,6vw,74px);font-weight:400;color:var(--gl);margin-bottom:8px;line-height:1.1}
-.abt-d{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:24px;max-width:560px}
+.abt-name{font-family:var(--fs);font-size:clamp(34px,3.4vw,44px);font-weight:700;color:var(--gl);margin-bottom:8px;line-height:1.1}
+.abt-d{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:24px;text-align:justify}
 .abt-list{list-style:none;display:flex;flex-direction:column;gap:20px;margin-bottom:44px}
 .abt-list li{display:flex;gap:16px;align-items:flex-start}
 .abt-ic{width:36px;height:36px;background:var(--go);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
@@ -247,11 +250,11 @@ a{color:inherit;text-decoration:none}
 .consult-list li{position:relative;padding-left:28px;font-size:17px;color:var(--iv);opacity:.92;line-height:1.6}
 .consult-list li::before{content:'\2726';position:absolute;left:0;top:2px;color:var(--go);font-size:15px}
 @media(max-width:1024px){.consult-g{grid-template-columns:1fr;gap:44px}.consult-img{max-width:360px}}
-.abt-cred{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:20px}
+.abt-cred{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:20px;text-align:justify}
 .abt-hl{font-size:1.35em;font-weight:700;color:var(--gl)}
 .abt-quote{font-family:var(--fb);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--go);margin:28px 0 0;padding:28px 32px;background:rgba(211,150,140,.10);border-left:4px solid var(--go);border-radius:0 18px 18px 0;box-shadow:0 10px 28px rgba(0,0,0,.18)}
 .abt-quote span{display:block;margin-top:12px;font-family:var(--fr);font-size:26px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--iv);line-height:1.45}
-.abt-quote span em{font-style:italic;color:var(--gl)}
+.abt-quote span em{font-style:normal;color:var(--gl)}
 .abt-kw{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
 .abt-kw span{padding:14px 28px;border-radius:999px;border:1px solid rgba(211,150,140,.35);background:rgba(255,255,255,.04);color:var(--iv);font-size:17px;font-weight:500;letter-spacing:0.3px;transition:var(--tr)}
 .abt-kw span:hover{border-color:rgba(211,150,140,.7);background:rgba(211,150,140,.1)}
@@ -426,11 +429,11 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
 <nav class='nav' id='nav'>
   <div class='nav-logo'><img src='Branding/Logo-cropped.png' alt='Financial Coach Logo'/><div>Tài Chính Doanh Chủ<small>Financial Coach</small></div></div>
   <ul class='nav-links'>
-    <li><a href='#about' data-i18n='nav.about'>Về Trinh</a></li>
     <li><a href='#pain' data-i18n='nav.pain'>Thực Trạng</a></li>
-    <li><a href='#car' data-i18n='nav.solution'>Giải Pháp</a></li>
+    <li><a href='#car' data-i18n='nav.solution'>Phương Pháp</a></li>
+    <li><a href='#consult' data-i18n='nav.start'>Kết Quả</a></li>
     <li><a href='#inv' data-i18n='nav.roadmap'>Lộ Trình</a></li>
-    <li><a href='#cta' data-i18n='nav.start'>Bắt Đầu</a></li>
+    <li><a href='#about' data-i18n='nav.about'>Về Trinh</a></li>
   </ul>
   <div class='nav-right'>
     <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn calendly-btn nav-btn'><span data-i18n='nav.book'>Đặt Lịch Ngay</span></a>
@@ -458,11 +461,11 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     <div>
       <span class='iey' data-i18n='hero.tag'>Wealth &middot; Freedom &middot; Shine</span>
       <h1 class='ht' data-i18n='hero.title'><span>Kiến Tạo</span><span><em>Di Sản Tài Chính</em></span></h1>
-      <p class='hdesc' data-i18n='hero.desc'>Giúp Chủ Doanh nghiệp SME nhìn rõ dòng tiền, lợi nhuận và rủi ro, chuyển thành quả kinh doanh thành tài sản cá nhân bền vững thông qua phương pháp khai vấn và cố vấn chuẩn quốc tế với 10 năm thực chiến trong lĩnh vực Tài chính &ndash; Ngân hàng.</p>
+      <p class='hdesc' data-i18n='hero.desc'>Giúp Chủ Doanh nghiệp SME nhìn rõ dòng tiền, lợi nhuận và rủi ro, chuyển thành quả kinh doanh thành tài sản cá nhân bền vững thông qua phương pháp khai vấn và cố vấn chuẩn quốc tế với 10+ năm thực chiến trong lĩnh vực Tài chính &ndash; Ngân hàng.</p>
       <div class='hcore-wrap'>
         <div class='hcore-t' data-i18n='hero.core.t'>Ba giá trị cốt lõi</div>
         <ul class='hchk'>
-          <li><span class='hchk-ic'>&#10003;</span><span data-i18n='hero.core1'>Rõ dòng tiền, chặn thất thoát</span></li>
+          <li><span class='hchk-ic'>&#10003;</span><span data-i18n='hero.core1'>Tạo lợi thế dòng tiền vững chắc</span></li>
           <li><span class='hchk-ic'>&#10003;</span><span data-i18n='hero.core2'>Tăng trưởng mà vẫn an toàn</span></li>
           <li><span class='hchk-ic'>&#10003;</span><span data-i18n='hero.core3'>Biến lợi nhuận thành tài sản</span></li>
         </ul>
@@ -470,7 +473,6 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     </div>
     <div class='hctas hctas-full'>
       <a href='#inv' class='btn bf'><span data-i18n='hero.cta1'>Khám Phá Chương Trình</span></a>
-      <a href='#about' class='btn'><span data-i18n='hero.cta2'>Về Trinh</span></a>
     </div>
     <div class='hstat'>
       <div class='hstat-i' data-i18n='hero.stat1'><span class='hstat-n lg'>10+</span><span class='hstat-l'>Năm Tài Chính &ndash; Ngân Hàng</span></div>
@@ -624,8 +626,8 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
     <div class='car-g'>
       <div class='car-c fu'>
         <div class='car-letter'>C</div>
-        <div class='car-pillar' data-i18n='car.pillar1'>Command</div>
-        <div class='car-name' data-i18n='car.name1'>Làm Chủ Bản Đồ Tài Chính</div>
+        <div class='car-pillar' data-i18n='car.pillar1'>Clarity</div>
+        <div class='car-name' data-i18n='car.name1'>Thấu Hiểu Bản Đồ Tài Chính</div>
         <p class='car-desc' data-i18n='car.desc1'>Thấu hiểu và làm chủ toàn cảnh tài chính doanh nghiệp.</p>
         <ul class='car-list' data-i18n='car.list1'>
           <li>Doanh nghiệp đang đứng ở đâu</li>
@@ -636,7 +638,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <div class='car-c fu'>
         <div class='car-letter'>A</div>
         <div class='car-pillar' data-i18n='car.pillar2'>Alignment</div>
-        <div class='car-name' data-i18n='car.name2'>Điều Khiển Tay Lái Đúng Hướng</div>
+        <div class='car-name' data-i18n='car.name2'>Tay Lái Dòng Tiền Đúng Hướng</div>
         <p class='car-desc' data-i18n='car.desc2'>Đưa ra những quyết định chính xác dựa trên dữ liệu.</p>
         <ul class='car-list' data-i18n='car.list2'>
           <li>Hiểu dòng tiền doanh nghiệp đang vận hành</li>
@@ -647,7 +649,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <div class='car-c fu'>
         <div class='car-letter'>R</div>
         <div class='car-pillar' data-i18n='car.pillar3'>Resilience</div>
-        <div class='car-name' data-i18n='car.name3'>Vận Hành Bánh Xe Bền Bỉ</div>
+        <div class='car-name' data-i18n='car.name3'>Vận Hành Bánh Xe Tăng Trưởng</div>
         <p class='car-desc' data-i18n='car.desc3'>Doanh nghiệp vận hành an toàn, quản trị rủi ro chủ động.</p>
         <ul class='car-list' data-i18n='car.list3'>
           <li>Xây dựng nền tảng tài chính vững chắc</li>
@@ -897,15 +899,15 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
 /* ---- Song ngữ VI/EN ---- */
 (function(){
   var EN = {
-    'nav.about':'About','nav.pain':'Reality Check','nav.solution':'Solution','nav.roadmap':'Roadmap','nav.start':'Get Started','nav.book':'Book a Call',
+    'nav.about':'About','nav.pain':'Reality Check','nav.solution':'Method','nav.roadmap':'Roadmap','nav.start':'Results','nav.book':'Book a Call',
     'hero.tag':'Wealth &middot; Freedom &middot; Shine',
     'hero.title':"<span>Building Your</span><span><em>Financial Legacy</em></span>",
-    'hero.desc':"Helping SME business owners see cash flow, profit and risk clearly, turning business results into durable personal wealth through internationally certified coaching and advisory methods, backed by 10 years of hands-on experience in Finance &amp; Banking.",
+    'hero.desc':"Helping SME business owners see cash flow, profit and risk clearly, turning business results into durable personal wealth through internationally certified coaching and advisory methods, backed by 10+ years of hands-on experience in Finance &amp; Banking.",
     'hero.core.t':'Three core values',
-    'hero.core1':'Clear cash flow, no leaks',
+    'hero.core1':'Build a strong cash-flow advantage',
     'hero.core2':'Grow without the risk',
     'hero.core3':'Turn profit into wealth',
-    'hero.cta1':'Explore the Program','hero.cta2':'About Trinh',
+    'hero.cta1':'Explore the Program',
     'hero.stat1':"<span class='hstat-n lg'>10+</span><span class='hstat-l'>Years in Finance &amp; Banking</span>",
     'hero.stat2':"<span class='hstat-n'>MSc</span><span class='hstat-l'>in Finance (UEH)</span>",
     'hero.stat3':"<span class='hstat-n'>ICF</span><span class='hstat-l'>Certified International Coach</span>",
@@ -932,13 +934,13 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'hc.btn':'Start the Assessment',
     'car.badge':'The Solution Framework',
     'car.sub':"Command your Financial CAR &mdash; take the wheel of your company's finances.",
-    'car.pillar1':'Command','car.name1':'Own Your Financial Map',
+    'car.pillar1':'Clarity','car.name1':'Understand Your Financial Map',
     'car.desc1':'Understand and own the full picture of your finances.',
     'car.list1':"<li>Where your business stands today</li><li>Where the business is headed</li><li>What the business needs to prepare</li>",
-    'car.pillar2':'Alignment','car.name2':'Steer in the Right Direction',
+    'car.pillar2':'Alignment','car.name2':'Take the Wheel of Your Cash Flow',
     'car.desc2':'Make accurate decisions grounded in data.',
     'car.list2':"<li>Understand how your company's cash flow runs</li><li>Separate personal and company cash flow</li><li>Turn scattered data into timely decisions</li>",
-    'car.pillar3':'Resilience','car.name3':'Run a Durable Wheel',
+    'car.pillar3':'Resilience','car.name3':'Run a Growth-Ready Wheel',
     'car.desc3':'Operate safely with proactive risk management.',
     'car.list3':"<li>Build a solid financial foundation</li><li>Allocate capital efficiently, optimize investments</li><li>Identify and control risks before they happen</li>",
     'inv.ey':'Roadmap','inv.h':'Choose the journey that fits you',
