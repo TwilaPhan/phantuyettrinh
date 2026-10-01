@@ -246,11 +246,12 @@ a{color:inherit;text-decoration:none}
 .consult-g{display:grid;grid-template-columns:0.85fr 1.15fr;gap:70px;align-items:center}
 .consult-img{position:relative;max-width:460px;margin:0 auto;aspect-ratio:4/5;overflow:hidden;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .consult-img img{width:100%;height:100%;object-fit:cover;object-position:43% center;display:block}
+@media(max-width:1024px){.consult-g{grid-template-columns:1fr;gap:44px}.consult-img{max-width:360px}}
 .consult-h{font-family:var(--fr);font-size:clamp(28px,3vw,36px);font-weight:700;color:var(--iv);line-height:1.35;margin-bottom:28px}
 .consult-list{list-style:none;display:flex;flex-direction:column;gap:18px;margin-bottom:32px}
 .consult-list li{position:relative;padding-left:28px;font-size:17px;color:var(--iv);opacity:.92;line-height:1.6}
 .consult-list li::before{content:'\2726';position:absolute;left:0;top:2px;color:var(--go);font-size:15px}
-@media(max-width:1024px){.consult-g{grid-template-columns:1fr;gap:44px}.consult-img{max-width:360px}}
+@media(max-width:1024px){.consult-g{grid-template-columns:1fr;gap:44px}}
 .abt-cred{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:20px;text-align:justify}
 .abt-hl{font-size:1.35em;font-weight:700;color:var(--gl)}
 .abt-quote{font-family:var(--fb);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--go);margin:28px 0 0;padding:28px 32px;background:rgba(211,150,140,.10);border-left:4px solid var(--go);border-radius:0 18px 18px 0;box-shadow:0 10px 28px rgba(0,0,0,.18)}
@@ -672,7 +673,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <div class='abt-hdg' data-i18n='abt.hdg'>Gặp Financial Coach</div>
         <div class='abt-name'>Phan Tuyết Trinh</div>
         <p class='abt-d' data-i18n='abt.d'>Với 10+ năm kinh nghiệm ở vai trò CFO, Cố vấn Tài chính và Financial Coach tại Ngân hàng hàng đầu Việt Nam (ACB) và các Doanh nghiệp SME/Start-up, Trinh thấu hiểu sâu sắc nỗi đau của Chủ Doanh nghiệp, sát cánh xây dựng bản đồ tài chính thông minh, giúp Doanh nghiệp vững tay lái đạt sự thịnh vượng và phát triển bền vững qua nhiều thế hệ.</p>
-        <p class='abt-cred' data-i18n='abt.cred'>Đồng hành cùng Coach Trinh, doanh nghiệp SME đã tăng trưởng lợi nhuận <span class='abt-hl'>20&ndash;50%</span> chỉ sau 6&ndash;12 tháng, không ít Start-up bứt phá lợi nhuận gấp <span class='abt-hl'>2&ndash;3 lần</span>, và tiết kiệm hàng chục <span class='abt-hl'>tỷ đồng</span> mỗi năm.</p>
+        <p class='abt-cred' data-i18n='abt.cred'>Những chủ doanh nghiệp đã đồng hành cùng Trinh thường ghi nhận Trinh là một người <span style='font-weight:700;color:var(--gl)'>tận tâm và trách nhiệm, thực chiến</span> để tạo ra những giải pháp tài chính thông minh, giúp chủ doanh nghiệp tháo gỡ những khủng hoảng tài chính, tiết kiệm <span class='abt-hl'>hàng chục tỷ đồng</span> mỗi năm, lợi nhuận tăng trưởng <span class='abt-hl'>20&ndash;50%</span> chỉ sau 6&ndash;12 tháng, Start-up bứt phá lợi nhuận gấp <span class='abt-hl'>2&ndash;3 lần</span>.</p>
         <p class='abt-quote' data-i18n='abt.quote'>Triết lý đồng hành: <span>&ldquo;Tôi không chỉ đưa ra <em>lời khuyên</em>, tôi cùng bạn tạo ra <em>kết quả đột phá</em>&rdquo;</span></p>
       </div>
     </div>
@@ -683,18 +684,18 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   <div class='cnt'>
     <div class='consult-g'>
       <div class='consult-v fu'>
-        <div class='consult-img'><img src='Expert/TCM-195.jpg' alt='Coach Trinh tư vấn trực tiếp'/></div>
+        <div class='consult-img'><img src='Expert/Speak.jpg' alt='Coach Trinh tư vấn trực tiếp'/></div>
       </div>
       <div class='fu'>
         <h2 class='consult-h' data-i18n='consult.h'>Một năm tới, bức tranh tài chính của bạn sẽ trông như thế nào?</h2>
         <ul class='consult-list'>
-          <li data-i18n='consult.li1'>Hệ thống tài chính quản trị được chuẩn hóa, đo lường và kiểm soát tự động</li>
-          <li data-i18n='consult.li2'>Nâng cấp chất lượng quyết định tài chính ở cấp độ chiến lược</li>
-          <li data-i18n='consult.li3'>Xây dựng cấu trúc tài chính dài hạn để tối ưu giá trị doanh nghiệp</li>
-          <li data-i18n='consult.li4'>An tâm vận hành, ngủ ngon vì luôn nắm rõ sức khỏe tài chính doanh nghiệp bất kỳ lúc nào</li>
-          <li data-i18n='consult.li5'>Tài sản cá nhân tăng trưởng bền vững song song với sự phát triển của doanh nghiệp</li>
+          <li data-i18n='consult.li1'>Hệ thống tài chính được chuẩn hóa, đo lường và kiểm soát theo thời gian thực</li>
+          <li data-i18n='consult.li2'>Quyết định chiến lược dựa trên dữ liệu, không còn phụ thuộc cảm tính</li>
+          <li data-i18n='consult.li3'>Cấu trúc vốn và dòng tiền được tối ưu để tối đa hóa giá trị doanh nghiệp</li>
+          <li data-i18n='consult.li4'>Rủi ro tài chính được nhận diện và kiểm soát chủ động</li>
+          <li data-i18n='consult.li5'>Tài sản cá nhân tăng trưởng bền vững, song hành cùng đà phát triển doanh nghiệp</li>
+          <li data-i18n='consult.li6'>Sở hữu một CFO / Cố vấn Tài chính / Financial Coach với mức đầu tư tối ưu hơn thay vì phải thuê một CFO toàn thời gian</li>
         </ul>
-        <a href='https://calendly.com/coachtrinhphan/60min' target='_blank' rel='noopener' class='btn bf calendly-btn'><span data-i18n='consult.cta'>Đặt Lịch Strategic Discovery</span></a>
       </div>
     </div>
   </div>
@@ -731,15 +732,12 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <svg class='rm-road-svg' viewBox='0 0 1000 120' preserveAspectRatio='none' aria-hidden='true'>
           <path class='rm-road-fill' d='M0,60 C50,60 75,8 125,8 C175,8 200,60 250,60 C300,60 325,112 375,112 C425,112 450,60 500,60 C550,60 575,8 625,8 C675,8 700,60 750,60 C800,60 825,112 875,112 C925,112 950,60 1000,60'></path>
           <path id='rm-road-path' class='rm-road-path' d='M0,60 C50,60 75,8 125,8 C175,8 200,60 250,60 C300,60 325,112 375,112 C425,112 450,60 500,60 C550,60 575,8 625,8 C675,8 700,60 750,60 C800,60 825,112 875,112 C925,112 950,60 1000,60'></path>
-          <g class='rm-car-icon'>
+          <g class='rm-car-icon' transform='translate(500,60) rotate(-22)'>
             <g transform='scale(1.6)'>
               <path d='M-19,5 L-19,2 Q-19,-1 -16,-1 L-11,-1 L-8,-6 Q-7,-8 -4,-8 L6,-8 Q9,-8 10,-6 L13,-1 L16,-1 Q19,-1 19,2 L19,5 Z'></path>
               <circle class='rm-car-wheel' cx='-10' cy='5' r='3'></circle>
               <circle class='rm-car-wheel' cx='10' cy='5' r='3'></circle>
             </g>
-            <animateMotion dur='8s' repeatCount='indefinite' rotate='auto'>
-              <mpath href='#rm-road-path'></mpath>
-            </animateMotion>
           </g>
         </svg>
         <div class='rm-marker-row'>
@@ -793,21 +791,21 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Nguyễn Lương Nhã Ý</div>
         <div class='test-role' data-i18n='test.role1'>CEO &middot; Ytrade Agency</div>
-        <p class='test-q' data-i18n='test.q1'>&ldquo;Trinh không dừng lại ở dữ liệu và phân tích tài chính, mà còn <b>tìm hiểu câu chuyện của doanh nghiệp để góp ý chiến lược</b> sau khi đã nắm rõ bối cảnh.&rdquo;</p>
+        <p class='test-q' data-i18n='test.q1'>&ldquo;Chị Trinh không dừng lại ở dữ liệu và phân tích tài chính, mà còn <b>tìm hiểu sâu câu chuyện của doanh nghiệp để giúp định hướng chiến lược kinh doanh dài hạn</b>.&rdquo;</p>
       </div>
       <div class='test-c fu'>
         <div class='test-av'><img src='Testimonial/Profile_anh%20Trung.png' alt='Nguyễn Quang Trung'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Nguyễn Quang Trung</div>
         <div class='test-role' data-i18n='test.role2'>CEO &middot; Công Ty TNHH Sản Xuất Thương Mại Bao Bì Asia</div>
-        <p class='test-q' data-i18n='test.q2'>&ldquo;Bước tiến quan trọng nhất là sự phản hồi của một nhà quản trị tài chính — <b>chất lượng ra quyết định của doanh chủ được bàn bạc và cải thiện</b>.&rdquo;</p>
+        <p class='test-q' data-i18n='test.q2'>&ldquo;<b>Chất lượng ra quyết định của Doanh nghiệp được bàn bạc và cải thiện thông qua hệ thống báo cáo quản trị được tự động hóa.</b> Lợi nhuận của Doanh nghiệp được dự phóng định kỳ bám sát mục tiêu đề ra.&rdquo;</p>
       </div>
       <div class='test-c fu'>
         <div class='test-av'><img class='zoom-minh' src='Testimonial/Profile_anh%20Minh.png' alt='Thái Cao Minh'/></div>
         <div class='test-stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class='test-name'>Thái Cao Minh</div>
         <div class='test-role' data-i18n='test.role3'>CEO &middot; Công Ty TNHH Sản Xuất Duy Hàng</div>
-        <p class='test-q' data-i18n='test.q3'>&ldquo;Trinh có năng lực <b>định kỳ thăm khám sức khỏe tài chính nội tại của doanh nghiệp</b>, làm rõ rủi ro tiềm ẩn và tham mưu vào các quyết định vận hành, phát triển.&rdquo;</p>
+        <p class='test-q' data-i18n='test.q3'>&ldquo;Trinh có năng lực <b>định kỳ thăm khám sức khỏe tài chính nội tại của doanh nghiệp</b>, làm rõ rủi ro tiềm ẩn và tham mưu vào các quyết định vận hành, phát triển kinh doanh và kế hoạch đầu tư nguồn vốn dài hạn.&rdquo;</p>
       </div>
     </div>
   </div>
@@ -915,7 +913,7 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'hero.stat4':"<span class='hstat-n'>CFA-CFP</span><span class='hstat-l'>International Finance Credentials</span>",
     'abt.hdg':'Meet the Financial Coach',
     'abt.d':"With 10+ years as a CFO, Financial Advisor and Financial Coach at a leading Vietnamese bank (ACB) and across SMEs and start-ups, Trinh deeply understands the pain of business owners &mdash; and works alongside them to build a smart financial map that keeps the business steady, prosperous and sustainable across generations.",
-    'abt.cred':"Working with Coach Trinh, SMEs have grown profit <span class='abt-hl'>20&ndash;50%</span> in just 6&ndash;12 months, many start-ups have multiplied profit <span class='abt-hl'>2&ndash;3&times;</span>, and businesses save <span class='abt-hl'>billions of VND</span> every year.",
+    'abt.cred':"Business owners who've worked with Trinh often describe her as <span style='font-weight:700;color:var(--gl)'>dedicated and accountable, hands-on</span> in crafting smart financial solutions that help them break through financial crises, save <span class='abt-hl'>tens of billions of VND</span> every year, grow profit <span class='abt-hl'>20&ndash;50%</span> in just 6&ndash;12 months, and multiply start-up profit <span class='abt-hl'>2&ndash;3&times;</span>.",
     'abt.quote':"Coaching philosophy: <span>&ldquo;I don't just give <em>advice</em> &mdash; I work with you to create <em>breakthrough results</em>&rdquo;</span>",
     'pain.badge':'Does This Sound Like You?',
     'pain.h':'Growth on the outside,<br>unease on the inside.',
@@ -953,19 +951,19 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'rm.btn3':'Book a Call',
     'rm.desc4':'A one-year partnership building a long-term Financial Legacy for your business.',
     'consult.h':'A year from now, what will your financial picture look like?',
-    'consult.li1':'A standardized financial management system, measured and controlled automatically',
-    'consult.li2':'Upgraded quality of financial decisions at the strategic level',
-    'consult.li3':'A long-term financial structure built to optimize business value',
-    'consult.li4':'Peace of mind and better sleep, always knowing your business’s financial health at any moment',
-    'consult.li5':'Personal wealth that grows steadily alongside your business',
-    'consult.cta':'Book Strategic Discovery',
+    'consult.li1':'A financial system standardized, measured and controlled in real time',
+    'consult.li2':'Strategic decisions driven by data, not guesswork',
+    'consult.li3':'Capital structure and cash flow optimized to maximize business value',
+    'consult.li4':'Financial risk identified and managed proactively',
+    'consult.li5':'Personal wealth that grows steadily, in step with the business',
+    'consult.li6':'A CFO / Financial Advisor / Financial Coach at a smarter investment than hiring a full-time CFO',
     'test.badge':'Client Stories','test.h':'What business owners say about the journey',
     'test.role1':'CEO &middot; Ytrade Agency',
-    'test.q1':"&ldquo;Trinh doesn't stop at data and financial analysis &mdash; she also <b>learns the company's story to advise on strategy</b> once she understands the context.&rdquo;",
+    'test.q1':"&ldquo;Trinh doesn't stop at data and financial analysis &mdash; she also <b>dives into the company's story to help shape long-term business strategy</b>.&rdquo;",
     'test.role2':'CEO &middot; Asia Packaging Manufacturing &amp; Trading Co., Ltd',
-    'test.q2':"&ldquo;The biggest step forward was having the input of a financial manager &mdash; <b>the owner's decision quality gets discussed and improved</b>.&rdquo;",
+    'test.q2':"&ldquo;<b>The quality of the business's decisions is discussed and improved through an automated management reporting system.</b> Profit is forecast regularly, staying on track with the targets set.&rdquo;",
     'test.role3':'CEO &middot; Duy Hang Manufacturing Co., Ltd',
-    'test.q3':"&ldquo;Trinh has the ability to <b>regularly check the internal financial health of the business</b>, clarify hidden risks and advise on operating and growth decisions.&rdquo;",
+    'test.q3':"&ldquo;Trinh has the ability to <b>regularly check the internal financial health of the business</b>, clarify hidden risks and advise on operating decisions, business growth, and long-term capital investment planning.&rdquo;",
     'cta.orn':'Begin the Journey',
     'cta.t':"Ready for an<br><em>in-depth financial health assessment?</em>",
     'cta.s':'Fill in your details below to register',
