@@ -119,6 +119,9 @@ a{color:inherit;text-decoration:none}
 .pain-i .gl{margin:0 auto 16px}
 .pain-i p{font-size:16px;line-height:1.6}
 .pain-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pain-pts{list-style:none;margin:12px 20px 0;display:flex;flex-direction:column;gap:8px}
+.pain-pts li{position:relative;padding-left:20px;font-size:14px;line-height:1.5;font-weight:600;color:var(--iv)}
+.pain-pts li::before{content:'\2726';position:absolute;left:0;top:2px;font-size:11px;color:var(--go)}
 .pain-c{background:rgba(255,255,255,.03);border:1px solid rgba(211,150,140,.2);border-radius:16px;padding:0 0 20px;position:relative;transition:var(--tr);overflow:hidden}
 .pain-c:hover{border-color:rgba(211,150,140,.55);background:rgba(131,153,88,.08)}
 .pain-c:nth-child(2){margin-top:-20px}
@@ -248,9 +251,14 @@ a{color:inherit;text-decoration:none}
 .consult-img img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
 @media(max-width:1024px){.consult-g{grid-template-columns:1fr;gap:44px}.consult-img{max-width:360px}}
 .consult-h{font-family:var(--fr);font-size:clamp(28px,3vw,36px);font-weight:700;color:var(--iv);line-height:1.35;margin-bottom:28px}
-.consult-list{list-style:none;display:flex;flex-direction:column;gap:18px;margin-bottom:32px}
-.consult-list li{position:relative;padding-left:28px;font-size:17px;color:var(--iv);opacity:.92;line-height:1.6}
-.consult-list li::before{content:'\2726';position:absolute;left:0;top:2px;color:var(--go);font-size:15px}
+.consult-boxes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.consult-box{padding:18px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:14px;transition:var(--tr)}
+.consult-box:hover{border-color:var(--go);background:rgba(255,255,255,.07)}
+.cb-t{font-family:var(--fr);font-size:19px;font-weight:700;color:var(--go);line-height:1.3;margin-bottom:10px}
+.consult-box ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.consult-box li{position:relative;padding-left:18px;font-size:14px;color:var(--iv);opacity:.92;line-height:1.5}
+.consult-box li::before{content:'\2726';position:absolute;left:0;top:2px;color:var(--go);font-size:11px}
+@media(max-width:640px){.consult-boxes{grid-template-columns:1fr}}
 .abt-cred{font-size:17px;color:var(--iv);opacity:0.95;line-height:1.6;margin-bottom:20px;text-align:justify}
 .abt-hl{font-size:1.35em;font-weight:700;color:var(--gl)}
 .abt-quote{font-family:var(--fb);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--go);margin:28px 0 0;padding:28px 32px;background:rgba(211,150,140,.10);border-left:4px solid var(--go);border-radius:0 18px 18px 0;box-shadow:0 10px 28px rgba(0,0,0,.18)}
@@ -269,7 +277,7 @@ a{color:inherit;text-decoration:none}
 .inv::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--go),transparent)}
 .iey{font-size:13px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;color:var(--go);margin-bottom:12px}
 /* PACKAGES */
-.pkg-i{text-align:center;max-width:760px;margin:0 auto 12px}
+.pkg-i{text-align:center;max-width:1000px;margin:0 auto 12px}
 .pkg-i .st{font-size:clamp(24px,3vw,34px);margin-bottom:8px}
 .pkg-i .gl{margin:0 auto 10px}
 .pkg-i p{font-size:14px;line-height:1.4}
@@ -460,6 +468,22 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
   .fsb .btn{padding:13px 28px;font-size:13px;letter-spacing:1.5px}
 }
 @media(prefers-reduced-motion:reduce){.btn,.btn.bf::after{animation:none !important}}
+@media(max-width:640px){
+  .pain-v{height:120px}
+  .pain-i p{font-size:17px !important;line-height:1.55}
+  .consult-img{max-width:300px}
+  .consult-h{margin-bottom:20px}
+  .consult-boxes{gap:12px}
+  .consult-box{padding:14px 16px}
+  .cb-t{font-size:17px;margin-bottom:8px}
+  .consult-box li{font-size:13.5px}
+  .nav-btn{padding:9px 10px}
+  .lang-switch button{padding:8px 6px}
+}
+@media(max-width:380px){
+  .nav-btn{padding:9px 6px}
+  .lang-switch button{padding:8px 3px}
+}
 </style>
 </head>
 <body>
@@ -538,7 +562,12 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           <div class='pain-ic'><svg viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='3'></rect><circle cx='8' cy='8' r='1.2' fill='currentColor'></circle><circle cx='16' cy='8' r='1.2' fill='currentColor'></circle><circle cx='8' cy='16' r='1.2' fill='currentColor'></circle><circle cx='16' cy='16' r='1.2' fill='currentColor'></circle><circle cx='12' cy='12' r='1.2' fill='currentColor'></circle></svg></div>
         </div>
         <div class='pt' data-i18n='pain.pt1'>Bất An</div>
-        <p class='pd' data-i18n='pain.pd1'>&ldquo;Nếu ngày mai có biến cố, tôi không biết công ty trụ được mấy tháng.&rdquo; Không quỹ dự phòng, không kịch bản xấu, chỉ có hy vọng chuyện đó không xảy ra. Một cú sụt doanh thu là đủ để &ldquo;đang ổn&rdquo; thành khủng hoảng.</p>
+        <p class='pd' data-i18n='pain.pd1'>&ldquo;Nếu ngày mai có biến cố, tôi không biết công ty trụ được mấy tháng.&rdquo;</p>
+        <ul class='pain-pts'>
+          <li data-i18n='pain.s1a'>Không có quỹ dự phòng đủ vài tháng chi phí</li>
+          <li data-i18n='pain.s1b'>Không rõ mở rộng cần bao nhiêu vốn</li>
+          <li data-i18n='pain.s1c'>Không nhận diện được các rủi ro có thể phát sinh</li>
+        </ul>
         <p class='pain-stat' data-i18n='pain.stat1'><b>54%</b>doanh nghiệp Việt không có quỹ khẩn cấp đủ 3 tháng chi phí<br><b style='font-size:14px;margin-top:6px'>UOB, 2024</b></p>
       </div>
       <div class='pain-c fu'>
@@ -552,7 +581,12 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           <div class='pain-ic'><svg viewBox='0 0 24 24'><path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path></svg></div>
         </div>
         <div class='pt' data-i18n='pain.pt2'>Nhập Nhằng</div>
-        <p class='pd' data-i18n='pain.pd2'>&ldquo;Tôi không tách được đâu là tiền của mình, đâu là tiền của công ty.&rdquo; Lấy tiền túi rót vào công ty, rồi rút tiền công ty lo việc riêng. Khi hai dòng tiền lẫn nhau, bạn không còn biết công ty đang lãi hay lỗ.</p>
+        <p class='pd' data-i18n='pain.pd2'>&ldquo;Tôi không tách được đâu là tiền của mình, đâu là tiền của công ty.&rdquo;</p>
+        <ul class='pain-pts'>
+          <li data-i18n='pain.s2a'>Lấy tiền túi rót vào công ty, rút tiền công ty lo việc riêng</li>
+          <li data-i18n='pain.s2b'>Báo cáo ngày càng nhiều, nhưng vẫn không biết lãi thật bao nhiêu</li>
+          <li data-i18n='pain.s2c'>Số liệu mỗi nơi một con số, quyết định dựa nhiều vào cảm tính</li>
+        </ul>
         <p class='pain-stat' data-i18n='pain.stat2'><b>7/10</b>chủ doanh nghiệp đang dùng vốn cá nhân để nuôi công ty<br><b style='font-size:14px;margin-top:6px'>Funding Societies, 2023</b></p>
       </div>
       <div class='pain-c fu'>
@@ -567,7 +601,12 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
           <div class='pain-ic'><svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='10'></circle><polygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76'></polygon></svg></div>
         </div>
         <div class='pt' data-i18n='pain.pt3'>Mắc Kẹt</div>
-        <p class='pd' data-i18n='pain.pd3'>&ldquo;Tôi làm nhiều hơn mỗi năm, nhưng không thấy mình giàu hơn.&rdquo; Doanh thu tăng đều, tài sản thì giậm chân tại chỗ. Giỏi làm chủ, xoay xở, giữ máy chạy, nhưng chưa giỏi biến lợi nhuận thành tài sản.</p>
+        <p class='pd' data-i18n='pain.pd3'>&ldquo;Tôi làm nhiều hơn mỗi năm, nhưng không thấy mình giàu hơn.&rdquo;</p>
+        <ul class='pain-pts'>
+          <li data-i18n='pain.s3a'>Doanh thu tăng, nhưng tiền mặt không tăng theo</li>
+          <li data-i18n='pain.s3b'>Lợi nhuận quay vòng vào công ty, tài sản cá nhân giậm chân tại chỗ</li>
+          <li data-i18n='pain.s3c'>Không biết cách tối ưu dòng tiền để gia tăng tài sản</li>
+        </ul>
         <p class='pain-stat' data-i18n='pain.stat3'><span style='opacity:.85'>&ldquo;Doanh nghiệp của bạn sẽ không bao giờ lớn hơn tư duy tài chính của chính bạn.&rdquo;</span><br><b style='font-size:14px;margin-top:6px'>Robert Kiyosaki</b></p>
       </div>
     </div>
@@ -723,14 +762,64 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       </div>
       <div class='fu'>
         <h2 class='consult-h' data-i18n='consult.h'>Một năm tới, bức tranh tài chính của bạn sẽ trông như thế nào?</h2>
-        <ul class='consult-list'>
-          <li data-i18n='consult.li1'>Hệ thống tài chính được chuẩn hóa, đo lường và kiểm soát theo thời gian thực</li>
-          <li data-i18n='consult.li2'>Quyết định chiến lược dựa trên dữ liệu, không còn phụ thuộc cảm tính</li>
-          <li data-i18n='consult.li3'>Cấu trúc vốn và dòng tiền được tối ưu để tối đa hóa giá trị doanh nghiệp</li>
-          <li data-i18n='consult.li4'>Rủi ro tài chính được nhận diện và kiểm soát chủ động</li>
-          <li data-i18n='consult.li5'>Tài sản cá nhân tăng trưởng bền vững, song hành cùng đà phát triển doanh nghiệp</li>
-          <li data-i18n='consult.li6'>Sở hữu một CFO / Cố vấn Tài chính / Financial Coach với mức đầu tư tối ưu hơn thay vì phải thuê một CFO toàn thời gian</li>
-        </ul>
+        <div class='consult-boxes'>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t1'>Chuẩn hóa Hệ thống Tài chính</div>
+            <ul>
+              <li data-i18n='consult.s1a'>Chuẩn hóa quy trình và báo cáo quản trị</li>
+              <li data-i18n='consult.s1b'>Đo lường, kiểm soát theo thời gian thực</li>
+            </ul>
+          </div>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t2'>Nâng tầm năng lực Tài chính</div>
+            <ul>
+              <li data-i18n='consult.s2a'>Coaching 1:1 cho CEO</li>
+              <li data-i18n='consult.s2b'>Đào tạo tài chính nội bộ cho doanh nghiệp</li>
+            </ul>
+          </div>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t3'>Tối ưu vốn và dòng tiền</div>
+            <ul>
+              <li data-i18n='consult.s3a'>Cấu trúc vốn và dòng tiền hợp lý</li>
+              <li data-i18n='consult.s3b'>Định giá gọi vốn, tư vấn M&amp;A</li>
+            </ul>
+          </div>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t7'>Xây dựng Kế hoạch và Chiến lược</div>
+            <ul>
+              <li data-i18n='consult.s7a'>Xây dựng mục tiêu kinh doanh, lập ngân sách</li>
+              <li data-i18n='consult.s7b'>Tầm nhìn chiến lược 3&ndash;5 năm tới</li>
+            </ul>
+          </div>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t4'>Quản trị rủi ro chủ động</div>
+            <ul>
+              <li data-i18n='consult.s4a'>Nhận diện rủi ro tài chính từ sớm</li>
+              <li data-i18n='consult.s4b'>Kiểm soát trước khi rủi ro thành khủng hoảng</li>
+            </ul>
+          </div>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t5'>Tăng trưởng tài sản cá nhân</div>
+            <ul>
+              <li data-i18n='consult.s5a'>Chuyển lợi nhuận thành tài sản dài hạn</li>
+              <li data-i18n='consult.s5b'>Song hành cùng đà phát triển doanh nghiệp</li>
+            </ul>
+          </div>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t6'>CFO đồng hành</div>
+            <ul>
+              <li data-i18n='consult.s6a'>Phân tích và cảnh báo định kỳ</li>
+              <li data-i18n='consult.s6b'>Cùng CEO ra các quyết định tài chính quan trọng</li>
+            </ul>
+          </div>
+          <div class='consult-box'>
+            <div class='cb-t' data-i18n='consult.t8'>Mindmap Dòng tiền</div>
+            <ul>
+              <li data-i18n='consult.s8a'>Tách bạch dòng tiền cá nhân và Doanh nghiệp</li>
+              <li data-i18n='consult.s8b'>Thiết lập cơ chế quản lý tài khoản</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -742,7 +831,7 @@ footer{background:#04150e;padding:80px 40px 60px;text-align:center;border-top:1p
       <span class='iey' data-i18n='inv.ey'>Lộ Trình</span>
       <h2 class='st' data-i18n='inv.h'>Chọn hành trình phù hợp với bạn</h2>
       <div class='gl'></div>
-      <p style='color:var(--iv);font-size:20px;opacity:0.9;' data-i18n='inv.sub'>Từ thẩm định nhanh sức khỏe tài chính đến đồng hành xây dựng giải pháp dài hạn &mdash; chọn lộ trình phù hợp với giai đoạn phát triển của doanh nghiệp bạn.</p>
+      <p style='color:var(--iv);font-size:20px;opacity:0.9;' data-i18n='inv.sub'>Từ thẩm định nhanh sức khỏe tài chính đến đồng hành xây dựng giải pháp dài hạn.</p>
     </div>
     <div class='roadmap'>
       <div class='rm-top-row rm-row-4'>
@@ -952,13 +1041,22 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'pain.h':'Growth on the outside,<br>unease on the inside.',
     'pain.sub':'Revenue grows every year. But the feeling inside stays the same. Where do you see yourself in the three points below?',
     'pain.pt1':'Insecurity',
-    'pain.pd1':"&ldquo;If something goes wrong tomorrow, I don't know how many months the company could survive.&rdquo; No reserve fund, no worst-case plan, only the hope that it won't happen. One revenue drop is enough to turn &ldquo;doing fine&rdquo; into a crisis.",
+    'pain.pd1':"&ldquo;If something goes wrong tomorrow, I don't know how many months the company could survive.&rdquo;",
+    'pain.s1a':"No reserve covering even a few months of costs",
+    'pain.s1b':"No clarity on how much capital expansion needs",
+    'pain.s1c':"Unable to identify the risks that may arise",
     'pain.stat1':"<b>54%</b>of Vietnamese businesses have no emergency fund covering 3 months of expenses<br><b style='font-size:14px;margin-top:6px'>UOB, 2024</b>",
     'pain.pt2':'Blurred Lines',
-    'pain.pd2':"&ldquo;I can't tell which money is mine and which belongs to the company.&rdquo; Personal cash goes into the business, company cash covers personal needs. When the two flows mix, you no longer know whether the company is profitable.",
+    'pain.pd2':"&ldquo;I can't tell which money is mine and which belongs to the company.&rdquo;",
+    'pain.s2a':"Personal cash goes into the business, company cash covers personal needs",
+    'pain.s2b':"More and more reports, yet you still don't know your real profit",
+    'pain.s2c':"Numbers differ from place to place, decisions lean on gut feeling",
     'pain.stat2':"<b>7/10</b>business owners are using personal capital to fund their company<br><b style='font-size:14px;margin-top:6px'>Funding Societies, 2023</b>",
     'pain.pt3':'Stuck',
-    'pain.pd3':"&ldquo;I work harder every year, but I don't feel any wealthier.&rdquo; Revenue climbs steadily, assets stand still. Great at running the business: hustling, keeping the engine going, but not yet turning profit into wealth.",
+    'pain.pd3':"&ldquo;I work harder every year, but I don't feel any wealthier.&rdquo;",
+    'pain.s3a':"Revenue grows, but cash doesn't follow",
+    'pain.s3b':"Profit keeps cycling back into the business, personal assets stand still",
+    'pain.s3c':"Not knowing how to optimize cash flow to grow assets",
     'pain.stat3':"<span style='opacity:.85'>&ldquo;Your business will never be bigger than your own financial thinking.&rdquo;</span><br><b style='font-size:14px;margin-top:6px'>Robert Kiyosaki</b>",
     'hc.t':'How healthy is your business, really?',
     'hc.d':'Take the financial health assessment, 18 questions, about 3&ndash;5 minutes, results right away.',
@@ -976,7 +1074,7 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'car.desc3':'Operate safely with proactive risk management.',
     'car.list3':"<li>Build a solid financial foundation</li><li>Allocate capital efficiently, optimize investments</li><li>Identify and control risks before they happen</li>",
     'inv.ey':'Roadmap','inv.h':'Choose the journey that fits you',
-    'inv.sub':'From a quick financial health check to a long-term partnership building your solution &mdash; choose the path that fits your business stage.',
+    'inv.sub':'From a quick financial health check to a long-term partnership building your solution.',
     'rm.desc1':'A quick financial health check that surfaces risks and how safe your business really is.',
     'rm.btn1':'Assess Now',
     'rm.desc2':'Build your business plan and strategy for the next 3&ndash;5 years.',
@@ -984,12 +1082,30 @@ document.querySelectorAll('.calendly-btn').forEach(btn=>{
     'rm.btn3':'Book a Call',
     'rm.desc4':'A one-year partnership building a long-term Financial Legacy for your business.',
     'consult.h':'A year from now, what will your financial picture look like?',
-    'consult.li1':'A financial system standardized, measured and controlled in real time',
-    'consult.li2':'Strategic decisions driven by data, not guesswork',
-    'consult.li3':'Capital structure and cash flow optimized to maximize business value',
-    'consult.li4':'Financial risk identified and managed proactively',
-    'consult.li5':'Personal wealth that grows steadily, in step with the business',
-    'consult.li6':'A CFO / Financial Advisor / Financial Coach at a smarter investment than hiring a full-time CFO',
+    'consult.t1':'Standardizing the Finance System',
+    'consult.s1a':'Standardized processes and management reporting',
+    'consult.s1b':'Measured and controlled in real time',
+    'consult.t2':'Elevating Financial Capability',
+    'consult.s2a':'1:1 coaching for the CEO',
+    'consult.s2b':'In-house financial training for the business',
+    'consult.t3':'Optimized capital and cash flow',
+    'consult.s3a':'A sound capital structure and cash flow',
+    'consult.s3b':'Valuation for fundraising, M&amp;A advisory',
+    'consult.t4':'Proactive risk management',
+    'consult.s4a':'Financial risks identified early',
+    'consult.s4b':'Controlled before they become a crisis',
+    'consult.t5':'Growing Personal Wealth',
+    'consult.s5a':'Profit turned into long-term assets',
+    'consult.s5b':'Growing in step with the business',
+    'consult.t6':'CFO by Your Side',
+    'consult.s6a':'Regular analysis and early warnings',
+    'consult.s6b':'Working with the CEO on key financial decisions',
+    'consult.t7':'Building Plans and Strategy',
+    'consult.s7a':'Setting business goals and preparing budgets',
+    'consult.s7b':'Strategic vision for the next 3&ndash;5 years',
+    'consult.t8':'Cash Flow Mindmap',
+    'consult.s8a':'Separating personal and business cash flow',
+    'consult.s8b':'Setting up account management controls',
     'test.badge':'Client Stories','test.h':'What business owners say about the journey',
     'test.role1':'CEO &middot; Ytrade Agency',
     'test.q1':"&ldquo;Trinh doesn't stop at data and financial analysis &mdash; she also <b>dives into the company's story to help shape long-term business strategy</b>.&rdquo;",
